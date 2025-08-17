@@ -38,17 +38,29 @@
 	<link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-	<header class="nav-header">
-		<div class="nav-container">
-			<div class="nav-logo">REDSHIFT LABS</div>
-			<nav class="nav-links text-light">
-				<a href="about.md" class="nav-link">About</a>
-				<a href="README.md" class="nav-link">Roadmap</a>
-				<a href="#community" class="nav-link">Community</a>
-			</nav>
-		</div>
-	</header>
-
+<header>
+  <nav class="navbar navbar-expand-md fixed-top navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">REDSHIFT LABS</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="about.md">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="README.md">Roadmap</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#community">Community</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
 	<section class="hero">
 		<div class="studio-logo">REDSHIFT LABS</div>
 		<h1 class="game-title">PROJECT MOON</h1>
@@ -250,7 +262,7 @@
 		<div class="social-links">
 			<a href="https://bsky.app/profile/mishotofu.bsky.social" class="social-link">Bluesky</a>
 			<a href="https://www.threads.com/@mischagoes" class="social-link">Threads</a>
-			<a href="https://rvlt.gg/8ddZBzVD" class="social-link">Community Discord</a>
+			<a href="https://rvlt.gg/8ddZBzVD" class="social-link">Community Chat</a>
 			<a href="https://mischa.itch.io/" class="social-link">Itch.io</a>
 		</div>
 	</section>
@@ -258,9 +270,8 @@
 	<footer class="footer">
 		<p>&copy; 2025 Redshift Labs. Project Moon coming to Windows. Steam release planned for December 2025.</p>
 	</footer>
-
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>\
-
+	<!-- Bootstrap JS Bundle with Popper -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 	<!-- JSON-LD Structured Data -->
 	<script type="application/ld+json">
 	{
@@ -277,6 +288,7 @@
 		"datePublished": "2025-12-01"
 	}
 	</script>
+	
 
 </body>
 </html>
