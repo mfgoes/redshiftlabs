@@ -52,7 +52,6 @@
 			background: linear-gradient(135deg, #1C1C1E 0%, #2E2E30 100%);
 			color: #fff;
 			overflow-x: hidden;
-			padding-top: 80px;
 		}
 
 		.hero {
@@ -328,3 +327,47 @@
 				gap: 1rem;
 			}
 		}
+
+		/* Timeline container: vertical line */
+		.timeline {
+    position: relative;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 100%;
+    background: #C9A66B;
+    opacity: 0.4;
+    z-index: 0;
+}
+
+/* Timeline marker */
+.timeline-marker {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 4px solid #C9A66B;
+    background: #2E2E30;
+    position: relative;
+    z-index: 1;
+    margin: 0 auto;
+}
+
+/* Reduce horizontal spacing between timeline columns */
+.timeline-item .row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.timeline-item .col-md-5,
+.timeline-item .col-md-2 {
+    padding-left: 0;
+    padding-right: 0;
+}
