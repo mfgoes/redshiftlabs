@@ -34,6 +34,7 @@
 	<!-- Bootstrap CSS -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/devlog-styles.css">
 </head>
 <body class="bg-dark text-white">
 
@@ -49,26 +50,77 @@
 		</div>
 	</section>
 
-	<!-- Timeline Section -->
+	<!-- Timeline & Devlog Combined Section -->
 	<section id="timeline" class="timeline-section py-5">
 		<div class="container">
-			<div class="text-center mb-5">
-				<h2 class="section-title mb-3">Projected timeline</h2>
-				<p class="section-subtitle">Join early: feedback shapes the final 35%.</p>
-			</div>
-			
 			<div class="row g-4">
-				<!-- RTS Essentials -->
-				<div class="col-12">
-					<div class="timeline-card">
-						<div class="card-body">
-							<div class="d-flex align-items-start gap-3">
-								<img src="Icons/Key.svg" alt="Key icon" width="48" height="48" class="timeline-icon">
-								<div class="flex-grow-1">
-									<p class="timeline-description mb-2">Movement, selection, building placement, and resource systems</p>
-									<div class="d-flex align-items-center gap-2">
-										<small class="timeline-date">Oct 2025</small>
-										<span class="badge badge-complete">Complete</span>
+				<!-- Left Column: Timeline -->
+				<div class="col-lg-7">
+					<div class="mb-4">
+						<h2 class="section-title mb-2">Projected timeline</h2>
+						<p class="section-subtitle">Join early: feedback shapes the final 35%.</p>
+					</div>
+					
+					<div class="d-flex flex-column gap-3">
+						<!-- RTS Essentials -->
+						<div class="timeline-card">
+							<div class="card-body">
+								<div class="d-flex align-items-start gap-3">
+									<img src="Icons/Key.svg" alt="Key icon" width="48" height="48" class="timeline-icon">
+									<div class="flex-grow-1">
+										<p class="timeline-description mb-2">Movement, selection, building placement, and resource systems</p>
+										<div class="d-flex align-items-center gap-2">
+											<small class="timeline-date">Oct 2025</small>
+											<span class="badge badge-complete">Complete</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- Survival Loop -->
+						<div class="timeline-card">
+							<div class="card-body">
+								<div class="d-flex align-items-start gap-3">
+									<img src="Icons/Life buoy.svg" alt="Life buoy icon" width="48" height="48" class="timeline-icon">
+									<div class="flex-grow-1">
+										<p class="timeline-description mb-2">Resource management, core buildings, and power usage</p>
+										<div class="d-flex align-items-center gap-2">
+											<small class="timeline-date">Nov 2025</small>
+											<span class="badge badge-complete">Complete</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- Finalising Game Loop -->
+						<div class="timeline-card">
+							<div class="card-body">
+								<div class="d-flex align-items-start gap-3">
+									<img src="Icons/Info.svg" alt="Info icon" width="48" height="48" class="timeline-icon">
+									<div class="flex-grow-1">
+										<p class="timeline-description mb-2">Equipment failures, resource shortages, environmental events</p>
+										<div class="d-flex align-items-center gap-2">
+											<small class="timeline-date">Dec 2025</small>
+											<span class="badge badge-development">In development</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- First Demo Release -->
+						<div class="timeline-card">
+							<div class="card-body">
+								<div class="d-flex align-items-start gap-3">
+									<img src="Icons/Users.svg" alt="Users icon" width="48" height="48" class="timeline-icon">
+									<div class="flex-grow-1">
+										<p class="timeline-description mb-2">For testing the core mechanics and gathering user feedback</p>
+										<div class="d-flex align-items-center gap-2">
+											<small class="timeline-date">Jan 2026</small>
+											<span class="badge badge-planned">Planned</span>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -76,62 +128,91 @@
 					</div>
 				</div>
 
-				<!-- Survival Loop -->
-				<div class="col-12">
-					<div class="timeline-card">
-						<div class="card-body">
-							<div class="d-flex align-items-start gap-3">
-								<img src="Icons/Life buoy.svg" alt="Life buoy icon" width="48" height="48" class="timeline-icon">
-								<div class="flex-grow-1">
-									<p class="timeline-description mb-2">Resource management, core buildings, and power usage</p>
-									<div class="d-flex align-items-center gap-2">
-										<small class="timeline-date">Nov 2025</small>
-										<span class="badge badge-complete">Complete</span>
-									</div>
-								</div>
-							</div>
-						</div>
+				<!-- Right Column: Development Updates -->
+				<div class="col-lg-5">
+					<div class="mb-4">
+						<h2 class="section-title mb-2">Development Updates</h2>
+						<p class="section-subtitle">Latest progress on Project Moon</p>
 					</div>
-				</div>
-
-				<!-- Finalising Game Loop -->
-				<div class="col-12">
-					<div class="timeline-card">
-						<div class="card-body">
-							<div class="d-flex align-items-start gap-3">
-								<img src="Icons/Info.svg" alt="Info icon" width="48" height="48" class="timeline-icon">
-								<div class="flex-grow-1">
-									<p class="timeline-description mb-2">Equipment failures, resource shortages, environmental events</p>
-									<div class="d-flex align-items-center gap-2">
-										<small class="timeline-date">Dec 2025</small>
-										<span class="badge badge-development">In development</span>
+					
+					<div class="d-flex flex-column gap-3">
+						
+						<!-- Update 1: Food & Survival System -->
+						<a href="devlog.html#nov16-2025" class="text-decoration-none">
+							<article class="devlog-card">
+								<div class="row g-3">
+									<div class="col-5">
+										<img src="https://i.imgur.com/vkWi1L7.jpeg" 
+											 alt="Food & Survival System" 
+											 class="devlog-card-img">
+									</div>
+									<div class="col-7">
+										<span class="badge badge-complete mb-1">Complete</span>
+										<h4 class="devlog-card-title">Food & Survival System</h4>
+										<p class="devlog-card-excerpt mb-2">Stronghold-style food mechanics with hunger, health, and morale tracking.</p>
+										<div class="d-flex align-items-center gap-2 mb-1">
+											<img src="images/user.JPG" alt="Mischa" style="width: 20px; height: 20px; border-radius: 50%; object-fit: cover;">
+											<small class="timeline-date">Mischa · Nov 16</small>
+										</div>
 									</div>
 								</div>
-							</div>
-						</div>
+							</article>
+						</a>
+
+						<!-- Update 2: Oxygen System -->
+						<a href="devlog.html#nov-oxygen" class="text-decoration-none">
+							<article class="devlog-card">
+								<div class="row g-3">
+									<div class="col-5">
+										<img src="https://i.imgur.com/vkWi1L7.jpeg" 
+											 alt="Oxygen System" 
+											 class="devlog-card-img">
+									</div>
+									<div class="col-7">
+										<span class="badge badge-complete mb-1">Complete</span>
+										<h4 class="devlog-card-title">Oxygen Consumption System</h4>
+										<p class="devlog-card-excerpt mb-2">Buildings maintain pressure zones using aluminium. Zones fail when depleted.</p>
+										<div class="d-flex align-items-center gap-2 mb-1">
+											<img src="images/user.JPG" alt="Mischa" style="width: 20px; height: 20px; border-radius: 50%; object-fit: cover;">
+											<small class="timeline-date">Mischa · Nov</small>
+										</div>
+									</div>
+								</div>
+							</article>
+						</a>
+
+						<!-- Update 3: Game Direction -->
+						<a href="devlog.html#claude-doc" class="text-decoration-none">
+							<article class="devlog-card">
+								<div class="row g-3">
+									<div class="col-5">
+										<img src="https://i.imgur.com/vkWi1L7.jpeg" 
+											 alt="Game Direction Document" 
+											 class="devlog-card-img">
+									</div>
+									<div class="col-7">
+										<span class="badge badge-complete mb-1">Complete</span>
+										<h4 class="devlog-card-title">Game Direction & Tech Overview</h4>
+										<p class="devlog-card-excerpt mb-2">Documented core vision, mechanics roadmap, and technical architecture.</p>
+										<div class="d-flex align-items-center gap-2 mb-1">
+											<img src="images/user.JPG" alt="Mischa" style="width: 20px; height: 20px; border-radius: 50%; object-fit: cover;">
+											<small class="timeline-date">Mischa · Oct</small>
+										</div>
+									</div>
+								</div>
+							</article>
+						</a>
+						
 					</div>
-				</div>
-
-				<!-- First Demo Release -->
-				<div class="col-12">
-					<div class="timeline-card">
-						<div class="card-body">
-							<div class="d-flex align-items-start gap-3">
-								<img src="Icons/Users.svg" alt="Users icon" width="48" height="48" class="timeline-icon">
-								<div class="flex-grow-1">
-									<p class="timeline-description mb-2">For testing the core mechanics and gathering user feedback</p>
-									<div class="d-flex align-items-center gap-2">
-										<small class="timeline-date">Jan 2026</small>
-										<span class="badge badge-planned">Planned</span>
-									</div>
-								</div>
-							</div>
-						</div>
+					
+					<div class="mt-4">
+						<a href="devlog.html" class="btn btn-outline-dark w-100">View All Updates</a>
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
+
 
 	<!-- Footer -->
 	<footer class="footer py-4">
