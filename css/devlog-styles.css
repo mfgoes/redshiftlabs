@@ -152,8 +152,64 @@
 	.devlog-card-img {
 		height: 100px;
 	}
-	
+
 	.devlog-title {
 		font-size: 1.25rem;
 	}
+}
+
+/* Bluesky Embed Styling */
+bsky-embed {
+	display: block;
+}
+
+bsky-embed::part(container) {
+	gap: 0.5rem !important;
+}
+
+bsky-embed::part(post) {
+	margin-bottom: 0.5rem !important;
+	padding: 0.75rem !important;
+	background-color: #1a1a1a !important;
+	border: 1px solid #2c2c2c !important;
+	border-radius: 6px !important;
+}
+
+bsky-embed::part(text) {
+	font-size: 0.8rem !important;
+	line-height: 1.4 !important;
+	color: #e5e5e5 !important;
+}
+
+bsky-embed::part(author) {
+	font-size: 0.75rem !important;
+	color: #a0a0a0 !important;
+}
+
+/* Bluesky feed media constraints */
+bsky-embed::part(media),
+bsky-embed::part(image),
+bsky-embed::part(video) {
+	max-height: 200px !important;
+	object-fit: cover !important;
+	border-radius: 4px !important;
+}
+
+/* Custom scrollbar for Bluesky feed */
+.bsky-feed-container::-webkit-scrollbar {
+	width: 8px;
+}
+
+.bsky-feed-container::-webkit-scrollbar-track {
+	background: #1a1a1a;
+	border-radius: 4px;
+}
+
+.bsky-feed-container::-webkit-scrollbar-thumb {
+	background: #3a3a3a;
+	border-radius: 4px;
+}
+
+.bsky-feed-container::-webkit-scrollbar-thumb:hover {
+	background: #4a4a4a;
 }
