@@ -94,79 +94,57 @@
 	</section>
 
 	<!-- Timeline & Devlog Combined Section -->
-	<section id="timeline" class="timeline-section py-5">
+	<section id="timeline" class="timeline-section py-5" style="background-color: #f5f5f7;">
 		<div class="container">
 			<div class="row g-4">
 				<!-- Left Column: Timeline -->
 				<div class="col-lg-7">
 					<div class="mb-4">
-						<h2 class="section-title mb-2">Projected timeline</h2>
-						<p class="section-subtitle">Join early: feedback shapes the final 35%.</p>
+						<h2 class="section-title mb-2" style="color: #1d1d1f;">Projected timeline</h2>
 					</div>
-					
-					<div class="d-flex flex-column gap-3">
-						<!-- RTS Essentials -->
-						<div class="timeline-card">
-							<div class="card-body">
-								<div class="d-flex align-items-start gap-3">
-									<img src="Icons/Key.svg" alt="Key icon" width="48" height="48" class="timeline-icon">
-									<div class="flex-grow-1">
-										<p class="timeline-description mb-2">Movement, selection, building placement, and resource systems</p>
-										<div class="d-flex align-items-center gap-2">
-											<small class="timeline-date">Oct 2025</small>
-											<span class="badge badge-complete">Complete</span>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
 
-						<!-- Survival Loop -->
-						<div class="timeline-card">
-							<div class="card-body">
-								<div class="d-flex align-items-start gap-3">
-									<img src="Icons/Life buoy.svg" alt="Life buoy icon" width="48" height="48" class="timeline-icon">
-									<div class="flex-grow-1">
-										<p class="timeline-description mb-2">Resource management, core buildings, and power usage</p>
-										<div class="d-flex align-items-center gap-2">
-											<small class="timeline-date">Nov 2025</small>
-											<span class="badge badge-complete">Complete</span>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<!-- Finalising Game Loop -->
-						<div class="timeline-card">
-							<div class="card-body">
-								<div class="d-flex align-items-start gap-3">
-									<img src="Icons/Info.svg" alt="Info icon" width="48" height="48" class="timeline-icon">
-									<div class="flex-grow-1">
-										<p class="timeline-description mb-2">Equipment failures, resource shortages, environmental events</p>
-										<div class="d-flex align-items-center gap-2">
-											<small class="timeline-date">Dec 2025</small>
-											<span class="badge badge-development">In development</span>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<!-- First Demo Release -->
-						<div class="timeline-card">
-							<div class="card-body">
-								<div class="d-flex align-items-start gap-3">
-									<img src="Icons/Users.svg" alt="Users icon" width="48" height="48" class="timeline-icon">
-									<div class="flex-grow-1">
-										<p class="timeline-description mb-2">For testing the core mechanics and gathering user feedback</p>
-										<div class="d-flex align-items-center gap-2">
-											<small class="timeline-date">Jan 2026</small>
-											<span class="badge badge-planned">Planned</span>
-										</div>
-									</div>
-								</div>
-							</div>
+					<!-- Timeline Table -->
+					<div class="timeline-card" style="background-color: #ffffff; border: 1px solid #d2d2d7;">
+						<div class="card-body" style="padding: 0;">
+							<table class="table mb-0" style="color: #1d1d1f;">
+								<thead>
+									<tr style="border-bottom: 1px solid #d2d2d7;">
+										<th style="padding: 1rem; font-weight: 600; font-size: 0.875rem; color: #6e6e73; background-color: #fafafa;">Date</th>
+										<th style="padding: 1rem; font-weight: 600; font-size: 0.875rem; color: #6e6e73; background-color: #fafafa;">Feature</th>
+										<th style="padding: 1rem; font-weight: 600; font-size: 0.875rem; color: #6e6e73; background-color: #fafafa; text-align: right;">Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr style="border-bottom: 1px solid #d2d2d7;">
+										<td style="padding: 1rem; font-size: 0.875rem; color: #1d1d1f;">Oct 2025</td>
+										<td style="padding: 1rem; font-size: 0.875rem; color: #1d1d1f;">Movement, selection, building placement, and resource systems</td>
+										<td style="padding: 1rem; text-align: right;">
+											<span class="badge" style="background-color: #34c759; color: #ffffff; padding: 0.375rem 0.75rem; border-radius: 12px; font-size: 0.75rem; font-weight: 600;">Done</span>
+										</td>
+									</tr>
+									<tr style="border-bottom: 1px solid #d2d2d7;">
+										<td style="padding: 1rem; font-size: 0.875rem; color: #1d1d1f;">Nov 2025</td>
+										<td style="padding: 1rem; font-size: 0.875rem; color: #1d1d1f;">Resource management, core buildings, and power usage</td>
+										<td style="padding: 1rem; text-align: right;">
+											<span class="badge" style="background-color: #34c759; color: #ffffff; padding: 0.375rem 0.75rem; border-radius: 12px; font-size: 0.75rem; font-weight: 600;">Done</span>
+										</td>
+									</tr>
+									<tr style="border-bottom: 1px solid #d2d2d7;">
+										<td style="padding: 1rem; font-size: 0.875rem; color: #1d1d1f;">Dec 2025</td>
+										<td style="padding: 1rem; font-size: 0.875rem; color: #1d1d1f;">Equipment failures, resource shortages, environmental events</td>
+										<td style="padding: 1rem; text-align: right;">
+											<span class="badge" style="background-color: #8e8e93; color: #ffffff; padding: 0.375rem 0.75rem; border-radius: 12px; font-size: 0.75rem; font-weight: 600;">Planned</span>
+										</td>
+									</tr>
+									<tr>
+										<td style="padding: 1rem; font-size: 0.875rem; color: #1d1d1f;">Jan 2026</td>
+										<td style="padding: 1rem; font-size: 0.875rem; color: #1d1d1f;">For testing the core mechanics and gathering user feedback</td>
+										<td style="padding: 1rem; text-align: right;">
+											<span class="badge" style="background-color: #8e8e93; color: #ffffff; padding: 0.375rem 0.75rem; border-radius: 12px; font-size: 0.75rem; font-weight: 600;">Planned</span>
+										</td>
+									</tr>
+								</tbody>
+							</table>
 						</div>
 					</div>
 				</div>
@@ -174,28 +152,23 @@
 				<!-- Right Column: Development Updates -->
 				<div class="col-lg-5">
 					<div class="mb-4">
-						<h2 class="section-title mb-2">Development Updates</h2>
-						<p class="section-subtitle">Latest progress on Project Moon</p>
+						<h2 class="section-title mb-2" style="color: #1d1d1f;">Latest devlogs</h2>
 					</div>
-					
+
 					<div class="d-flex flex-column gap-3">
-						
+
 						<!-- Update 1: Food & Survival System -->
 						<a href="devlog.html#nov16-2025" class="text-decoration-none">
-							<article class="devlog-card">
-								<div class="row g-3">
-									<div class="col-5">
-										<img src="https://i.imgur.com/vkWi1L7.jpeg" 
-											 alt="Food & Survival System" 
-											 class="devlog-card-img">
-									</div>
-									<div class="col-7">
-										<span class="badge badge-complete mb-1">Complete</span>
-										<h4 class="devlog-card-title">Food & Survival System</h4>
-										<p class="devlog-card-excerpt mb-2">Stronghold-style food mechanics with hunger, health, and morale tracking.</p>
-										<div class="d-flex align-items-center gap-2 mb-1">
-											<img src="images/user.JPG" alt="Mischa" style="width: 20px; height: 20px; border-radius: 50%; object-fit: cover;">
-											<small class="timeline-date">Mischa · Nov 16</small>
+							<article class="timeline-card" style="background-color: #ffffff; border: 1px solid #d2d2d7; transition: all 0.2s ease;">
+								<div class="card-body" style="padding: 1rem;">
+									<div class="d-flex gap-3">
+										<img src="https://i.imgur.com/vkWi1L7.jpeg"
+											 alt="Food & Survival System"
+											 style="width: 120px; height: 120px; object-fit: cover; border-radius: 8px; flex-shrink: 0;">
+										<div class="flex-grow-1">
+											<h4 style="color: #1d1d1f; font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem;">Food & Survival System</h4>
+											<p style="color: #6e6e73; font-size: 0.875rem; line-height: 1.4; margin-bottom: 0.75rem;">Implemented Stronghold-style food mechanics and individual survival stats to create a compelling survival loop for Project Moon.</p>
+											<small style="color: #86868b; font-size: 0.75rem;">4 mins</small>
 										</div>
 									</div>
 								</div>
@@ -204,20 +177,16 @@
 
 						<!-- Update 2: Oxygen System -->
 						<a href="devlog.html#nov-oxygen" class="text-decoration-none">
-							<article class="devlog-card">
-								<div class="row g-3">
-									<div class="col-5">
-										<img src="https://i.imgur.com/vkWi1L7.jpeg" 
-											 alt="Oxygen System" 
-											 class="devlog-card-img">
-									</div>
-									<div class="col-7">
-										<span class="badge badge-complete mb-1">Complete</span>
-										<h4 class="devlog-card-title">Oxygen Consumption System</h4>
-										<p class="devlog-card-excerpt mb-2">Buildings maintain pressure zones using aluminium. Zones fail when depleted.</p>
-										<div class="d-flex align-items-center gap-2 mb-1">
-											<img src="images/user.JPG" alt="Mischa" style="width: 20px; height: 20px; border-radius: 50%; object-fit: cover;">
-											<small class="timeline-date">Mischa · Nov</small>
+							<article class="timeline-card" style="background-color: #ffffff; border: 1px solid #d2d2d7; transition: all 0.2s ease;">
+								<div class="card-body" style="padding: 1rem;">
+									<div class="d-flex gap-3">
+										<img src="https://i.imgur.com/vkWi1L7.jpeg"
+											 alt="Oxygen System"
+											 style="width: 120px; height: 120px; object-fit: cover; border-radius: 8px; flex-shrink: 0;">
+										<div class="flex-grow-1">
+											<h4 style="color: #1d1d1f; font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem;">Oxygen Consumption System</h4>
+											<p style="color: #6e6e73; font-size: 0.875rem; line-height: 1.4; margin-bottom: 0.75rem;">Implemented Stronghold-style food mechanics and individual survival stats to create a compelling survival loop for Project Moon.</p>
+											<small style="color: #86868b; font-size: 0.75rem;">4 mins</small>
 										</div>
 									</div>
 								</div>
@@ -226,82 +195,66 @@
 
 						<!-- Update 3: Game Direction -->
 						<a href="devlog.html#claude-doc" class="text-decoration-none">
-							<article class="devlog-card">
-								<div class="row g-3">
-									<div class="col-5">
-										<img src="https://i.imgur.com/vkWi1L7.jpeg" 
-											 alt="Game Direction Document" 
-											 class="devlog-card-img">
-									</div>
-									<div class="col-7">
-										<span class="badge badge-complete mb-1">Complete</span>
-										<h4 class="devlog-card-title">Game Direction & Tech Overview</h4>
-										<p class="devlog-card-excerpt mb-2">Documented core vision, mechanics roadmap, and technical architecture.</p>
-										<div class="d-flex align-items-center gap-2 mb-1">
-											<img src="images/user.JPG" alt="Mischa" style="width: 20px; height: 20px; border-radius: 50%; object-fit: cover;">
-											<small class="timeline-date">Mischa · Oct</small>
+							<article class="timeline-card" style="background-color: #ffffff; border: 1px solid #d2d2d7; transition: all 0.2s ease;">
+								<div class="card-body" style="padding: 1rem;">
+									<div class="d-flex gap-3">
+										<img src="https://i.imgur.com/vkWi1L7.jpeg"
+											 alt="Game Direction Document"
+											 style="width: 120px; height: 120px; object-fit: cover; border-radius: 8px; flex-shrink: 0;">
+										<div class="flex-grow-1">
+											<h4 style="color: #1d1d1f; font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem;">Game Direction & Technical Overview</h4>
+											<p style="color: #6e6e73; font-size: 0.875rem; line-height: 1.4; margin-bottom: 0.75rem;">Implemented Stronghold-style food mechanics and individual survival stats to create a compelling survival loop for Project Moon.</p>
+											<small style="color: #86868b; font-size: 0.75rem;">4 mins</small>
 										</div>
 									</div>
 								</div>
 							</article>
 						</a>
-						
-					</div>
-					
-					<div class="mt-4">
-						<a href="devlog.html" class="btn btn-outline-dark w-100">View All Updates</a>
+
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
 
-	<!-- Contact & Previous Work Section -->
-	<section class="community-section py-5">
+	<!-- Contact Section -->
+	<section class="community-section py-5" style="background-color: #0a0a0a;">
 		<div class="container">
-			<!-- Get in Touch Section -->
-			<div class="row g-4">
-				<div class="col-12">
-					<div class="timeline-card" style="background-color: #1a1a1a; border: 1px solid #2c2c2c;">
-						<div class="card-body">
-							<div class="text-center mb-4">
-								<h3 class="section-title mb-2" style="color: #ffffff;">Contact & Previous Work</h3>
-								<p class="section-subtitle" style="color: #a0a0a0;">Questions, feedback, or playtester applications welcome</p>
+			<div class="row g-4 align-items-stretch">
+				<!-- Contact Us Card -->
+				<div class="col-lg-6">
+					<div class="timeline-card h-100" style="background-color: #1a1a1a; border: 1px solid #2c2c2c;">
+						<div class="card-body d-flex flex-column justify-content-center" style="padding: 3rem 2rem;">
+							<h3 class="section-title mb-3" style="color: #ffffff; font-size: 2rem;">Contact us</h3>
+							<p class="mb-4" style="color: #a0a0a0; font-size: 1rem; line-height: 1.6;">
+								Questions, feedback, or playtester applications welcome.
+							</p>
+							<div>
+								<a href="mailto:mfgoes1@gmail.com" class="btn btn-outline-light btn-lg px-4">Send an email</a>
 							</div>
+						</div>
+					</div>
+				</div>
 
-							<div class="row g-4 justify-content-center">
-								<!-- Email -->
-								<div class="col-lg-5">
-									<div class="text-center">
-										<svg width="40" height="40" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mb-3" style="opacity: 0.9;">
-											<rect x="2" y="4" width="20" height="16" rx="2"/>
-											<path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
-										</svg>
-										<p class="timeline-description mb-2" style="color: #e5e5e5; font-weight: 600; font-size: 1.1rem;">Email</p>
-										<a href="mailto:mfgoes1@gmail.com" class="x-link" style="color: #0066cc; font-size: 1rem;">mfgoes1@gmail.com</a>
-										<p style="color: #6e6e73; font-size: 0.85rem; margin-top: 0.75rem;">Response within 24-48 hours</p>
-									</div>
-								</div>
-
-								<!-- Previous Work -->
-								<div class="col-lg-5">
-									<div class="text-center">
-										<svg width="40" height="40" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mb-3" style="opacity: 0.9;">
-											<path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
-											<polyline points="7.5 4.21 12 6.81 16.5 4.21"/>
-											<polyline points="7.5 19.79 7.5 14.6 3 12"/>
-											<polyline points="21 12 16.5 14.6 16.5 19.79"/>
-											<polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
-											<line x1="12" y1="22.08" x2="12" y2="12"/>
-										</svg>
-										<p class="timeline-description mb-2" style="color: #e5e5e5; font-weight: 600; font-size: 1.1rem;">Previous Work</p>
-										<div class="d-flex flex-column gap-2 align-items-center">
-											<a href="https://store.steampowered.com/app/387060/Earth_Overclocked/" class="x-link" style="color: #0066cc; font-size: 1rem;">Earth Overclocked (Steam)</a>
-											<a href="https://mfgoes.github.io/UXFolio2025/" class="x-link" style="color: #0066cc; font-size: 1rem;">UX Design Portfolio</a>
-										</div>
-									</div>
-								</div>
+				<!-- Previous Work Card -->
+				<div class="col-lg-6">
+					<div class="timeline-card h-100" style="background-color: #1a1a1a; border: 1px solid #2c2c2c;">
+						<div class="card-body d-flex flex-column justify-content-center" style="padding: 3rem 2rem;">
+							<h4 class="mb-3" style="color: #ffffff; font-size: 1.25rem; font-weight: 600;">Previous work</h4>
+							<div class="mb-3">
+								<a href="https://store.steampowered.com/app/387060/Earth_Overclocked/" class="x-link d-block mb-2" style="color: #0066cc; font-size: 1rem; text-decoration: none;">
+									Earth Overclocked (Steam) >
+								</a>
 							</div>
+							<div class="mb-4">
+								<h4 class="mb-3" style="color: #ffffff; font-size: 1.25rem; font-weight: 600;">UX Design work</h4>
+								<a href="https://mfgoes.github.io/UXFolio2025/" class="x-link d-block" style="color: #0066cc; font-size: 1rem; text-decoration: none;">
+									View case studies >
+								</a>
+							</div>
+							<p style="color: #6e6e73; font-size: 0.875rem;">
+								Maximum response time: 3 business days.
+							</p>
 						</div>
 					</div>
 				</div>
@@ -310,14 +263,10 @@
 	</section>
 
 	<!-- Footer -->
-	<footer class="py-4" style="background-color: #121212; border-top: 1px solid #2c2c2c;">
-		<div class="container text-center">
-			<p class="mb-2" style="color: #a0a0a0; font-size: 0.875rem;">
-				Redshift Labs | Solo indie dev | <a href="https://bsky.app/profile/mishotofu.bsky.social" class="x-link" style="color: #0066cc;">Bluesky</a> | <a href="https://x.com/MishoWave" class="x-link" style="color: #0066cc;">X</a>
-			</p>
-			<p class="mb-0" style="color: #6e6e73; font-size: 0.75rem;">
-				&copy; 2025 | <a href="https://store.steampowered.com/app/387060/Earth_Overclocked/" class="x-link" style="color: #0066cc;">Earth Overclocked</a>
-				| <a href="https://mfgoes.github.io/UXFolio2025/" class="x-link" style="color: #0066cc;">Design Work</a>
+	<footer class="py-4" style="background-color: #0a0a0a; border-top: 1px solid #2c2c2c;">
+		<div class="container">
+			<p class="mb-0 text-center" style="color: #6e6e73; font-size: 0.875rem;">
+				Redshift Labs &copy; 2025
 			</p>
 		</div>
 	</footer>
