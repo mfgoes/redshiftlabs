@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	
 	<!-- SEO Meta Tags -->
-	<title>Soviet Lunar Colony RTS | Redshift Labs</title>
+	<title>Redshift Labs</title>
 	<meta name="description" content="Command a Soviet lunar colony in Project Moon. Balance survival, politics, and resources in this intense colony management RTS. Coming to Steam December 2025.">
 	<meta name="keywords" content="RTS, colony management, Soviet space, lunar colony, strategy game, survival, indie game, Steam, colony sim">
 	<meta name="author" content="Redshift Labs">
@@ -41,24 +41,23 @@
 </head>
 <body class="bg-dark text-white">
 
+	<!-- Dark Mode Toggle (Fixed Position) -->
+	<button id="darkModeToggle" class="btn btn-dark-toggle-fixed" aria-label="Toggle dark mode">
+		<svg id="darkModeIcon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+			<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+		</svg>
+	</button>
+
 	<!-- Hero Section -->
-	<section class="hero-section min-vh-100 d-flex flex-column justify-content-center align-items-center text-center px-3">
-		<h1 class="hero-title mb-4">Survive the void<br>one base at a time.</h1>
-		<p class="hero-subtitle mb-3">Hi, I'm Mischa, building an RTS in my spare time.</p>
-		<p class="progress-text mb-4">Progress: <span id="progress-counter">0</span>%</p>
-		
-		<div class="d-flex gap-3 mb-5">
-			<a href="https://x.com/MishoWave" class="btn btn-x btn-lg px-4">Follow on X</a>
-			<a href="#timeline" class="btn btn-outline-light btn-lg px-4">Read more</a>
-		</div>
-	</section>
+
 
 	<!-- Latest Updates Section -->
 	<section class="community-section py-5">
 		<div class="container">
-			<div class="text-center mb-5">
-				<h2 class="section-title mb-2" style="color: #ffffff;">Latest from Development</h2>
-				<p class="section-subtitle" style="color: #a0a0a0;">Real-time updates as they happen</p>
+			<div class="text-center mb-5 mt-5">
+				<h1 class="hero-title mb-4">Survive the void<br>one base at a time</h1>
+		<p class="hero-subtitle mb-3">Building an RTS in my spare time.</p>
+		<p class="progress-text mb-4">Progress: <span id="progress-counter">0</span>%</p>
 			</div>
 
 			<div class="row g-4">
@@ -73,15 +72,16 @@
 								</div>
 								<div class="col-lg-5">
 									<div class="ps-lg-4">
-										<h4 style="font-family: 'Orbitron', sans-serif; color: #ffffff; font-size: 1.5rem; margin-bottom: 1rem;">
-											Follow the Journey
+										<h4 style="color: #ffffff; font-size: 1.5rem; margin-bottom: 1rem; font-weight: 600;">
+											Updates and News
 										</h4>
 										<p style="color: #a0a0a0; font-size: 1rem; line-height: 1.6; margin-bottom: 1.5rem;">
 											Daily progress updates, behind-the-scenes development, and direct answers to community questions. Join the conversation on Bluesky.
 										</p>
 										<div class="d-flex flex-column gap-2">
-											<a href="https://bsky.app/profile/mishotofu.bsky.social" class="btn btn-outline-light btn-sm" style="max-width: 200px;">Follow on Bluesky</a>
-											<a href="devlog.html" class="btn btn-outline-light btn-sm" style="max-width: 200px;">Read Full Devlog</a>
+											<!--<a href="https://discord.gg/RbzwwYn945" class="btn btn-outline-light btn-sm">Discord</a>-->
+											<a href="https://bsky.app/profile/mishotofu.bsky.social" class="btn btn-outline-light">Follow on Bluesky</a>
+											<a href="devlog.html" class="btn btn-link">Devlog posts</a>
 										</div>
 									</div>
 								</div>
@@ -152,7 +152,7 @@
 				<!-- Right Column: Development Updates -->
 				<div class="col-lg-5">
 					<div class="mb-4">
-						<h2 class="section-title mb-2" style="color: #1d1d1f;">Latest devlogs</h2>
+						<h3 class="section-title mb-2" style="color: #1d1d1f;">Latest devlogs</h3>
 					</div>
 
 					<div class="d-flex flex-column gap-3">
@@ -230,7 +230,8 @@
 								Questions, feedback, or playtester applications welcome.
 							</p>
 							<div>
-								<a href="mailto:mfgoes1@gmail.com" class="btn btn-outline-light btn-lg px-4">Send an email</a>
+								<a href="https://discord.gg/RbzwwYn945" class="btn btn-x px-4">Discord</a>
+								<a href="mailto:mfgoes1@gmail.com" class="x-link d-block mt-3">Send an email</a>
 							</div>
 						</div>
 					</div>
@@ -240,21 +241,24 @@
 				<div class="col-lg-6">
 					<div class="timeline-card h-100" style="background-color: #1a1a1a; border: 1px solid #2c2c2c;">
 						<div class="card-body d-flex flex-column justify-content-center" style="padding: 3rem 2rem;">
-							<h4 class="mb-3" style="color: #ffffff; font-size: 1.25rem; font-weight: 600;">Previous work</h4>
-							<div class="mb-3">
-								<a href="https://store.steampowered.com/app/387060/Earth_Overclocked/" class="x-link d-block mb-2" style="color: #0066cc; font-size: 1rem; text-decoration: none;">
-									Earth Overclocked (Steam) >
-								</a>
+							<h3 class="section-title mb-4" style="color: #ffffff; font-size: 2rem;">Previous games</h3>
+
+							<!-- Earth Overclocked -->
+							<div class="d-flex gap-3 mb-3">
+								<img src="images/earthoverclocked-banner.jpg"
+									 alt="Earth Overclocked"
+									 style="width: 100px; height: 100px; object-fit: cover; border-radius: 8px; flex-shrink: 0;">
+								<div class="flex-grow-1">
+									<h5 style="color: #ffffff; font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem;">Earth Overclocked</h5>
+									<p style="color: #a0a0a0; font-size: 0.85rem; line-height: 1.4; margin-bottom: 0.5rem;">A frantic rogue-lite adventure starring a scientist who is terrible at making time machines, but great at blasting bad guys.</p>
+									<div class="d-flex flex-column gap-1" style="font-size: 0.75rem;">
+										<span style="color: #7289da;">Very Positive (132 reviews)</span>
+										<span style="color: #6e6e73;">Released: 4 Dec, 2015</span>
+									</div>
+								</div>
 							</div>
-							<div class="mb-4">
-								<h4 class="mb-3" style="color: #ffffff; font-size: 1.25rem; font-weight: 600;">UX Design work</h4>
-								<a href="https://mfgoes.github.io/UXFolio2025/" class="x-link d-block" style="color: #0066cc; font-size: 1rem; text-decoration: none;">
-									View case studies >
-								</a>
-							</div>
-							<p style="color: #6e6e73; font-size: 0.875rem;">
-								Maximum response time: 3 business days.
-							</p>
+
+							<a href="https://store.steampowered.com/app/387060/Earth_Overclocked/" class="btn btn-x px-4">View on Steam</a>
 						</div>
 					</div>
 				</div>
@@ -313,6 +317,43 @@
 		"gamePlatform": ["PC", "Steam"],
 		"datePublished": "2026-01-01"
 	}
+	</script>
+
+	<!-- Dark Mode Toggle Script -->
+	<script>
+		// SVG icons
+		const moonIcon = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>';
+		const sunIcon = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>';
+
+		// Check for saved theme preference or default to light mode
+		const currentTheme = localStorage.getItem('theme') || 'light';
+		const darkModeToggle = document.getElementById('darkModeToggle');
+
+		// Apply saved theme on page load
+		if (currentTheme === 'dark') {
+			document.body.classList.add('dark-mode');
+			darkModeToggle.innerHTML = sunIcon;
+		}
+
+		// Toggle dark mode
+		darkModeToggle.addEventListener('click', function() {
+			// Add rotation animation
+			darkModeToggle.style.transform = 'rotate(360deg)';
+			setTimeout(() => {
+				darkModeToggle.style.transform = '';
+			}, 300);
+
+			document.body.classList.toggle('dark-mode');
+
+			// Update icon and save preference
+			if (document.body.classList.contains('dark-mode')) {
+				darkModeToggle.innerHTML = sunIcon;
+				localStorage.setItem('theme', 'dark');
+			} else {
+				darkModeToggle.innerHTML = moonIcon;
+				localStorage.setItem('theme', 'light');
+			}
+		});
 	</script>
 </body>
 </html>
