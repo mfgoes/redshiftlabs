@@ -197,6 +197,38 @@ a .timeline-card:hover {
 	.section-title {
 		font-size: 2rem;
 	}
+
+	/* Mobile adjustments for Bluesky section */
+	.community-section .timeline-card {
+		padding: 1rem !important;
+	}
+
+	.community-section .timeline-card .card-body {
+		padding: 0.5rem !important;
+	}
+
+	/* Adjust Bluesky feed container padding on mobile */
+	.bsky-feed-container {
+		padding: 0.75rem !important;
+	}
+
+	/* Reduce padding on mobile for devlog previews */
+	.col-lg-5 .pe-lg-3,
+	.col-lg-7 .ps-lg-3 {
+		padding-left: 0 !important;
+		padding-right: 0 !important;
+	}
+
+	/* Hide Bluesky profile pictures on mobile for better fit */
+	.bsky-feed-container img[src*="cdn.bsky.app/img/avatar"],
+	.bsky-feed-container img[src*="avatar"],
+	.bsky-feed-container .avatar-hidden {
+		display: none !important;
+		width: 0 !important;
+		height: 0 !important;
+		margin: 0 !important;
+		padding: 0 !important;
+	}
 }
 
 /* Dark Mode Toggle Button - Fixed Position */
@@ -447,6 +479,17 @@ body.dark-mode div[style*="background-color: #ffffff"] {
 /* Images in dark cards - subtle border for contrast */
 body.dark-mode div[style*="background-color: #1a1a1a"] img {
 	border: 1px solid #2c2f33;
+}
+
+/* Bluesky Feed Container - Surface elevation styling */
+.bsky-feed-container {
+	background-color: #252525;
+	border: 1px solid #303030;
+}
+
+body.dark-mode .bsky-feed-container {
+	background-color: #1e2124 !important;
+	border-color: #2c2f33 !important;
 }
 
 /* Smooth transitions */

@@ -64,25 +64,87 @@
 				<div class="col-12">
 					<div class="timeline-card" style="background-color: #1a1a1a; border: 1px solid #2c2c2c;">
 						<div class="card-body">
-							<div class="row g-4 align-items-center">
-								<div class="col-lg-7">
-									<div class="bsky-feed-container" style="max-height: 550px; overflow-y: auto; overflow-x: hidden;">
-										<bsky-embed limit="3" mode="dark" username="mishotofu.bsky.social" style="--bsky-embed-spacing: 0.75rem;"></bsky-embed>
+							<div class="row g-4 align-items-start">
+								<!-- Left: Devlog Previews -->
+								<div class="col-lg-5 col-md-12">
+									<div class="pe-lg-3">
+										<h4 style="color: #ffffff; font-size: 1.5rem; margin-bottom: 1rem; font-weight: 600;">
+											Latest devlogs
+										</h4>
+
+										<div class="d-flex flex-column gap-3">
+											<!-- Update 1: Food & Survival System -->
+											<a href="devlog.html#nov16-2025" class="text-decoration-none">
+												<article class="timeline-card" style="background-color: #2a2a2a; border: 1px solid #3c3c3c; transition: all 0.2s ease;">
+													<div class="card-body" style="padding: 1rem;">
+														<div class="d-flex gap-3">
+															<img src="https://i.imgur.com/vkWi1L7.jpeg"
+																 alt="Food & Survival System"
+																 style="width: 80px; height: 80px; object-fit: cover; border-radius: 8px; flex-shrink: 0;">
+															<div class="flex-grow-1">
+																<h5 style="color: #ffffff; font-size: 0.95rem; font-weight: 600; margin-bottom: 0.5rem;">Food & Survival System</h5>
+																<p style="color: #a0a0a0; font-size: 0.8rem; line-height: 1.4; margin-bottom: 0.5rem;">Implemented Stronghold-style food mechanics and individual survival stats.</p>
+																<small style="color: #6e6e73; font-size: 0.7rem;">4 mins</small>
+															</div>
+														</div>
+													</div>
+												</article>
+											</a>
+
+											<!-- Update 2: Oxygen System -->
+											<a href="devlog.html#nov-oxygen" class="text-decoration-none">
+												<article class="timeline-card" style="background-color: #2a2a2a; border: 1px solid #3c3c3c; transition: all 0.2s ease;">
+													<div class="card-body" style="padding: 1rem;">
+														<div class="d-flex gap-3">
+															<img src="https://i.imgur.com/vkWi1L7.jpeg"
+																 alt="Oxygen System"
+																 style="width: 80px; height: 80px; object-fit: cover; border-radius: 8px; flex-shrink: 0;">
+															<div class="flex-grow-1">
+																<h5 style="color: #ffffff; font-size: 0.95rem; font-weight: 600; margin-bottom: 0.5rem;">Oxygen Consumption System</h5>
+																<p style="color: #a0a0a0; font-size: 0.8rem; line-height: 1.4; margin-bottom: 0.5rem;">Room-based oxygen mechanics creating a compelling survival loop.</p>
+																<small style="color: #6e6e73; font-size: 0.7rem;">4 mins</small>
+															</div>
+														</div>
+													</div>
+												</article>
+											</a>
+
+											<!-- Update 3: Game Direction -->
+											<a href="devlog.html#claude-doc" class="text-decoration-none">
+												<article class="timeline-card" style="background-color: #2a2a2a; border: 1px solid #3c3c3c; transition: all 0.2s ease;">
+													<div class="card-body" style="padding: 1rem;">
+														<div class="d-flex gap-3">
+															<img src="https://i.imgur.com/vkWi1L7.jpeg"
+																 alt="Game Direction Document"
+																 style="width: 80px; height: 80px; object-fit: cover; border-radius: 8px; flex-shrink: 0;">
+															<div class="flex-grow-1">
+																<h5 style="color: #ffffff; font-size: 0.95rem; font-weight: 600; margin-bottom: 0.5rem;">Game Direction & Technical Overview</h5>
+																<p style="color: #a0a0a0; font-size: 0.8rem; line-height: 1.4; margin-bottom: 0.5rem;">Comprehensive overview of Project Moon's vision and architecture.</p>
+																<small style="color: #6e6e73; font-size: 0.7rem;">4 mins</small>
+															</div>
+														</div>
+													</div>
+												</article>
+											</a>
+										</div>
+
+										<a href="devlog.html" class="btn btn-outline-light mt-3 w-100">View all devlogs</a>
 									</div>
 								</div>
-								<div class="col-lg-5">
-									<div class="ps-lg-4">
+
+								<!-- Right: Bluesky Feed -->
+								<div class="col-lg-7 col-md-12">
+									<div class="ps-lg-3">
 										<h4 style="color: #ffffff; font-size: 1.5rem; margin-bottom: 1rem; font-weight: 600;">
-											Updates and News
+											Bluesky Feed
 										</h4>
 										<p style="color: #a0a0a0; font-size: 1rem; line-height: 1.6; margin-bottom: 1.5rem;">
-											Daily progress updates, behind-the-scenes development, and direct answers to community questions. Join the conversation on Bluesky.
+											Follow along with daily progress updates, behind-the-scenes development insights, and direct answers to community questions from my Bluesky account.
 										</p>
-										<div class="d-flex flex-column gap-2">
-											<!--<a href="https://discord.gg/RbzwwYn945" class="btn btn-outline-light btn-sm">Discord</a>-->
-											<a href="https://bsky.app/profile/mishotofu.bsky.social" class="btn btn-outline-light">Follow on Bluesky</a>
-											<a href="devlog.html" class="btn btn-link">Devlog posts</a>
+										<div class="bsky-feed-container" style="max-height: 550px; overflow-y: auto; overflow-x: hidden; padding: 1rem; border-radius: 8px;">
+											<bsky-embed id="bskyEmbed" limit="3" mode="light" username="mishotofu.bsky.social" style="--bsky-embed-spacing: 0.75rem;"></bsky-embed>
 										</div>
+										<a href="https://bsky.app/profile/mishotofu.bsky.social" class="btn btn-outline-light mt-3">Follow on Bluesky</a>
 									</div>
 								</div>
 							</div>
@@ -93,125 +155,55 @@
 		</div>
 	</section>
 
-	<!-- Timeline & Devlog Combined Section -->
+	<!-- Projected Timeline Section -->
 	<section id="timeline" class="timeline-section py-5" style="background-color: #f5f5f7;">
 		<div class="container">
-			<div class="row g-4">
-				<!-- Left Column: Timeline -->
-				<div class="col-lg-7">
-					<div class="mb-4">
-						<h2 class="section-title mb-2" style="color: #1d1d1f;">Projected timeline</h2>
-					</div>
+			<div class="mb-4">
+				<h2 class="section-title mb-2" style="color: #1d1d1f;">Projected timeline</h2>
+			</div>
 
-					<!-- Timeline Table -->
-					<div class="timeline-card" style="background-color: #ffffff; border: 1px solid #d2d2d7;">
-						<div class="card-body" style="padding: 0;">
-							<table class="table mb-0" style="color: #1d1d1f;">
-								<thead>
-									<tr style="border-bottom: 1px solid #d2d2d7;">
-										<th style="padding: 1rem; font-weight: 600; font-size: 0.875rem; color: #6e6e73; background-color: #fafafa;">Date</th>
-										<th style="padding: 1rem; font-weight: 600; font-size: 0.875rem; color: #6e6e73; background-color: #fafafa;">Feature</th>
-										<th style="padding: 1rem; font-weight: 600; font-size: 0.875rem; color: #6e6e73; background-color: #fafafa; text-align: right;">Status</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr style="border-bottom: 1px solid #d2d2d7;">
-										<td style="padding: 1rem; font-size: 0.875rem; color: #1d1d1f;">Oct 2025</td>
-										<td style="padding: 1rem; font-size: 0.875rem; color: #1d1d1f;">Movement, selection, building placement, and resource systems</td>
-										<td style="padding: 1rem; text-align: right;">
-											<span class="badge" style="background-color: #34c759; color: #ffffff; padding: 0.375rem 0.75rem; border-radius: 12px; font-size: 0.75rem; font-weight: 600;">Done</span>
-										</td>
-									</tr>
-									<tr style="border-bottom: 1px solid #d2d2d7;">
-										<td style="padding: 1rem; font-size: 0.875rem; color: #1d1d1f;">Nov 2025</td>
-										<td style="padding: 1rem; font-size: 0.875rem; color: #1d1d1f;">Resource management, core buildings, and power usage</td>
-										<td style="padding: 1rem; text-align: right;">
-											<span class="badge" style="background-color: #34c759; color: #ffffff; padding: 0.375rem 0.75rem; border-radius: 12px; font-size: 0.75rem; font-weight: 600;">Done</span>
-										</td>
-									</tr>
-									<tr style="border-bottom: 1px solid #d2d2d7;">
-										<td style="padding: 1rem; font-size: 0.875rem; color: #1d1d1f;">Dec 2025</td>
-										<td style="padding: 1rem; font-size: 0.875rem; color: #1d1d1f;">Equipment failures, resource shortages, environmental events</td>
-										<td style="padding: 1rem; text-align: right;">
-											<span class="badge" style="background-color: #8e8e93; color: #ffffff; padding: 0.375rem 0.75rem; border-radius: 12px; font-size: 0.75rem; font-weight: 600;">Planned</span>
-										</td>
-									</tr>
-									<tr>
-										<td style="padding: 1rem; font-size: 0.875rem; color: #1d1d1f;">Jan 2026</td>
-										<td style="padding: 1rem; font-size: 0.875rem; color: #1d1d1f;">For testing the core mechanics and gathering user feedback</td>
-										<td style="padding: 1rem; text-align: right;">
-											<span class="badge" style="background-color: #8e8e93; color: #ffffff; padding: 0.375rem 0.75rem; border-radius: 12px; font-size: 0.75rem; font-weight: 600;">Planned</span>
-										</td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-					</div>
-				</div>
-
-				<!-- Right Column: Development Updates -->
-				<div class="col-lg-5">
-					<div class="mb-4">
-						<h3 class="section-title mb-2" style="color: #1d1d1f;">Latest devlogs</h3>
-					</div>
-
-					<div class="d-flex flex-column gap-3">
-
-						<!-- Update 1: Food & Survival System -->
-						<a href="devlog.html#nov16-2025" class="text-decoration-none">
-							<article class="timeline-card" style="background-color: #ffffff; border: 1px solid #d2d2d7; transition: all 0.2s ease;">
-								<div class="card-body" style="padding: 1rem;">
-									<div class="d-flex gap-3">
-										<img src="https://i.imgur.com/vkWi1L7.jpeg"
-											 alt="Food & Survival System"
-											 style="width: 120px; height: 120px; object-fit: cover; border-radius: 8px; flex-shrink: 0;">
-										<div class="flex-grow-1">
-											<h4 style="color: #1d1d1f; font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem;">Food & Survival System</h4>
-											<p style="color: #6e6e73; font-size: 0.875rem; line-height: 1.4; margin-bottom: 0.75rem;">Implemented Stronghold-style food mechanics and individual survival stats to create a compelling survival loop for Project Moon.</p>
-											<small style="color: #86868b; font-size: 0.75rem;">4 mins</small>
-										</div>
-									</div>
-								</div>
-							</article>
-						</a>
-
-						<!-- Update 2: Oxygen System -->
-						<a href="devlog.html#nov-oxygen" class="text-decoration-none">
-							<article class="timeline-card" style="background-color: #ffffff; border: 1px solid #d2d2d7; transition: all 0.2s ease;">
-								<div class="card-body" style="padding: 1rem;">
-									<div class="d-flex gap-3">
-										<img src="https://i.imgur.com/vkWi1L7.jpeg"
-											 alt="Oxygen System"
-											 style="width: 120px; height: 120px; object-fit: cover; border-radius: 8px; flex-shrink: 0;">
-										<div class="flex-grow-1">
-											<h4 style="color: #1d1d1f; font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem;">Oxygen Consumption System</h4>
-											<p style="color: #6e6e73; font-size: 0.875rem; line-height: 1.4; margin-bottom: 0.75rem;">Implemented Stronghold-style food mechanics and individual survival stats to create a compelling survival loop for Project Moon.</p>
-											<small style="color: #86868b; font-size: 0.75rem;">4 mins</small>
-										</div>
-									</div>
-								</div>
-							</article>
-						</a>
-
-						<!-- Update 3: Game Direction -->
-						<a href="devlog.html#claude-doc" class="text-decoration-none">
-							<article class="timeline-card" style="background-color: #ffffff; border: 1px solid #d2d2d7; transition: all 0.2s ease;">
-								<div class="card-body" style="padding: 1rem;">
-									<div class="d-flex gap-3">
-										<img src="https://i.imgur.com/vkWi1L7.jpeg"
-											 alt="Game Direction Document"
-											 style="width: 120px; height: 120px; object-fit: cover; border-radius: 8px; flex-shrink: 0;">
-										<div class="flex-grow-1">
-											<h4 style="color: #1d1d1f; font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem;">Game Direction & Technical Overview</h4>
-											<p style="color: #6e6e73; font-size: 0.875rem; line-height: 1.4; margin-bottom: 0.75rem;">Implemented Stronghold-style food mechanics and individual survival stats to create a compelling survival loop for Project Moon.</p>
-											<small style="color: #86868b; font-size: 0.75rem;">4 mins</small>
-										</div>
-									</div>
-								</div>
-							</article>
-						</a>
-
-					</div>
+			<!-- Timeline Table -->
+			<div class="timeline-card" style="background-color: #ffffff; border: 1px solid #d2d2d7;">
+				<div class="card-body" style="padding: 0;">
+					<table class="table mb-0" style="color: #1d1d1f;">
+						<thead>
+							<tr style="border-bottom: 1px solid #d2d2d7;">
+								<th style="padding: 1rem; font-weight: 600; font-size: 0.875rem; color: #6e6e73; background-color: #fafafa;">Date</th>
+								<th style="padding: 1rem; font-weight: 600; font-size: 0.875rem; color: #6e6e73; background-color: #fafafa;">Feature</th>
+								<th style="padding: 1rem; font-weight: 600; font-size: 0.875rem; color: #6e6e73; background-color: #fafafa; text-align: right;">Status</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr style="border-bottom: 1px solid #d2d2d7;">
+								<td style="padding: 1rem; font-size: 0.875rem; color: #1d1d1f;">Oct 2025</td>
+								<td style="padding: 1rem; font-size: 0.875rem; color: #1d1d1f;">Movement, selection, building placement, and resource systems</td>
+								<td style="padding: 1rem; text-align: right;">
+									<span class="badge" style="background-color: #34c759; color: #ffffff; padding: 0.375rem 0.75rem; border-radius: 12px; font-size: 0.75rem; font-weight: 600;">Done</span>
+								</td>
+							</tr>
+							<tr style="border-bottom: 1px solid #d2d2d7;">
+								<td style="padding: 1rem; font-size: 0.875rem; color: #1d1d1f;">Nov 2025</td>
+								<td style="padding: 1rem; font-size: 0.875rem; color: #1d1d1f;">Resource management, core buildings, and power usage</td>
+								<td style="padding: 1rem; text-align: right;">
+									<span class="badge" style="background-color: #34c759; color: #ffffff; padding: 0.375rem 0.75rem; border-radius: 12px; font-size: 0.75rem; font-weight: 600;">Done</span>
+								</td>
+							</tr>
+							<tr style="border-bottom: 1px solid #d2d2d7;">
+								<td style="padding: 1rem; font-size: 0.875rem; color: #1d1d1f;">Dec 2025</td>
+								<td style="padding: 1rem; font-size: 0.875rem; color: #1d1d1f;">Equipment failures, resource shortages, environmental events</td>
+								<td style="padding: 1rem; text-align: right;">
+									<span class="badge" style="background-color: #8e8e93; color: #ffffff; padding: 0.375rem 0.75rem; border-radius: 12px; font-size: 0.75rem; font-weight: 600;">Planned</span>
+								</td>
+							</tr>
+							<tr>
+								<td style="padding: 1rem; font-size: 0.875rem; color: #1d1d1f;">Jan 2026</td>
+								<td style="padding: 1rem; font-size: 0.875rem; color: #1d1d1f;">For testing the core mechanics and gathering user feedback</td>
+								<td style="padding: 1rem; text-align: right;">
+									<span class="badge" style="background-color: #8e8e93; color: #ffffff; padding: 0.375rem 0.75rem; border-radius: 12px; font-size: 0.75rem; font-weight: 600;">Planned</span>
+								</td>
+							</tr>
+						</tbody>
+					</table>
 				</div>
 			</div>
 		</div>
@@ -319,6 +311,65 @@
 	}
 	</script>
 
+	<!-- Hide Bluesky Avatars on Mobile -->
+	<script>
+		// Hide Bluesky profile pictures on mobile devices
+		if (window.innerWidth <= 768) {
+			function hideAvatars() {
+				// Find all images in the bsky-feed-container
+				const container = document.querySelector('.bsky-feed-container');
+				if (!container) return;
+
+				// Target all avatar images
+				const allImages = container.querySelectorAll('img');
+				allImages.forEach(img => {
+					if (img.src && (img.src.includes('avatar') || img.src.includes('cdn.bsky.app/img/avatar'))) {
+						img.style.display = 'none';
+						img.style.width = '0';
+						img.style.height = '0';
+						img.classList.add('avatar-hidden');
+					}
+				});
+
+				// Also try to access shadow DOM
+				const bskyEmbeds = container.querySelectorAll('bsky-embed');
+				bskyEmbeds.forEach(embed => {
+					if (embed.shadowRoot) {
+						const shadowImages = embed.shadowRoot.querySelectorAll('img');
+						shadowImages.forEach(img => {
+							if (img.src && (img.src.includes('avatar') || img.src.includes('cdn.bsky.app/img/avatar'))) {
+								img.style.display = 'none';
+								img.style.width = '0';
+								img.style.height = '0';
+							}
+						});
+					}
+				});
+			}
+
+			// Run on load
+			document.addEventListener('DOMContentLoaded', function() {
+				// Run immediately
+				setTimeout(hideAvatars, 500);
+				// Run again after component loads
+				setTimeout(hideAvatars, 2000);
+				setTimeout(hideAvatars, 4000);
+
+				// Watch for DOM changes using MutationObserver
+				const observer = new MutationObserver(hideAvatars);
+				const container = document.querySelector('.bsky-feed-container');
+				if (container) {
+					observer.observe(container, {
+						childList: true,
+						subtree: true,
+						attributes: true,
+						attributeFilter: ['src']
+					});
+				}
+			});
+		}
+	</script>
+
 	<!-- Dark Mode Toggle Script -->
 	<script>
 		// SVG icons
@@ -328,11 +379,20 @@
 		// Check for saved theme preference or default to light mode
 		const currentTheme = localStorage.getItem('theme') || 'light';
 		const darkModeToggle = document.getElementById('darkModeToggle');
+		const bskyEmbed = document.getElementById('bskyEmbed');
+
+		// Function to update Bluesky embed theme
+		function updateBskyTheme(isDark) {
+			if (bskyEmbed) {
+				bskyEmbed.setAttribute('mode', isDark ? 'dark' : 'light');
+			}
+		}
 
 		// Apply saved theme on page load
 		if (currentTheme === 'dark') {
 			document.body.classList.add('dark-mode');
 			darkModeToggle.innerHTML = sunIcon;
+			updateBskyTheme(true);
 		}
 
 		// Toggle dark mode
@@ -349,9 +409,11 @@
 			if (document.body.classList.contains('dark-mode')) {
 				darkModeToggle.innerHTML = sunIcon;
 				localStorage.setItem('theme', 'dark');
+				updateBskyTheme(true);
 			} else {
 				darkModeToggle.innerHTML = moonIcon;
 				localStorage.setItem('theme', 'light');
+				updateBskyTheme(false);
 			}
 		});
 	</script>
