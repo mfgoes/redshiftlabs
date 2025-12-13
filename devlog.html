@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<!-- SEO Meta Tags -->
+	<title>Development Log | Project Moon | Redshift Labs</title>
+	<meta name="description" content="Follow the development of Project Moon - a Soviet lunar colony RTS. Weekly updates on features, mechanics, and progress.">
+	<meta name="keywords" content="game development, devlog, indie game, Project Moon, RTS development, game updates">
+	<meta name="author" content="Redshift Labs">
+	<meta name="robots" content="index, follow">
+	<link rel="canonical" href="https://mfgoes.github.io/redshiftlabs/devlog.html">
+	
+	<!-- Favicon -->
+	<link rel="icon" type="image/x-icon" href="favicon.ico">
+	
+	<!-- Google Fonts - Orbitron -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+	
+	<!-- Bootstrap CSS -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/devlog-styles.css">
+
+	<!-- Bluesky Embed -->
+	<script async src="https://cdn.jsdelivr.net/npm/bsky-embed/dist/bsky-embed.es.js" type="module"></script>
+</head>
+<body class="bg-dark text-white">
+
+	<!-- Header -->
+	<header class="py-4" style="background-color: #121212;">
+		<div class="container">
+			<div class="d-flex justify-content-between align-items-center">
+				<a href="index.html" class="text-white text-decoration-none">
+					<p class="mb-0">← Back to Home</p>
+				</a>
+				<div class="d-flex gap-2 align-items-center">
+					<button id="darkModeToggle" class="btn btn-dark-toggle" aria-label="Toggle dark mode">
+						<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+							<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+						</svg>
+					</button>
+					<a href="https://x.com/MishoWave" class="btn btn-x px-4">Follow on X</a>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<!-- Devlog Header -->
+	<section class="py-5" style="background-color: #121212;">
+		<div class="container text-center">
+			<h1 class="hero-title mb-3">Development Log</h1>
+		</div>
+	</section>
+
+	<!-- Devlog Entries -->
+	<section class="py-5" style="background-color: #f5f5f7;">
+		<div class="container">
+			<div class="row">
+				<!-- Main Content -->
+				<div class="col-lg-8">
+
+					<!-- Entry: Nov 16, 2025 - Food & Survival System (NEWEST) -->
+					<article id="nov16-2025" class="devlog-entry">
+						<div class="devlog-entry-header">
+							<h2 class="devlog-entry-title">Food & Survival System</h2>
+							<div class="devlog-entry-meta">
+								<small class="timeline-date">Nov 16, 2025</small>
+								<small class="timeline-date">·</small>
+								<small class="timeline-date">4 min read</small>
+							</div>
+						</div>
+
+						<div class="devlog-content">
+							<p class="mb-4">Implemented Stronghold-style food mechanics and individual survival stats to create a compelling survival loop for Project Moon.</p>
+
+							<h5>Food System</h5>
+							<ul class="mb-4">
+								<li>Global consumption: 10 food/colonist/day from stockpile</li>
+								<li>If sufficient food → colonists eat, hunger resets</li>
+								<li>If insufficient → nobody eats, health/morale decline begins</li>
+							</ul>
+
+							<h5>Survival Stats (UnitDetails.gd)</h5>
+							<ul class="mb-4">
+								<li><strong>Hunger:</strong> Depletes 33%/day without food, critical at day 3</li>
+								<li><strong>Health:</strong> Master stat, damaged by starvation (-34/day) and oxygen loss (-20/min)</li>
+								<li><strong>Morale:</strong> Crashes during starvation (-40/day), slow decay otherwise (-2/day)</li>
+							</ul>
+
+							<h5>Death & Game Over</h5>
+							<ul class="mb-4">
+								<li>Colonists die at 0 health</li>
+								<li>Game over screen shows death causes by type (starvation, oxygen deprivation)</li>
+							</ul>
+
+							<h5>UI Improvements</h5>
+							<ul class="mb-4">
+								<li>Day counter tracks current sol</li>
+								<li>Resource panel displays consumption rates (e.g., "Food: 500 (-30/day)")</li>
+								<li>Unit details panel ready for stat visualization</li>
+								<li>Debug key ']' to skip days for testing</li>
+							</ul>
+
+							<p class="mb-0"><em>Timeline example: 500 food + 3 colonists = starvation begins ~day 17, deaths ~day 21</em></p>
+						</div>
+
+						<div class="devlog-footer">
+							<img src="images/user.JPG" alt="Mischa" style="width: 20px; height: 20px; border-radius: 50%; object-fit: cover; margin-right: 6px; vertical-align: middle;">
+							<small class="text-muted">Mischa (with Claude)</small>
+						</div>
+					</article>
+
+					<!-- Entry: Nov 15, 2025 - Oxygen System -->
+					<article id="nov-oxygen" class="devlog-entry">
+						<div class="devlog-entry-header">
+							<h2 class="devlog-entry-title">Oxygen Consumption System</h2>
+							<div class="devlog-entry-meta">
+								<small class="timeline-date">Nov 15, 2025</small>
+								<small class="timeline-date">·</small>
+								<small class="timeline-date">3 min read</small>
+							</div>
+						</div>
+
+						<div class="devlog-content">
+							<p class="mb-4">Added atmospheric pressure zones to buildings with aluminium-based oxygen generation, creating a critical resource management layer.</p>
+
+							<img src="https://i.imgur.com/vkWi1L7.jpeg" alt="Oxygen system UI" class="img-fluid rounded mb-4">
+
+							<h5>Oxygen System</h5>
+							<ul class="mb-4">
+								<li><strong>Renamed zones:</strong> InsideZone → PressureZone across all buildings</li>
+								<li><strong>Aluminium consumption:</strong> Buildings with pressure zones consume aluminium to maintain oxygen</li>
+								<li><strong>Zone failure:</strong> Oxygen zones fail when aluminium depleted (collision disabled)</li>
+								<li><strong>Immediate danger:</strong> Units inside failed zones start losing oxygen immediately</li>
+							</ul>
+
+							<h5>Building Details Panel</h5>
+							<ul class="mb-4">
+								<li>Shows oxygen consumption: "Generates oxygen zone. Cost: 1 alu/10s"</li>
+								<li>Displays oxygen status (Active/FAILING) for pressure zone buildings</li>
+								<li>Updated power display formatting for cleaner units</li>
+								<li>ResourcesLabel repurposed for oxygen info display</li>
+							</ul>
+
+							<h5>Design Improvements</h5>
+							<ul class="mb-4">
+								<li>Made building UI panel larger to accommodate oxygen and power information</li>
+								<li>Better visual hierarchy for critical system status</li>
+							</ul>
+
+							<p class="mb-0"><em>This system creates tension between expansion and resource management - every pressurized building needs constant aluminium supply to keep colonists alive.</em></p>
+						</div>
+
+						<div class="devlog-footer">
+							<img src="images/user.JPG" alt="Mischa" style="width: 20px; height: 20px; border-radius: 50%; object-fit: cover; margin-right: 6px; vertical-align: middle;">
+							<small class="text-muted">Mischa</small>
+						</div>
+					</article>
+
+					<!-- Entry: Oct 28, 2025 - Game Direction Document (OLDEST) -->
+					<article id="claude-doc" class="devlog-entry">
+						<div class="devlog-entry-header">
+							<h2 class="devlog-entry-title">Game Direction & Technical Overview</h2>
+							<div class="devlog-entry-meta">
+								<small class="timeline-date">Oct 28, 2025</small>
+								<small class="timeline-date">·</small>
+								<small class="timeline-date">2 min read</small>
+							</div>
+						</div>
+
+						<div class="devlog-content">
+							<p class="mb-4">Created comprehensive CLAUDE.md document to establish the game's vision, core mechanics, and technical architecture.</p>
+
+							<!-- Audio Player -->
+							<div class="mb-4">
+								<audio controls style="width: 100%;">
+									<source src="audio/Track 1 Moon.mp3" type="audio/mpeg">
+									Your browser does not support the audio element.
+								</audio>
+							</div>
+
+							<h5>Game Vision</h5>
+							<ul class="mb-4">
+								<li>Soviet lunar colony management with 1970s aesthetic and Cold War tension</li>
+								<li>Focus on survival, resource scarcity, and tough moral decisions</li>
+								<li><strong>Inspired by classics:</strong> Stronghold Crusader's economic chains and castle-building, RimWorld's emergent storytelling and colonist management</li>
+								<li>Every decision matters: balance expansion vs. survival, production vs. consumption, safety vs. efficiency</li>
+								<li><strong>Estimated price:</strong> 15 EUR at launch</li>
+								<li>Target platform: Steam (PC), January 2026 demo release</li>
+							</ul>
+
+							<h5>Core Mechanics Documented</h5>
+							<ul class="mb-4">
+								<li><strong>Resource management:</strong> Minerals, food, power, oxygen, aluminium</li>
+								<li><strong>Building systems:</strong> Placement, power grids, production chains</li>
+								<li><strong>Unit systems:</strong> Worker assignment, survival stats, pathfinding</li>
+								<li><strong>Day/night cycle:</strong> 24-hour sol system for pacing</li>
+							</ul>
+
+							<h5>Technical Stack</h5>
+							<ul class="mb-4">
+								<li>Engine: Godot 4.4</li>
+								<li>Language: GDScript</li>
+								<li>Architecture: Scene-based with singleton managers</li>
+								<li>UI: Custom panels with real-time stat tracking</li>
+							</ul>
+
+							<p class="mb-0"><em>This document serves as the development north star - defining scope, mechanics, and technical decisions to keep the project focused during solo development.</em></p>
+						</div>
+						
+						<div class="devlog-footer">
+							<img src="images/user.JPG" alt="Mischa" style="width: 20px; height: 20px; border-radius: 50%; object-fit: cover; margin-right: 6px; vertical-align: middle;">
+							<small class="text-muted">Mischa</small>
+						</div>
+					</article>
+
+					<!-- Template for future entries (copy this structure) -->
+					<!--
+					<article id="unique-id" class="devlog-entry">
+						<div class="devlog-entry-header">
+							<h2 class="devlog-entry-title">Entry Title</h2>
+							<div class="devlog-entry-meta">
+								<span class="badge badge-complete">Complete</span>
+								<small class="timeline-date">Month Day, Year</small>
+								<small class="timeline-date">·</small>
+								<small class="timeline-date">X min read</small>
+							</div>
+						</div>
+						
+						<div class="devlog-content">
+							<p>Entry content goes here...</p>
+						</div>
+						
+						<div class="devlog-footer">
+							<small class="text-muted">-Claude</small>
+						</div>
+					</article>
+					-->
+
+				</div>
+				
+				<!-- Sidebar -->
+				<div class="col-lg-4">
+					<div class="sticky-top" style="top: 2rem;">
+						
+						<!-- About -->
+						<div class="timeline-card mb-4">
+							<div class="card-body">
+								<h5 style="color: #1d1d1f; margin-bottom: 1rem; font-weight: 600;">About Project Moon</h5>
+								<p class="timeline-description mb-3">A Soviet lunar colony RTS built solo in Godot Engine. Follow the journey from prototype to Steam release.</p>
+								<a href="index.html" class="x-link">← Back to home</a>
+							</div>
+						</div>
+						
+						<!-- Progress -->
+						<div class="timeline-card mb-4">
+							<div class="card-body">
+								<h5 style="color: #1d1d1f; margin-bottom: 1rem; font-weight: 600;">Development Progress</h5>
+								<div class="mb-3">
+									<div class="d-flex justify-content-between mb-1">
+										<small class="timeline-description">Overall</small>
+										<small class="timeline-description"><strong>65%</strong></small>
+									</div>
+									<div class="progress" style="height: 8px;">
+										<div class="progress-bar" role="progressbar" style="width: 65%; background-color: #ff9500;" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+									</div>
+								</div>
+								<small class="timeline-date">Target: January 2026 Demo</small>
+							</div>
+						</div>
+						
+						<!-- Bluesky Feed -->
+						<div class="timeline-card mb-4" style="background-color: #121212; border: 1px solid #2c2c2c;">
+							<div class="card-body">
+								<h5 style="color: #ffffff; margin-bottom: 1rem; font-weight: 600;">Latest Updates</h5>
+								<div class="bsky-feed-container" style="max-height: 550px; overflow-y: auto; overflow-x: hidden;">
+									<bsky-embed limit="3" mode="dark" username="mishotofu.bsky.social" style="--bsky-embed-spacing: 0.75rem;"></bsky-embed>
+								</div>
+							</div>
+						</div>
+
+						<!-- Links -->
+						<div class="timeline-card">
+							<div class="card-body">
+								<h5 style="color: #1d1d1f; margin-bottom: 1rem; font-weight: 600;">Follow Development</h5>
+								<div class="d-flex flex-column gap-2">
+									<a href="https://bsky.app/profile/mishotofu.bsky.social" class="x-link">Bluesky →</a>
+									<a href="https://x.com/MishoWave" class="x-link">X / Twitter →</a>
+									<a href="https://store.steampowered.com/app/387060/Earth_Overclocked/" class="x-link">Previous Game →</a>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Footer -->
+	<footer class="py-4" style="background-color: #121212; border-top: 1px solid #2c2c2c;">
+		<div class="container text-center">
+			<p class="mb-2" style="color: #a0a0a0; font-size: 0.875rem;">
+				Redshift Labs | Solo indie dev | <a href="https://bsky.app/profile/mishotofu.bsky.social" class="x-link" style="color: #0066cc;">Bluesky</a> | <a href="https://x.com/MishoWave" class="x-link" style="color: #0066cc;">X</a>
+			</p>
+			<p class="mb-0" style="color: #6e6e73; font-size: 0.75rem;">
+				&copy; 2025 | <a href="press-kit.html" class="x-link" style="color: #0066cc;">Press Kit</a>
+				| <a href="https://store.steampowered.com/app/387060/Earth_Overclocked/" class="x-link" style="color: #0066cc;">Earth Overclocked</a>
+				| <a href="https://mfgoes.github.io/UXFolio2025/" class="x-link" style="color: #0066cc;">Design Work</a>
+			</p>
+		</div>
+	</footer>
+
+	<!-- Bootstrap JS -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+	<!-- Dark Mode Toggle Script -->
+	<script>
+		// SVG icons
+		const moonIcon = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>';
+		const sunIcon = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>';
+
+		// Check for saved theme preference or default to light mode
+		const currentTheme = localStorage.getItem('theme') || 'light';
+		const darkModeToggle = document.getElementById('darkModeToggle');
+
+		// Apply saved theme on page load
+		if (currentTheme === 'dark') {
+			document.body.classList.add('dark-mode');
+			darkModeToggle.innerHTML = sunIcon;
+		}
+
+		// Toggle dark mode
+		darkModeToggle.addEventListener('click', function() {
+			// Add rotation animation
+			darkModeToggle.style.transform = 'rotate(360deg)';
+			setTimeout(() => {
+				darkModeToggle.style.transform = '';
+			}, 300);
+
+			document.body.classList.toggle('dark-mode');
+
+			// Update icon and save preference
+			if (document.body.classList.contains('dark-mode')) {
+				darkModeToggle.innerHTML = sunIcon;
+				localStorage.setItem('theme', 'dark');
+			} else {
+				darkModeToggle.innerHTML = moonIcon;
+				localStorage.setItem('theme', 'light');
+			}
+		});
+	</script>
+</body>
+</html>
