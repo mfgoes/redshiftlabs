@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Moon Roadmap | Redshift Labs</title>
+    <meta name="description" content="Development roadmap for Project Moon, a Soviet lunar colony RTS.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+</head>
+<body>
+<header>
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">REDSHIFT LABS</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="about.md">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="roadmap.html">Roadmap</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#community">Community</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main>
+   
+    <div class="container py-5">
+        <div class="row">
+            <!-- Sidebar for anchor points -->
+            <nav class="col-lg-3 mb-4 mb-lg-0">
+                <div class="list-group sticky-top pt-4">
+                    <a href="#month1" class="list-group-item list-group-item-action">Month 1: Core Survival Loop</a>
+                    <a href="#month2" class="list-group-item list-group-item-action">Month 2: Challenge Systems</a>
+                    <a href="#month3" class="list-group-item list-group-item-action">Month 3: Replayability & Polish</a>
+                    <a href="#month4" class="list-group-item list-group-item-action">Month 4: Launch Prep</a>
+                    <a href="#replayability" class="list-group-item list-group-item-action">Replayability Features</a>
+                    <a href="#commercial" class="list-group-item list-group-item-action">Commercial Strategy</a>
+                    <a href="#risk" class="list-group-item list-group-item-action">Risk Mitigation</a>
+                </div>
+            </nav>
+            <!-- Main roadmap content -->
+            <div class="col-lg-9">
+                <h1 class="section-title">Roadmap</h1>
+                <h2 class=" mb-4">4-Month Development Roadmap</h2>
+                <p><strong>Target:</strong> Steam Release by December 2025 | <strong>Price:</strong> $19.99</p>
+               
+
+                <!-- Month 1 -->
+                <section id="month1" class="mb-5">
+                    <h3 class="mb-3">Month 1: Core Survival Loop + Replayability Foundation <span class="badge bg-info">4 weeks</span></h3>
+                    <p><strong>Goal:</strong> Playable game with infinite replay potential</p>
+                    <div class="card mb-3">
+                        <div class="card-header">Week 1-2: Complete Core Mechanics</div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><span class="badge bg-success">Done</span> Movement & Selection</li>
+                            <li class="list-group-item"><span class="badge bg-success">Done</span> Building Placement</li>
+                            <li class="list-group-item"><span class="badge bg-success">Done</span> Resource UI</li>
+                            <li class="list-group-item"><span class="badge bg-warning text-dark">In Progress</span> FINISH: Resource Collection to Silo</li>
+                            <li class="list-group-item"><span class="badge bg-warning text-dark">In Progress</span> Complete Unit Carrying System</li>
+                        </ul>
+                    </div>
+                    <div class="card mb-3">
+                        <div class="card-header">Week 3: Essential Survival Buildings</div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><span class="badge bg-success">Done</span> Solar Panel (power generation)</li>
+                            <li class="list-group-item"><span class="badge bg-success">Done</span> Silo (resource storage)</li>
+                            <li class="list-group-item"><span class="badge bg-danger">To Do</span> Oxygen Generator (power → oxygen)</li>
+                            <li class="list-group-item"><span class="badge bg-danger">To Do</span> Food Fabricator (regolith + power → food)</li>
+                            <li class="list-group-item"><span class="badge bg-danger">To Do</span> Battery Bank (power storage for night)</li>
+                        </ul>
+                    </div>
+                    <div class="card mb-3">
+                        <div class="card-header">Week 4: Procedural Map Generation <span class="badge bg-success">Replayability</span></div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Random resource deposit placement</li>
+                            <li class="list-group-item">Variable terrain layouts (3-5 templates)</li>
+                            <li class="list-group-item">Randomized starting positions</li>
+                            <li class="list-group-item"><strong>ROI:</strong> Infinite content variation from 1 week investment</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- Month 2 -->
+                <section id="month2" class="mb-5">
+                    <h3 class="mb-3">Month 2: Challenge Systems + Difficulty Scaling <span class="badge bg-info">4 weeks</span></h3>
+                    <p><strong>Goal:</strong> Balanced challenge with multiple difficulty modes</p>
+                    <div class="card mb-3">
+                        <div class="card-header">Week 1-2: Parameter-Based Difficulty System</div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><strong>3-Tier Structure:</strong></li>
+                            <li class="list-group-item">Beginner: 150% resources, 50% threat frequency, equipment doesn't fail</li>
+                            <li class="list-group-item">Standard: Intended balanced experience</li>
+                            <li class="list-group-item">Advanced: 75% resources, 150% threat frequency, faster equipment degradation</li>
+                            <li class="list-group-item">Mode selection UI and balancing</li>
+                        </ul>
+                    </div>
+                    <div class="card mb-3">
+                        <div class="card-header">Week 3: Scheduled Threat System</div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Predictable timing with 25% random variation</li>
+                            <li class="list-group-item">3 threat types: Equipment failures, resource shortages, environmental events</li>
+                            <li class="list-group-item">Escalating intensity based on colony progress</li>
+                            <li class="list-group-item"><strong>Simple but effective tension without complex AI</strong></li>
+                        </ul>
+                    </div>
+                    <div class="card mb-3">
+                        <div class="card-header">Week 4: Multiple Victory Conditions</div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Survival Victory: Survive 10 days (was 7, extends base gameplay)</li>
+                            <li class="list-group-item">Communication Victory: Build communications array + survive 7 days</li>
+                            <li class="list-group-item">Expansion Victory: Build 3 outposts + collect 1000 regolith</li>
+                            <li class="list-group-item"><strong>ROI:</strong> 3x replay motivation from same content</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- Month 3 -->
+                <section id="month3" class="mb-5">
+                    <h3 class="mb-3">Month 3: Replayability Multipliers + Steam Polish <span class="badge bg-info">4 weeks</span></h3>
+                    <p><strong>Goal:</strong> Premium Steam-ready experience with high replay value</p>
+                    <div class="card mb-3">
+                        <div class="card-header">Week 1: Faction/Colony Variations</div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Pioneer: Standard start, balanced resources</li>
+                            <li class="list-group-item">Emergency Landing: Low resources, damaged equipment, immediate pressure</li>
+                            <li class="list-group-item">Research Mission: Extra buildings unlocked, higher difficulty</li>
+                            <li class="list-group-item"><strong>Parameter-driven variety, not new content</strong></li>
+                        </ul>
+                    </div>
+                    <div class="card mb-3">
+                        <div class="card-header">Week 2: Meta-Progression & Achievements</div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Unlock system based on successful runs</li>
+                            <li class="list-group-item">8-10 Steam achievements tied to different victory paths</li>
+                            <li class="list-group-item">Colony naming and basic statistics tracking</li>
+                            <li class="list-group-item"><strong>Drives "just one more run" mentality</strong></li>
+                        </ul>
+                    </div>
+                    <div class="card mb-3">
+                        <div class="card-header">Week 3-4: Steam Essentials</div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Tutorial system (essential for $19.99 pricing)</li>
+                            <li class="list-group-item">Save/Load system with multiple slots</li>
+                            <li class="list-group-item">Settings menu (graphics, audio, controls)</li>
+                            <li class="list-group-item">Main menu with professional presentation</li>
+                            <li class="list-group-item"><strong>Steam-quality polish justifies premium pricing</strong></li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- Month 4 -->
+                <section id="month4" class="mb-5">
+                    <h3 class="mb-3">Month 4: Launch Preparation + Commercial Success <span class="badge bg-info">4 weeks</span></h3>
+                    <p><strong>Goal:</strong> Successful Steam launch at $19.99 price point</p>
+                    <div class="card mb-3">
+                        <div class="card-header">Week 1-2: Steam Integration & Marketing</div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Steam store page with professional screenshots</li>
+                            <li class="list-group-item">Achievement integration and Steam Cloud saves</li>
+                            <li class="list-group-item">Trailer emphasizing replayability ("Hundreds of possible colonies")</li>
+                            <li class="list-group-item">Steam Next Fest demo preparation</li>
+                        </ul>
+                    </div>
+                    <div class="card mb-3">
+                        <div class="card-header">Week 3: Audio & Final Polish</div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Essential ambient audio and SFX</li>
+                            <li class="list-group-item">Performance optimization for Steam Deck compatibility</li>
+                            <li class="list-group-item">Final balance pass across all difficulty modes</li>
+                            <li class="list-group-item">Bug fixing and stability testing</li>
+                        </ul>
+                    </div>
+                    <div class="card mb-3">
+                        <div class="card-header">Week 4: Launch Strategy</div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Press kit with GIFs showing procedural variety</li>
+                            <li class="list-group-item">Launch at $24.99 with 20% launch discount → $19.99</li>
+                            <li class="list-group-item">Post-launch support planning</li>
+                            <li class="list-group-item">Analytics integration for player behavior data</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- Replayability Features -->
+                <section id="replayability" class="mb-5">
+                    <h3 class="mb-3">Replayability Features - Maximum ROI Priority</h3>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card mb-3">
+                                <div class="card-header bg-success text-white">Included - High Impact Systems</div>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">Procedural maps (infinite variety, 1 week dev)</li>
+                                    <li class="list-group-item">3-tier difficulty (3x audience reach, 1 week dev)</li>
+                                    <li class="list-group-item">Multiple victory paths (3x replay motivation, 1 week dev)</li>
+                                    <li class="list-group-item">Scenario variations (strategic variety, 1 week dev)</li>
+                                    <li class="list-group-item">Achievement progression (motivation system, 0.5 week dev)</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card mb-3">
+                                <div class="card-header bg-danger text-white">Excluded - Diminishing Returns</div>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">Complex research trees (6+ weeks, limited replay impact)</li>
+                                    <li class="list-group-item">Multiple unit types (4+ weeks, scope creep risk)</li>
+                                    <li class="list-group-item">Combat systems (8+ weeks, fundamental scope change)</li>
+                                    <li class="list-group-item">Story campaign (10+ weeks, linear content)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="mt-3"><strong>Key Insight:</strong> Focus on systems that create infinite variety rather than finite content. Successful indie RTS games sell replayability, not just initial playtime.</p>
+                </section>
+
+                <!-- Commercial Strategy -->
+                <section id="commercial" class="mb-5">
+                    <h3 class="mb-3">Commercial Strategy Based on Research</h3>
+                    <div class="card mb-3">
+                        <div class="card-header">Pricing Strategy</div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Launch Price: $19.99 (premium indie positioning)</li>
+                            <li class="list-group-item">Target: €1 per hour value perception</li>
+                            <li class="list-group-item">Expected Playtime: 20+ hours through replayability</li>
+                            <li class="list-group-item">Regional Pricing: Steam's suggested scaling</li>
+                        </ul>
+                    </div>
+                    <div class="card mb-3">
+                        <div class="card-header">Market Positioning</div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Primary Tags: Colony Sim, Survival, Strategy, Indie</li>
+                            <li class="list-group-item">Secondary Tags: Sandbox, Replay Value, Challenging</li>
+                            <li class="list-group-item">Audience: Hardcore strategy fans willing to pay premium for quality</li>
+                        </ul>
+                    </div>
+                    <div class="card mb-3">
+                        <div class="card-header">Success Metrics</div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Week 4: Core loop playable with basic procedural variety</li>
+                            <li class="list-group-item">Week 8: All difficulty modes balanced and tested</li>
+                            <li class="list-group-item">Week 12: Steam-quality polish with 20+ hour replay potential</li>
+                            <li class="list-group-item">Week 16: Commercial launch with professional presentation</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- Risk Mitigation -->
+                <section id="risk" class="mb-5">
+                    <h3 class="mb-3">Risk Mitigation</h3>
+                    <div class="card mb-3">
+                        <div class="card-header">Development Risks</div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">No new features after Month 2 (polish only)</li>
+                            <li class="list-group-item">Parameter-based systems over content creation</li>
+                            <li class="list-group-item">Weekly playtesting starting Week 4</li>
+                            <li class="list-group-item">Steam Next Fest participation for early feedback</li>
+                        </ul>
+                    </div>
+                    <div class="card mb-3">
+                        <div class="card-header">Commercial Risks</div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Premium pricing justified by replayability focus</li>
+                            <li class="list-group-item">Multiple difficulty modes reduce refund risk</li>
+                            <li class="list-group-item">Professional presentation essential for $19.99</li>
+                            <li class="list-group-item">Post-launch content roadmap for sustained sales</li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <section id="community" class="community-section text-center py-5">
+        <h2 class="section-title">Follow us</h2>
+        <p style="font-size: 1.3rem; color: #A0A0A0; max-width: 600px; margin: 0 auto;">
+            Follow development updates, join the community, and help shape the future of Project Moon.
+        </p>
+        <div class="social-links">
+            <a href="https://bsky.app/profile/mishotofu.bsky.social" class="social-link">
+                <i class="bi bi-cloud"></i> Bluesky
+            </a>
+            <a href="https://www.threads.com/@mischagoes" class="social-link">
+                <i class="bi bi-instagram"></i> Threads
+            </a>
+            <a href="https://rvlt.gg/8ddZBzVD" class="social-link">
+                <i class="bi bi-people"></i> Community Chat
+            </a>
+            <a href="https://mischa.itch.io/" class="social-link">
+                <i class="bi bi-controller"></i> Itch.io
+            </a>
+        </div>
+    </section>
+</main>
+
+<footer class="footer text-center py-4">
+    <p>&copy; 2025 Redshift Labs. Project Moon coming to Windows. Steam release planned for December 2025.</p>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
