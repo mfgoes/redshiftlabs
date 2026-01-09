@@ -224,43 +224,33 @@ a .timeline-card:hover {
 }
 
 /* News & Announcement Badges */
-.badge-update {
-	background-color: #34c759;
-	color: #ffffff;
-	padding: 0.25rem 0.6rem;
-	border-radius: 12px;
-	font-size: 0.7rem;
-	font-weight: 600;
-	text-transform: uppercase;
-	letter-spacing: 0.02em;
-	display: inline-block;
-	width: auto;
-}
 
 .badge-article {
 	background-color: #ff9500;
 	color: #ffffff;
 	padding: 0.25rem 0.6rem;
+	max-width: 80px;
 	border-radius: 12px;
 	font-size: 0.7rem;
 	font-weight: 600;
 	text-transform: uppercase;
 	letter-spacing: 0.02em;
 	display: inline-block;
-	width: auto;
+	text-align: center;
 }
 
 .badge-devlog {
 	background-color: #34c759;
 	color: #ffffff;
 	padding: 0.25rem 0.6rem;
+	max-width: 80px;
 	border-radius: 12px;
 	font-size: 0.7rem;
 	font-weight: 600;
 	text-transform: uppercase;
 	letter-spacing: 0.02em;
 	display: inline-block;
-	width: auto;
+	text-align: center;
 }
 
 /* Timeline Footer */
@@ -745,6 +735,47 @@ body.dark-mode div[style*="background-color: #1a1a1a"] img {
 body.dark-mode .bsky-feed-container {
 	background-color: #1e2124 !important;
 	border-color: #2c2f33 !important;
+}
+
+/* News Section Dark Mode */
+body.dark-mode .news-section {
+	background-color: #2c2f33 !important;
+}
+
+body.dark-mode .news-section .section-header {
+	color: #ffffff !important;
+}
+
+body.dark-mode .news-section .btn-outline-light {
+	border-color: #7289da !important;
+	color: #7289da !important;
+}
+
+body.dark-mode .news-section .btn-outline-light:hover {
+	background-color: #7289da !important;
+	border-color: #7289da !important;
+	color: #ffffff !important;
+}
+
+body.dark-mode .news-card {
+	background-color: #23272a !important;
+	border-color: #2c2f33 !important;
+}
+
+body.dark-mode .news-card:hover {
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5) !important;
+}
+
+body.dark-mode .news-card-title {
+	color: #ffffff !important;
+}
+
+body.dark-mode .news-card-description {
+	color: #99aab5 !important;
+}
+
+body.dark-mode .news-card-meta {
+	color: #99aab5 !important;
 }
 
 /* News Page Dark Mode */
