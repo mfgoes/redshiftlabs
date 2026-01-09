@@ -24,7 +24,7 @@ h3, h4, h5, h6 {
 
 /* Hero Section */
 .hero-section {
-	background-color: #121212;
+	background-color: #0a0a0a;
 }
 
 .hero-title {
@@ -74,6 +74,10 @@ h3, h4, h5, h6 {
 	transform: translateY(-1px);
 }
 
+.btn-orange.btn-lg {
+	font-size: 1.1rem;
+}
+
 .btn-outline-light {
 	border-width: 2px;
 	font-weight: 600;
@@ -84,10 +88,76 @@ h3, h4, h5, h6 {
 	background-color: #f5f5f7;
 }
 
-.section-title {
+.timeline-section .section-title {
 	font-size: 2.5rem;
 	font-weight: 700;
 	color: #1d1d1f;
+}
+
+.timeline-table-wrapper {
+	background-color: #ffffff;
+	border: 1px solid #d2d2d7;
+}
+
+.timeline-table-wrapper .card-body {
+	padding: 0;
+}
+
+.timeline-table {
+	color: #1d1d1f;
+	margin-bottom: 0;
+}
+
+.timeline-table thead tr {
+	border-bottom: 1px solid #d2d2d7;
+}
+
+.timeline-table thead th {
+	padding: 1rem;
+	font-weight: 600;
+	font-size: 0.875rem;
+	color: #6e6e73;
+	background-color: #fafafa;
+}
+
+.timeline-table thead th:last-child {
+	text-align: right;
+}
+
+.timeline-table tbody tr {
+	border-bottom: 1px solid #d2d2d7;
+}
+
+.timeline-table tbody tr:last-child {
+	border-bottom: none;
+}
+
+.timeline-table tbody td {
+	padding: 1rem;
+	font-size: 0.875rem;
+	color: #1d1d1f;
+}
+
+.timeline-table tbody td:last-child {
+	text-align: right;
+}
+
+.timeline-badge-done {
+	background-color: #34c759;
+	color: #ffffff;
+	padding: 0.375rem 0.75rem;
+	border-radius: 12px;
+	font-size: 0.75rem;
+	font-weight: 600;
+}
+
+.timeline-badge-planned {
+	background-color: #8e8e93;
+	color: #ffffff;
+	padding: 0.375rem 0.75rem;
+	border-radius: 12px;
+	font-size: 0.75rem;
+	font-weight: 600;
 }
 
 .section-subtitle {
@@ -153,6 +223,46 @@ a .timeline-card:hover {
 	color: #000000;
 }
 
+/* News & Announcement Badges */
+.badge-update {
+	background-color: #34c759;
+	color: #ffffff;
+	padding: 0.25rem 0.6rem;
+	border-radius: 12px;
+	font-size: 0.7rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.02em;
+	display: inline-block;
+	width: auto;
+}
+
+.badge-article {
+	background-color: #ff9500;
+	color: #ffffff;
+	padding: 0.25rem 0.6rem;
+	border-radius: 12px;
+	font-size: 0.7rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.02em;
+	display: inline-block;
+	width: auto;
+}
+
+.badge-devlog {
+	background-color: #34c759;
+	color: #ffffff;
+	padding: 0.25rem 0.6rem;
+	border-radius: 12px;
+	font-size: 0.7rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.02em;
+	display: inline-block;
+	width: auto;
+}
+
 /* Timeline Footer */
 .timeline-footer-text {
 	color: #1d1d1f;
@@ -182,6 +292,131 @@ a .timeline-card:hover {
 /* Community Section */
 .community-section {
 	background-color: #121212;
+}
+
+/* Contact Section */
+.contact-section {
+	background-color: #0a0a0a;
+}
+
+/* News Section */
+.news-section {
+	background-color: #f5f5f7;
+}
+
+.news-section .section-header {
+	color: #1d1d1f;
+}
+
+.news-section .btn-outline-light {
+	border-color: #1d1d1f;
+	color: #1d1d1f;
+}
+
+.news-section .btn-outline-light:hover {
+	background-color: #1d1d1f;
+	border-color: #1d1d1f;
+	color: #ffffff;
+}
+
+/* News Article Cards */
+.news-card {
+	background-color: #ffffff;
+	border: 1px solid #d2d2d7;
+	border-radius: 8px;
+	overflow: hidden;
+	transition: all 0.2s ease;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.news-card:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.news-card-body {
+	padding: 1.25rem;
+	flex-grow: 1;
+	display: flex;
+	flex-direction: column;
+}
+
+.news-card-image {
+	width: 100%;
+	height: 240px;
+	object-fit: cover;
+	display: block;
+}
+
+.news-card-title {
+	color: #1d1d1f;
+	font-size: 1rem;
+	font-weight: 600;
+	margin-bottom: 0.5rem;
+	line-height: 1.4;
+}
+
+.news-card-description {
+	color: #6e6e73;
+	font-size: 0.85rem;
+	line-height: 1.5;
+	margin-bottom: 0.75rem;
+	flex-grow: 1;
+}
+
+.news-card-meta {
+	color: #86868b;
+	font-size: 0.75rem;
+	margin-top: auto;
+}
+
+/* Bluesky Section */
+.bluesky-section-title {
+	color: #ffffff;
+	font-size: 1.5rem;
+	margin-bottom: 1rem;
+	font-weight: 600;
+	display: flex;
+	align-items: center;
+	gap: 0.75rem;
+}
+
+.bluesky-logo {
+	height: 32px;
+	width: auto;
+}
+
+.bluesky-section-description {
+	color: #a0a0a0;
+	font-size: 1rem;
+	line-height: 1.6;
+	margin-bottom: 1.5rem;
+}
+
+.bluesky-follow-button {
+	background-color: #1185fe;
+	color: #ffffff;
+	border: none;
+	padding: 0.75rem 1.5rem;
+	border-radius: 8px;
+	font-weight: 600;
+	text-decoration: none;
+	display: inline-block;
+	transition: background-color 0.2s ease;
+}
+
+.bluesky-follow-button:hover {
+	background-color: #0d6ecd;
+	color: #ffffff;
+}
+
+.section-header {
+	color: #ffffff;
+	font-size: 1.5rem;
+	margin-bottom: 1rem;
+	font-weight: 600;
 }
 
 /* Footer */
@@ -500,6 +735,11 @@ body.dark-mode div[style*="background-color: #1a1a1a"] img {
 .bsky-feed-container {
 	background-color: #252525;
 	border: 1px solid #303030;
+	border-radius: 8px;
+	padding: 1rem;
+	max-height: 550px;
+	overflow-y: auto;
+	overflow-x: hidden;
 }
 
 body.dark-mode .bsky-feed-container {
