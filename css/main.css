@@ -42,7 +42,7 @@ h3, h4, h5, h6 {
 
 .progress-text {
 	font-size: 1rem;
-	color: #ff9500;
+	color: #4d4a46;
 	font-weight: 500;
 }
 
@@ -61,7 +61,7 @@ h3, h4, h5, h6 {
 
 .btn-orange {
 	background-color: #ff9500;
-	color: #ffffff;
+	color: #1d1d1d;
 	font-weight: 600;
 	border-radius: 8px;
 	border: none;
@@ -70,7 +70,7 @@ h3, h4, h5, h6 {
 
 .btn-orange:hover {
 	background-color: #e68600;
-	color: #ffffff;
+	color: #171616;
 	transform: translateY(-1px);
 }
 
@@ -99,7 +99,7 @@ h3, h4, h5, h6 {
 .timeline-card {
 	background-color: #ffffff;
 	border-radius: 8px;
-	padding: 1.5rem;
+	padding: 0.5rem;
 	transition: transform 0.2s ease, box-shadow 0.2s ease;
 	border: 1px solid #d2d2d7;
 }
