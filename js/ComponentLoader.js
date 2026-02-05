@@ -20,8 +20,9 @@
                     throw new Error(`Container not found: ${containerSelector}`);
                 }
 
-                // Fetch the component HTML
-                const response = await fetch(`components/${componentName}.html`);
+                // Fetch the component HTML (use base path if defined for subdirectories)
+                const basePath = window.componentBasePath || '';
+                const response = await fetch(`${basePath}components/${componentName}.html`);
 
                 if (!response.ok) {
                     throw new Error(`Failed to load component: ${componentName} (${response.status})`);
