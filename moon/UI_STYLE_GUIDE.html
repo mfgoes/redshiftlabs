@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Moon Colony RTS — UI Style Guide · Panel Examples</title>
+<link rel="stylesheet" href="styleguide_resources/style.css">
+<link rel="stylesheet" href="styleguide_resources/components.css">
+<link rel="stylesheet" href="styleguide_resources/mission-log.css">
+<script src="styleguide_resources/tabs.js"></script>
+<script src="styleguide_resources/mission-log.js"></script>
+</head>
+<body data-page="examples">
+
+<div class="layout">
+
+<!-- ── NAV ──────────────────────────────────────────────────────────── -->
+<nav>
+  <div class="brand">
+    <a class="brand-title" href="UI_STYLE_GUIDE.html">ARC / MOON COLONY</a>
+    <div class="brand-sub">UI Style Guide · 2026-04-03</div>
+  </div>
+
+  <h2>Introduction</h2>
+  <a href="#introduction">Getting Started</a>
+
+  <h2>Foundations</h2>
+  <a href="foundations.html#typography">Typography</a>
+  <a href="foundations.html#colour">Colour</a>
+  <a href="foundations.html#spacing">Spacing &amp; Radius</a>
+
+  <h2>Components</h2>
+  <a href="components.html#buttons">Buttons</a>
+  <a href="components.html#sliders">Sliders</a>
+  <a href="components.html#toggles">Toggles &amp; Checkboxes</a>
+  <a href="components.html#tabs">Tab Buttons</a>
+  <a href="components.html#panels">Panel Anatomy</a>
+  <a href="components.html#progress">Progress Bars</a>
+
+  <h2>Panel Examples</h2>
+  <a href="#ex-bottom-tab-bar">Bottom Tab Bar</a>
+  <a href="#ex-pause">Pause Menu</a>
+  <a href="#ex-settings">Settings Panel</a>
+  <a href="#ex-building">Building Details</a>
+  <a href="#ex-hab">Hab Module</a>
+  <a href="#ex-unit">Unit Details</a>
+  <a href="#ex-dialogue">Dialogue Box</a>
+  <a href="#ex-mission-log">Mission Log</a>
+
+  <h2>Reference</h2>
+  <a href="#quickref">Quick Reference</a>
+  <a href="#fixes">Remediation</a>
+</nav>
+
+<!-- ── MAIN ─────────────────────────────────────────────────────────── -->
+<main>
+
+  <section id="introduction">
+  <div class="section-label">UI Style Guide — Design System</div>
+  <h1>UI Style Guide · Introduction</h1>
+  <p class="page-meta"><strong>Kosmograd</strong> (aka Project Moon) is a real-time survival colony sim set on the lunar surface. You manage three colonists — keeping them fed, oxygenated, and alive — while a quest chain gates new systems and escalates threats. The win condition: assemble all three Signal Components to complete the Comms Center.</p>
+  <p class="page-meta">The UI reflects the world: a Soviet-era space programme aesthetic — utilitarian, worn, purposeful. Panels borrow the structured information density of XCOM's squad management while staying calm enough for a game about quiet survival rather than action. Every design decision returns to two principles: <strong>legible at a glance</strong> and <strong>thematically honest to the setting</strong>. Dark backgrounds, muted regolith tones, and ARC Cyan highlights keep the interface feeling like cold vacuum glass over mission-critical readouts.</p>
+  <p class="page-meta">This design system is split across three sections: <a href="foundations.html">Foundations</a> covers colour tokens, typography scale, and spacing rules; <a href="components.html">Components</a> documents individual widgets and controls; <strong>Panel Examples</strong> (below) collects full rendered examples of every in-game panel.</p>
+  </section>
+
+  <div class="section-label">UI Style Guide — Panel Compositions</div>
+  <h1>UI Style Guide · Panel Examples</h1>
+
+  <!-- ══ BOTTOM TAB BAR EXAMPLE ═══════════════════════════════════════ -->
+  <section id="ex-bottom-tab-bar">
+    <h2>Example — Bottom Tab Bar</h2>
+    <p>Centered pill bar anchored to the bottom of the game viewport. Two toggle buttons: <strong>Build</strong> (crank icon) and <strong>Colonists</strong> (user icon). Active tab = ARC Cyan <code>--interactive</code> (<code>#4AC1F2</code>), matching the tab component system. Inactive = Gray <code>#999</code>. Clicking an active tab again deselects it and hides the panel. Click the buttons below to interact.</p>
+
+    <!-- Interactive demo -->
+    <div class="demo-viewport">
+      <!-- Fake game world background -->
+      <div class="demo-viewport-label">game viewport</div>
+
+      <!-- Build panel (slides up from bar) -->
+      <div id="sg-build-panel" class="panel-floating visible">
+        <div class="panel-title">Build</div>
+        <div class="building-grid">
+          <div class="building-card">
+            <div class="building-card-icon">⚙</div>
+            <div class="building-card-name">Refiner</div>
+            <div class="building-card-cost">80 Al</div>
+          </div>
+          <div class="building-card">
+            <div class="building-card-icon">🔋</div>
+            <div class="building-card-name">Battery</div>
+            <div class="building-card-cost">60 Al</div>
+          </div>
+          <div class="building-card">
+            <div class="building-card-icon">🏠</div>
+            <div class="building-card-name">Hab</div>
+            <div class="building-card-cost">50 Al</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Colonists panel (slides up from bar) -->
+      <div id="sg-colonists-panel" class="panel-floating">
+        <div class="panel-title">Colonists</div>
+        <div class="colonist-list">
+          <div class="colonist-item">
+            <div class="colonist-avatar">👤</div>
+            <div class="colonist-info">
+              <div class="colonist-name">Boris</div>
+              <div class="colonist-status">Working · Refiner Alpha</div>
+            </div>
+            <div class="colonist-state active">● Active</div>
+          </div>
+          <div class="colonist-item">
+            <div class="colonist-avatar">👤</div>
+            <div class="colonist-info">
+              <div class="colonist-name">Katya</div>
+              <div class="colonist-status">Sleeping · Hab Module</div>
+            </div>
+            <div class="colonist-state sleeping">● Sleeping</div>
+          </div>
+          <div class="colonist-item">
+            <div class="colonist-avatar">👤</div>
+            <div class="colonist-info">
+              <div class="colonist-name">Chen</div>
+              <div class="colonist-status">Idle</div>
+            </div>
+            <div class="colonist-state idle">● Idle</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab bar -->
+      <div id="sg-tabbar" class="tab-bar" data-tabbar>
+        <!-- Build button -->
+        <button class="tab-button active" data-panel="sg-build-panel">
+          <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="7" cy="7" r="3"/><path d="M7 1v2M7 11v2M1 7h2M11 7h2M2.93 2.93l1.41 1.41M9.66 9.66l1.41 1.41M2.93 11.07l1.41-1.41M9.66 4.34l1.41-1.41"/></svg>
+          Build
+        </button>
+
+        <!-- Colonists button -->
+        <button class="tab-button" data-panel="sg-colonists-panel">
+          <svg viewBox="0 0 14 16" fill="currentColor" aria-hidden="true"><circle cx="7" cy="4.5" r="3"/><path d="M1 15c0-3.3 2.7-6 6-6s6 2.7 6 6" fill="currentColor"/></svg>
+          Colonists
+        </button>
+      </div>
+
+    </div><!-- /demo viewport -->
+
+    <h3>Anatomy</h3>
+    <div class="table-wrap" style="margin-bottom:16px;">
+      <table>
+        <thead><tr><th>Property</th><th>Value</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td>Bar background</td><td><code>#151618</code> @ 95%</td><td>Slightly transparent to sit on game world without fully obscuring it</td></tr>
+          <tr><td>Bar border</td><td><code>#474747</code> 1px</td><td>Subtle separation from game world. Radius 4px.</td></tr>
+          <tr><td>Button size</td><td>80–90 px wide × 32 px tall</td><td>Build 80px, Colonists 90px. Both min-width, content-driven.</td></tr>
+          <tr><td>Active color</td><td><code>--interactive</code> (<code>#4AC1F2</code>)</td><td>Applied to both text and icon simultaneously. Matches tab component system.</td></tr>
+          <tr><td>Inactive color</td><td><code>#999999</code> (Gray)</td><td>Clear enough to read, dim enough to recede</td></tr>
+          <tr><td>Toggle behavior</td><td>Click active tab = deselect</td><td>Hides panel. Player gets unobstructed view of game world.</td></tr>
+          <tr><td>Theme</td><td><code>panel_button_primary.tres</code></td><td>Consistent with all other in-panel actions</td></tr>
+          <tr><td>Icon size</td><td>14 px max-width</td><td>Left-aligned within button. 5px gap to label.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="rule"><strong>Panels attach to the bar, not the viewport.</strong> The panel that opens floats directly above the tab bar, with its bottom edge flush against the top of the bar. It is not a modal — the game world remains interactive behind it. Panel corners are rounded at the top only (top-left + top-right), meeting flush with the flat top edge of the tab bar.</div>
+  </section>
+
+
+  <!-- ══ PAUSE MENU EXAMPLE ══════════════════════════════════════════ -->
+  <section id="ex-pause">
+    <h2>Example — Pause Menu</h2>
+    <p>Modal context: full-attention, single-column, uniform button height. All pause menu buttons use <code>btn-md</code> (40 px). Primary action (Resume) gets visual priority through the <em>primary colour variant</em> only — never through size. A taller Resume button would look like a layout error, not intentional hierarchy.</p>
+
+    <div style="display:flex;gap:32px;align-items:flex-start;flex-wrap:wrap;">
+
+      <!-- The panel -->
+      <div class="game-panel" style="width:360px;padding:var(--pad-modal);display:flex;flex-direction:column;gap:12px;">
+        <!-- Title -->
+        <div style="font-size:14px;font-weight:700;color:var(--dust-shadow);letter-spacing:.06em;text-align:center;margin-bottom:4px;">GAME PAUSED</div>
+        <button class="btn btn-md btn-primary">Resume Game</button>
+        <button class="btn btn-md btn-secondary">Save Game</button>
+        <button class="btn btn-md btn-secondary">Settings</button>
+        <div style="height:1px;background:var(--regolith-slate);margin:4px 0;"></div>
+        <button class="btn btn-md btn-secondary">Quit to Menu</button>
+        <button class="btn btn-md btn-danger">Quit to Desktop</button>
+      </div>
+
+      <!-- Annotations -->
+      <div style="display:flex;flex-direction:column;gap:10px;padding-top:8px;min-width:220px;">
+        <div class="anno-header">Annotations</div>
+        <div class="anno-row">
+          <div class="anno-dot" style="background:var(--arc-cyan);"></div>
+          <div class="anno-text">Title: 14px · <code>PIXEARG_</code> <span class="fix-tag">FIX → Onest 16px</span></div>
+        </div>
+        <div class="anno-row">
+          <div class="anno-dot" style="background:var(--cream);"></div>
+          <div class="anno-text">All buttons: <code>btn-md</code> · 40 px tall · full width. Uniform height — hierarchy via colour only.</div>
+        </div>
+        <div class="anno-row">
+          <div class="anno-dot" style="background:var(--regolith-slate);"></div>
+          <div class="anno-text">Secondary: <code>btn-md btn-secondary</code> · Slate bg, Cream text.</div>
+        </div>
+        <div class="anno-row">
+          <div class="anno-dot" style="background:var(--arc-red);"></div>
+          <div class="anno-text">Danger: <code>btn-md btn-danger</code> · below divider · never mixed with other actions.</div>
+        </div>
+        <div class="anno-row">
+          <div class="anno-dot" style="background:var(--arc-cyan); opacity:.4;"></div>
+          <div class="anno-text">Panel padding: 20 px · Section gap: 12 px</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══ SETTINGS PANEL EXAMPLE ══════════════════════════════════════ -->
+  <section id="ex-settings">
+    <h2>Example — Settings Panel</h2>
+    <p>Settings is a sub-panel inside the pause overlay — same panel chrome as the pause menu, narrower content. Controls are grouped into labelled sections (<em>Display</em>, <em>Audio</em>). Toggles use arc-cyan when on; sliders share the same cyan accent. All rows are equal-height with a hairline separator. Buttons live below a divider, secondary weight only — Back is the primary escape action here, never a primary-coloured button.</p>
+
+    <div style="display:flex;gap:32px;align-items:flex-start;flex-wrap:wrap;">
+
+      <!-- Live panel -->
+      <div class="game-panel" style="width:360px;padding:var(--pad-modal);display:flex;flex-direction:column;gap:0;">
+
+        <!-- Title -->
+        <div style="font-size:16px;font-weight:700;color:var(--cream);text-align:center;letter-spacing:.04em;margin-bottom:14px;">SETTINGS</div>
+
+        <!-- ── Display ── -->
+        <div class="stg-section-label">Display</div>
+
+        <div class="stg-row">
+          <div>
+            <div class="stg-row-label">Fullscreen</div>
+            <div class="stg-row-sub">Run game in fullscreen mode</div>
+          </div>
+          <label class="stg-toggle">
+            <input type="checkbox">
+            <span class="stg-pill"></span>
+          </label>
+        </div>
+
+        <div class="stg-row">
+          <div>
+            <div class="stg-row-label">Fog of War</div>
+            <div class="stg-row-sub">Hide unexplored terrain</div>
+          </div>
+          <label class="stg-toggle">
+            <input type="checkbox" checked>
+            <span class="stg-pill"></span>
+          </label>
+        </div>
+
+        <!-- ── Audio ── -->
+        <div class="stg-section-label">Audio</div>
+
+        <div class="stg-vol-row">
+          <div class="stg-vol-header">
+            <div class="stg-row-label">Master Volume</div>
+            <div class="stg-vol-value" id="vol-master-val">80%</div>
+          </div>
+          <input class="stg-range" type="range" min="0" max="100" value="80"
+            oninput="document.getElementById('vol-master-val').textContent=this.value+'%'">
+        </div>
+
+        <div class="stg-vol-row">
+          <div class="stg-vol-header">
+            <div class="stg-row-label">Music</div>
+            <div class="stg-vol-value" id="vol-music-val">50%</div>
+          </div>
+          <input class="stg-range" type="range" min="0" max="100" value="50"
+            oninput="document.getElementById('vol-music-val').textContent=this.value+'%'">
+        </div>
+
+        <div class="stg-vol-row" style="border-bottom:none;">
+          <div class="stg-vol-header">
+            <div class="stg-row-label">SFX</div>
+            <div class="stg-vol-value" id="vol-sfx-val">30%</div>
+          </div>
+          <input class="stg-range" type="range" min="0" max="100" value="30"
+            oninput="document.getElementById('vol-sfx-val').textContent=this.value+'%'">
+        </div>
+
+        <!-- Bottom actions -->
+        <div style="height:1px;background:rgba(255,255,255,.05);margin:14px 0 12px;"></div>
+        <button class="btn btn-md btn-secondary">Report a Bug</button>
+        <div style="height:8px;"></div>
+        <button class="btn btn-md btn-secondary">Back</button>
+      </div>
+
+      <!-- Annotations -->
+      <div style="display:flex;flex-direction:column;gap:10px;padding-top:8px;min-width:240px;">
+        <div class="anno-header">Annotations</div>
+        <div class="anno-row">
+          <div class="anno-dot" style="background:var(--cream);"></div>
+          <div class="anno-text">Title: 16px Onest-Bold · <code>--cream</code> · centered.</div>
+        </div>
+        <div class="anno-row">
+          <div class="anno-dot" style="background:var(--dust-shadow);"></div>
+          <div class="anno-text">Section labels: 9px Onest-Bold · <code>--dust-shadow</code> · uppercase · 0.1em tracking. Groups related controls without adding heavy visual weight.</div>
+        </div>
+        <div class="anno-row">
+          <div class="anno-dot" style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);"></div>
+          <div class="anno-text">Row separator: <code>rgba(white, 0.05)</code> hairline. Barely-there — structure without contrast noise.</div>
+        </div>
+        <div class="anno-row">
+          <div class="anno-dot" style="background:var(--arc-cyan);"></div>
+          <div class="anno-text">Toggle ON state: <code>--arc-cyan</code> thumb, low-opacity cyan pill bg. OFF: slate pill, dust-shadow thumb. Never use checkboxes in-game.</div>
+        </div>
+        <div class="anno-row">
+          <div class="anno-dot" style="background:var(--arc-cyan); opacity:.6;"></div>
+          <div class="anno-text">Volume sliders: cyan thumb + value readout in <code>--arc-cyan</code> monospace. Label left, live % right — no separate label rows.</div>
+        </div>
+        <div class="anno-row">
+          <div class="anno-dot" style="background:var(--regolith-slate);"></div>
+          <div class="anno-text">Both buttons are <code>btn-md btn-secondary</code>. Back is not a primary button — returning to the pause menu is low-stakes.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══ BUILDING DETAILS EXAMPLE ═══════════════════════════════════ -->
+  <section id="ex-building">
+    <h2>Example — Building Details Panel</h2>
+    <p>Compact in-game panel showing a damaged building. Demonstrates full-width <code>panel_button_primary.tres</code> (repair action), <code>btn-xs</code> secondary controls, status visualization, and hierarchical information density. Information is primary; buttons are compact affordances.</p>
+
+    <div style="display:flex;gap:32px;align-items:flex-start;flex-wrap:wrap;">
+
+      <!-- Panel -->
+      <div class="game-panel" style="width:340px;padding:var(--pad-panel);display:flex;flex-direction:column;gap:10px;">
+
+        <!-- Header -->
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:4px;">
+          <div style="width:48px;height:48px;background:#1a1c1f;border-radius:var(--r-card);border:1px solid var(--regolith-slate);flex-shrink:0;overflow:hidden;"><img src="styleguide_resources/building_icon.png" style="width:100%;height:100%;object-fit:contain;image-rendering:pixelated;display:block;"></div>
+          <div style="flex:1;min-width:0;">
+            <div style="font-size:16px;font-weight:700;line-height:1.2;">Thermal Reactor</div>
+            <div style="font-size:10px;color:var(--dust-shadow);margin-top:2px;">Power generation · Level 3</div>
+          </div>
+          <button class="btn btn-icon btn-ghost" style="flex-shrink:0;color:var(--dust-shadow);"><svg viewBox="0 0 10 10" width="10" height="10" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M1 1l8 8M9 1L1 9"/></svg></button>
+        </div>
+
+        <!-- Damage warning -->
+        <div class="alert-danger" style="display:flex;align-items:flex-start;gap:8px;">
+          <svg viewBox="0 0 14 13" width="13" height="12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" style="flex-shrink:0;margin-top:2px;"><path d="M7 1.5L1 12h12z"/><path d="M7 5.5v3" stroke-linecap="round"/><circle cx="7" cy="10.5" r=".6" fill="currentColor" stroke="none"/></svg>
+          <div>
+            <div style="font-size:10px;font-weight:700;color:var(--arc-red);">Hull breach detected</div>
+            <div style="font-size:9px;color:var(--arc-red);opacity:.8;margin-top:1px;">Efficiency −45%</div>
+          </div>
+        </div>
+
+        <!-- Sections: repair action (high priority) -->
+        <div class="panel-section-label">Maintenance</div>
+        <button style="width:100%;background:rgba(61,68,83,.6);border:1px solid rgba(74,193,242,.2);border-radius:var(--r-card);padding:8px 12px;font-size:10px;font-weight:700;color:var(--cream);cursor:pointer;font-family:inherit;transition:all .15s;display:flex;align-items:center;justify-content:center;gap:6px;" onmouseover="this.style.background='rgba(61,68,83,.85)';this.style.borderColor='rgba(74,193,242,.35)'" onmouseout="this.style.background='rgba(61,68,83,.6)';this.style.borderColor='rgba(74,193,242,.2)'">
+          <svg viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="8" cy="8" r="6"/><path d="M8 5.5v5M5.5 8h5"/></svg>
+          Repair (200 Al, 40 hours)
+        </button>
+
+        <div class="demo-divider" style="margin:4px 0;"></div>
+
+        <!-- Status rows: reading-focused -->
+        <div style="font-size:9px;text-transform:uppercase;color:var(--dust-shadow);letter-spacing:.08em;margin-bottom:4px;">Status</div>
+
+        <div class="status-row">
+          <div class="status-lbl">Operator</div>
+          <div class="status-val">Dr. Chen</div>
+        </div>
+        <div class="status-row">
+          <div class="status-lbl">Output</div>
+          <div class="status-val" style="color:var(--arc-red);">● 45% capacity</div>
+        </div>
+        <div class="status-row">
+          <div class="status-lbl">Power draw</div>
+          <div class="status-val">18 kW</div>
+        </div>
+
+        <!-- Info card: detailed readings -->
+        <div class="inset-card" style="padding:8px;display:flex;flex-direction:column;gap:4px;">
+          <div style="display:flex;justify-content:space-between;font-size:9px;">
+            <span style="color:var(--dust-shadow);">Structural integrity</span>
+            <span style="color:var(--arc-red);">52%</span>
+          </div>
+          <div style="height:4px;background:rgba(255,255,255,.08);border-radius:2px;overflow:hidden;">
+            <div style="height:100%;background:linear-gradient(90deg,var(--arc-orange),var(--arc-red));width:52%;border-radius:2px;"></div>
+          </div>
+          <div style="display:flex;justify-content:space-between;font-size:9px;margin-top:2px;">
+            <span style="color:var(--dust-shadow);">Thermal load</span>
+            <span style="color:#4AC1F2;">78%</span>
+          </div>
+          <div style="height:4px;background:rgba(255,255,255,.08);border-radius:2px;overflow:hidden;">
+            <div style="height:100%;background:#4AC1F2;width:78%;border-radius:2px;"></div>
+          </div>
+        </div>
+
+        <!-- Bottom actions: compact secondary controls -->
+        <div style="display:flex;gap:6px;margin-top:2px;">
+          <button class="btn btn-xs btn-secondary">Pause</button>
+          <button class="btn btn-xs btn-ghost">Settings</button>
+          <button class="btn btn-xs btn-danger">Demolish</button>
+        </div>
+
+      </div>
+
+      <!-- Annotations -->
+      <div style="display:flex;flex-direction:column;gap:10px;padding-top:8px;min-width:240px;">
+        <div class="anno-header">Key patterns</div>
+        <div class="anno-row">
+          <div class="anno-dot" style="background:var(--cream);"></div>
+          <div class="anno-text"><strong>Panel-primary button</strong> (repair): Full-width <code>panel_button_primary.tres</code>, slate + magenta accent. Used for primary building action — repair, assign, build upgrade.</div>
+        </div>
+        <div class="anno-row">
+          <div class="anno-dot" style="background:var(--arc-red);"></div>
+          <div class="anno-text">Alert banner above actions. Only shown when urgent (damage, missing resources). Uses red + icon for instant scanning.</div>
+        </div>
+        <div class="anno-row">
+          <div class="anno-dot" style="background:#4AC1F2;"></div>
+          <div class="anno-text">Inset card with mini progress bars. Information density kept high — 4px bars, 9px labels. No extra padding.</div>
+        </div>
+        <div class="anno-row">
+          <div class="anno-dot" style="background:var(--dust-shadow);"></div>
+          <div class="anno-text"><code>btn-xs</code> trio (Pause, Settings, Demolish) on own row. Compact secondary controls — they don't compete with the primary repair action.</div>
+        </div>
+        <div class="anno-row">
+          <div class="anno-dot" style="background:var(--regolith-slate);"></div>
+          <div class="anno-text">Section label "Status" (9px, uppercase) groups related data. Soviet-functional: everything scannable in ~500ms.</div>
+        </div>
+        <div class="anno-row">
+          <div class="anno-dot" style="background:var(--arc-orange);"></div>
+          <div class="anno-text">Only critical values (integrity: red, thermal: cyan) use accent colours. Everything else is dust shadow to reduce noise.</div>
+        </div>
+      </div>
+    </div>
+
+    <h3 style="margin-top:28px;">Button decision tree for this panel</h3>
+    <div style="background:rgba(74,193,242,.05);border:1px solid rgba(74,193,242,.2);border-radius:var(--r-panel);padding:16px;font-size:11px;color:var(--dust-shadow);line-height:1.6;">
+      <strong style="color:var(--cream);">Repair action:</strong> <code>panel_button_primary.tres</code> (full-width, dark slate with magenta hover) — high-value action, deserves visual weight but never primary color (which is for menus). Communicates "this is what you came here to do" while staying practical for dense UI.<br><br>
+      <strong style="color:var(--cream);">Pause / Settings / Demolish:</strong> <code>btn-xs</code> trio — information sharing space, buttons must be secondary. Pause and Settings use <code>btn-secondary</code> (neutral), Demolish is <code>btn-danger</code> (red). Never full-width — info is the focal point, not actions.<br><br>
+      <strong style="color:var(--cream);">Never use:</strong> <code>button_big.tres</code> (main menu only) or <code>button_primary.tres</code> (pause menu only). Never use <code>btn-lg</code> / <code>btn-md</code> inside a detail panel. Screen real estate is premium.
+    </div>
+  </section>
+
+
+  <!-- ══ HAB MODULE EXAMPLE ══════════════════════════════════════════ -->
+  <section id="ex-hab">
+    <h2>Example — Hab Module Panel</h2>
+    <p>A building panel that contains a resident list. The primary action (<strong>Assign Resident</strong>) is a centered full-width flat button. All per-row controls use <code>btn-icon</code> only. Secondary details (slots count, power, O₂ source) live in a collapsed accordion — players scan the resident list first, then drill in only if needed.</p>
+
+    <div style="display:flex;gap:32px;align-items:flex-start;flex-wrap:wrap;">
+
+      <!-- Panel — matches in-game width closely -->
+      <div class="game-panel" style="width:350px;padding:var(--pad-panel);display:flex;flex-direction:column;gap:8px;">
+
+        <!-- Header -->
+        <div style="display:flex;align-items:center;gap:10px;">
+          <div class="demo-icon"><img src="styleguide_resources/building_icon.png" style="width:100%;height:100%;object-fit:contain;image-rendering:pixelated;display:block;"></div>
+          <div style="flex:1;min-width:0;">
+            <div style="font-size:16px;font-weight:700;line-height:1.2;">Hab Module</div>
+          </div>
+          <button class="btn btn-icon btn-ghost" style="flex-shrink:0;color:var(--dust-shadow);"><svg viewBox="0 0 10 10" width="10" height="10" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M1 1l8 8M9 1L1 9"/></svg></button>
+        </div>
+
+        <!-- O2 warning (conditional — shown when no O2 source) -->
+        <div class="alert-danger">
+          <svg viewBox="0 0 14 13" width="13" height="12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M7 1.5L1 12h12z"/><path d="M7 5.5v3" stroke-linecap="round"/><circle cx="7" cy="10.5" r=".6" fill="currentColor" stroke="none"/></svg> No oxygen source — sleeping disabled
+        </div>
+
+        <!-- Assign Resident: centered flat button — not a styled CTA, just a text affordance -->
+        <button style="width:100%;background:rgba(255,255,255,.04);border:none;border-radius:var(--r-card);padding:7px 12px;font-size:12px;font-weight:600;color:var(--cream);cursor:pointer;font-family:inherit;transition:background .15s;" onmouseover="this.style.background='rgba(255,255,255,.08)'" onmouseout="this.style.background='rgba(255,255,255,.04)'">
+          Assign Resident
+        </button>
+
+        <!-- Resident rows: no border/bg on unselected, just spacing -->
+        <!-- Row 1: unselected -->
+        <div style="display:flex;align-items:center;gap:8px;padding:4px 0;">
+          <div style="width:20px;height:20px;background:var(--regolith-slate);border-radius:3px;flex-shrink:0;display:flex;align-items:center;justify-content:center;"><svg viewBox="0 0 14 16" width="12" height="12" fill="currentColor" aria-hidden="true"><circle cx="7" cy="5" r="3.2"/><path d="M1 15.5c0-3.3 2.7-6 6-6s6 2.7 6 6" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></div>
+          <div style="flex:1;font-size:10px;color:var(--cream);">Yuri</div>
+          <div class="status-lbl">Assigned</div>
+          <button class="btn btn-icon-sm btn-danger" style="color:var(--arc-red);background:none;"><svg viewBox="0 0 10 10" width="9" height="9" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M1 1l8 8M9 1L1 9"/></svg></button>
+        </div>
+
+        <!-- Row 2: unselected -->
+        <div style="display:flex;align-items:center;gap:8px;padding:4px 0;">
+          <div style="width:20px;height:20px;background:var(--regolith-slate);border-radius:3px;flex-shrink:0;display:flex;align-items:center;justify-content:center;"><svg viewBox="0 0 14 16" width="12" height="12" fill="currentColor" aria-hidden="true"><circle cx="7" cy="5" r="3.2"/><path d="M1 15.5c0-3.3 2.7-6 6-6s6 2.7 6 6" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></div>
+          <div class="meta">Katya</div>
+          <div class="status-lbl">Assigned</div>
+          <button class="btn btn-icon-sm btn-danger" style="color:var(--arc-red);background:none;"><svg viewBox="0 0 10 10" width="9" height="9" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M1 1l8 8M9 1L1 9"/></svg></button>
+        </div>
+
+        <!-- Row 3: selected colonist (Boris — matches the in-game screenshot) -->
+        <div style="background:rgba(74,193,242,.12);border-radius:var(--r-card);display:flex;align-items:center;gap:8px;padding:5px 8px;">
+          <div style="width:20px;height:20px;background:#1e3048;border-radius:3px;flex-shrink:0;display:flex;align-items:center;justify-content:center;"><svg viewBox="0 0 14 16" width="12" height="12" fill="currentColor" aria-hidden="true"><circle cx="7" cy="5" r="3.2"/><path d="M1 15.5c0-3.3 2.7-6 6-6s6 2.7 6 6" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></div>
+          <div style="flex:1;font-size:10px;color:#BFE8FF;font-weight:700;">Boris</div>
+          <div class="status-lbl">Assigned</div>
+          <button class="btn btn-icon-sm btn-danger" style="color:var(--arc-red);background:none;"><svg viewBox="0 0 10 10" width="9" height="9" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M1 1l8 8M9 1L1 9"/></svg></button>
+        </div>
+
+        <!-- Accordion: secondary details collapsed by default -->
+        <details class="panel-accordion">
+          <summary>Details <span class="acc-chevron">▼</span></summary>
+          <div class="acc-body">
+            <div style="display:flex;justify-content:space-between;">
+              <div class="status-lbl">Slots</div>
+              <div class="status-val">3 / 4 filled</div>
+            </div>
+            <div style="display:flex;justify-content:space-between;">
+              <div class="status-lbl">Power</div>
+              <div class="status-val">8 kW</div>
+            </div>
+            <div style="display:flex;justify-content:space-between;">
+              <div class="status-lbl">O₂ source</div>
+              <div class="status-val">Oxygen Generator</div>
+            </div>
+          </div>
+        </details>
+
+      </div>
+
+      <!-- Annotations -->
+      <div style="display:flex;flex-direction:column;gap:10px;padding-top:8px;min-width:240px;">
+        <div class="anno-header">Annotations</div>
+        <div class="anno-row">
+          <div class="anno-dot" style="background:var(--arc-red);"></div>
+          <div class="anno-text">O₂ warning sits between header and Assign — urgency before action.</div>
+        </div>
+        <div class="anno-row">
+          <div class="anno-dot" style="background:var(--cream);"></div>
+          <div class="anno-text">"Assign Resident" = centered flat tinted button, not a styled CTA. Visible but not dominant.</div>
+        </div>
+        <div class="anno-row">
+          <div class="anno-dot" style="background:var(--dust-shadow);"></div>
+          <div class="anno-text">Unselected rows: no background or border. Just spacing (4px padding). Clean list.</div>
+        </div>
+        <div class="anno-row">
+          <div class="anno-dot" style="background:var(--arc-cyan);"></div>
+          <div class="anno-text">Selected row: <code>#4AC1F2 @ 12%</code> bg, name in <code>#BFE8FF</code>. No border needed.</div>
+        </div>
+        <div class="anno-row">
+          <div class="anno-dot" style="background:var(--arc-red); opacity:.6;"></div>
+          <div class="anno-text">× = bare icon button, no background. Red colour is the only affordance needed.</div>
+        </div>
+        <div class="anno-row">
+          <div class="anno-dot" style="background:var(--regolith-slate);"></div>
+          <div class="anno-text">Accordion "Details ▼": secondary info (slots, power, O₂). Collapsed by default. Row-label left / value right, 10px text.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══ UNIT DETAILS EXAMPLE ════════════════════════════════════════ -->
+  <section id="ex-unit">
+    <h2>Example — Unit Details Panel</h2>
+    <p>Read-mostly colonist overview. Stat labels are ALL CAPS, bars are 4px thin. The value text uses accent colour only when the stat is warning/critical — OK states stay in Dust Shadow to avoid noise. No primary action button.</p>
+
+    <div style="display:flex;gap:32px;align-items:flex-start;flex-wrap:wrap;">
+
+      <!-- Normal state panel -->
+      <div>
+        <div style="font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--dust-shadow);margin-bottom:8px;">Normal state</div>
+        <div class="game-panel" style="width:300px;overflow:hidden;">
+          <div style="padding:var(--pad-panel);display:flex;flex-direction:column;gap:8px;">
+
+            <!-- Header -->
+            <div style="display:flex;align-items:flex-start;gap:10px;">
+              <div style="width:52px;height:52px;background:#191c24;border:1px solid #3A3D4A;border-radius:var(--r-card);flex-shrink:0;overflow:hidden;"><img src="styleguide_resources/icon_unit_red.png" style="width:100%;height:100%;object-fit:contain;image-rendering:pixelated;display:block;"></div>
+              <div style="flex:1;min-width:0;padding-top:2px;">
+                <div style="font-size:16px;font-weight:700;line-height:1.2;">Boris</div>
+                <div style="font-size:10px;color:var(--dust-shadow);margin-top:3px;">Engineer</div>
+                <div style="font-size:10px;color:var(--dust-shadow);margin-top:2px;">▶ Recovering oxygen</div>
+              </div>
+              <button class="btn btn-icon btn-ghost" style="color:var(--dust-shadow);flex-shrink:0;"><svg viewBox="0 0 10 10" width="10" height="10" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M1 1l8 8M9 1L1 9"/></svg></button>
+            </div>
+
+            <div class="demo-divider"></div>
+
+            <!-- Vitals: ALL CAPS labels, value right-aligned, bar full-width below -->
+            <div style="display:flex;flex-direction:column;gap:8px;">
+              <div class="progress-wrap">
+                <div class="progress-labels"><span class="key">Health</span><span class="val">OK</span></div>
+                <div class="progress-track"><div class="progress-fill fill-health" style="width:95%;"></div></div>
+              </div>
+              <div class="progress-wrap">
+                <div class="progress-labels"><span class="key">Oxygen</span><span class="val" style="color:var(--arc-yellow);">Low</span></div>
+                <div class="progress-track"><div class="progress-fill fill-oxygen" style="width:38%;"></div></div>
+              </div>
+              <div class="progress-wrap">
+                <div class="progress-labels"><span class="key">Hunger</span><span class="val">Fed</span></div>
+                <div class="progress-track"><div class="progress-fill fill-hunger" style="width:75%;"></div></div>
+              </div>
+              <div class="progress-wrap">
+                <div class="progress-labels"><span class="key">Energy</span><span class="val">OK</span></div>
+                <div class="progress-track"><div class="progress-fill fill-energy" style="width:82%;"></div></div>
+              </div>
+            </div>
+
+            <div class="demo-divider"></div>
+
+            <!-- Assignment -->
+            <div style="display:flex;flex-direction:column;gap:6px;">
+              <div class="panel-section-label" style="margin-bottom:2px;">ASSIGNMENT</div>
+              <div style="display:flex;justify-content:space-between;">
+                <div class="status-lbl">Quarters</div>
+                <div class="status-val">Hab Module</div>
+              </div>
+              <div style="display:flex;justify-content:space-between;">
+                <div class="status-lbl">Sleep</div>
+                <div class="status-val">Nightfall (auto)</div>
+              </div>
+              <div style="display:flex;justify-content:space-between;">
+                <div class="status-lbl">Work zone</div>
+                <div class="status-lbl">Unassigned</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Critical state panel -->
+      <div>
+        <div style="font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--dust-shadow);margin-bottom:8px;">Critical state — alert banner</div>
+        <div class="game-panel" style="width:300px;overflow:hidden;">
+
+          <!-- Alert banner: outside padding, full bleed, first element -->
+          <div style="background:rgba(180,40,40,.12);border-bottom:1px solid rgba(180,40,40,.35);padding:6px 12px;display:flex;align-items:center;gap:8px;">
+            <div style="width:6px;height:6px;background:var(--arc-red);border-radius:50%;flex-shrink:0;"></div>
+            <div style="font-size:9px;letter-spacing:.1em;color:var(--arc-red);">CRITICAL — REQUIRES ATTENTION</div>
+          </div>
+
+          <div style="padding:var(--pad-panel);display:flex;flex-direction:column;gap:8px;">
+            <div style="display:flex;align-items:flex-start;gap:10px;">
+              <div class="demo-icon-lg"><img src="styleguide_resources/icon_unit_red.png" style="width:100%;height:100%;object-fit:contain;image-rendering:pixelated;display:block;"></div>
+              <div style="flex:1;min-width:0;padding-top:2px;">
+                <div style="font-size:16px;font-weight:700;line-height:1.2;">Boris</div>
+                <div style="font-size:10px;color:var(--dust-shadow);margin-top:3px;">Engineer</div>
+                <div style="font-size:10px;color:var(--dust-shadow);margin-top:2px;">▶ Unconscious</div>
+              </div>
+              <button class="btn btn-icon btn-ghost" style="color:var(--dust-shadow);flex-shrink:0;"><svg viewBox="0 0 10 10" width="10" height="10" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M1 1l8 8M9 1L1 9"/></svg></button>
+            </div>
+            <div class="demo-divider"></div>
+            <div style="display:flex;flex-direction:column;gap:8px;">
+              <div class="progress-wrap">
+                <div class="progress-labels"><span class="key">Health</span><span class="val" style="color:var(--arc-red);">Critical</span></div>
+                <div class="progress-track"><div class="progress-fill fill-warn" style="width:8%;"></div></div>
+              </div>
+              <div class="progress-wrap">
+                <div class="progress-labels"><span class="key">Oxygen</span><span class="val" style="color:var(--arc-red);">Critical</span></div>
+                <div class="progress-track"><div class="progress-fill fill-warn" style="width:5%;"></div></div>
+              </div>
+              <div class="progress-wrap">
+                <div class="progress-labels"><span class="key">Hunger</span><span class="val" style="color:var(--arc-yellow);">Hungry</span></div>
+                <div class="progress-track"><div class="progress-fill fill-hunger" style="width:22%;"></div></div>
+              </div>
+              <div class="progress-wrap">
+                <div class="progress-labels"><span class="key">Energy</span><span class="val" style="color:var(--arc-yellow);">Tired</span></div>
+                <div class="progress-track"><div class="progress-fill fill-energy" style="width:15%;"></div></div>
+              </div>
+            </div>
+            <div class="demo-divider"></div>
+            <div style="display:flex;flex-direction:column;gap:6px;">
+              <div class="panel-section-label" style="margin-bottom:2px;">ASSIGNMENT</div>
+              <div style="display:flex;justify-content:space-between;">
+                <div class="status-lbl">Quarters</div>
+                <div class="status-val">Hab Module</div>
+              </div>
+              <div style="display:flex;justify-content:space-between;">
+                <div class="status-lbl">Work zone</div>
+                <div class="status-lbl">Unassigned</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Annotations -->
+      <div style="display:flex;flex-direction:column;gap:10px;padding-top:32px;min-width:240px;">
+        <div class="anno-header">Annotations</div>
+        <div class="anno-row">
+          <div class="anno-dot" style="background:var(--arc-cyan);"></div>
+          <div class="anno-text">Role label: Dust Shadow. ARC Cyan is reserved for interactive elements and active states — not decorative labels. Task line: Dust Shadow with ▶ prefix.</div>
+        </div>
+        <div class="anno-row">
+          <div class="anno-dot" style="background:var(--cream);"></div>
+          <div class="anno-text">Stat labels: ALL CAPS, 9px, Dust Shadow. Bars: 4px height, full-width.</div>
+        </div>
+        <div class="anno-row">
+          <div class="anno-dot" style="background:var(--dust-shadow);"></div>
+          <div class="anno-text">Value "OK" / "Fed" = Dust Shadow. Only warning/critical states use accent colour.</div>
+        </div>
+        <div class="anno-row">
+          <div class="anno-dot" style="background:var(--arc-yellow);"></div>
+          <div class="anno-text">"Low" = ARC Yellow. "Critical" = ARC Red. Colour alone communicates severity.</div>
+        </div>
+        <div class="anno-row">
+          <div class="anno-dot" style="background:var(--arc-red);"></div>
+          <div class="anno-text">Alert banner: full-bleed, above padding zone. First thing seen. No button inside — just status.</div>
+        </div>
+        <div class="anno-row">
+          <div class="anno-dot" style="background:var(--regolith-slate);"></div>
+          <div class="anno-text">This panel has no primary CTA — it's a viewer. Assignment values are cream; unassigned is Dust Shadow.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══ DIALOGUE BOX EXAMPLE ═══════════════════════════════════════ -->
+  <section id="ex-dialogue">
+    <h2>Example — Dialogue Box</h2>
+    <p>Appears at the bottom of the screen during NPC conversations. Portrait left (pixel art, 80×80 px, r=4 px). Speaker name in ARC Orange at 14 px bold. Body text Cream at 12 px. <strong>Continue indicator:</strong> Animated bouncing arrow (▼) centered below the text — no label. The animation alone signals interactivity.</p>
+
+    <div style="display:flex;gap:32px;align-items:flex-start;flex-wrap:wrap;">
+
+      <!-- Dialogue panel -->
+      <div>
+        <!-- Panel: column layout so arrow never overlaps text -->
+        <div style="background:#1E2023;border-radius:var(--r-panel);padding:16px 20px 10px;display:flex;flex-direction:column;gap:10px;width:480px;border:1px solid rgba(255,255,255,.06);">
+          <!-- Row 1: portrait + text -->
+          <div style="display:flex;align-items:flex-start;gap:16px;">
+            <!-- Portrait -->
+            <div style="width:80px;height:80px;background:#1a1c1f;border-radius:var(--r-card);border:1px solid var(--regolith-slate);flex-shrink:0;overflow:hidden;">
+              <img src="styleguide_resources/icon_unit_red.png" style="width:100%;height:100%;object-fit:contain;image-rendering:pixelated;display:block;">
+            </div>
+            <!-- Text -->
+            <div style="flex:1;display:flex;flex-direction:column;gap:6px;">
+              <div style="font-size:14px;font-weight:700;color:var(--arc-orange);">Katya</div>
+              <div style="font-size:12px;color:var(--cream);line-height:1.65;">Sun's going down. Power holding? The batteries can't keep up with night-side drain.</div>
+            </div>
+          </div>
+          <!-- Row 2: continue arrow, centered -->
+          <div style="display:flex;justify-content:center;">
+            <div style="font-size:14px;color:var(--dust-shadow);animation:dialogue-bounce 1s ease-in-out infinite;">▼</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Annotations -->
+      <div style="display:flex;flex-direction:column;gap:10px;padding-top:40px;min-width:240px;">
+        <div class="anno-header">Annotations</div>
+        <div class="anno-row">
+          <div class="anno-dot" style="background:var(--arc-orange);"></div>
+          <div class="anno-text">Speaker name: Onest-Bold 14px, ARC Orange <code>#F28C38</code>.</div>
+        </div>
+        <div class="anno-row">
+          <div class="anno-dot" style="background:var(--cream);"></div>
+          <div class="anno-text">Dialogue text: Onest-Bold 12px Cream. Line-height 1.65. Can wrap to multiple lines.</div>
+        </div>
+        <div class="anno-row">
+          <div class="anno-dot" style="background:var(--regolith-slate);"></div>
+          <div class="anno-text">Portrait: 80×80 px, r=4 px (inset card rule). <code>image-rendering: pixelated</code>.</div>
+        </div>
+        <div class="anno-row">
+          <div class="anno-dot" style="background:var(--dust-shadow);"></div>
+          <div class="anno-text"><strong>Continue arrow:</strong> Centered below text in its own row. Bounces 6px up/down, 1s loop. No label — the animation is the affordance.</div>
+        </div>
+        <div class="anno-row">
+          <div class="anno-dot" style="background:var(--basalt);border:1px solid var(--regolith-slate);"></div>
+          <div class="anno-text">Panel bg: <code>#1E2023</code> (slightly lighter than <code>--basalt</code>). Padding: 16px v / 20px h. Arrow + text are overlay, not part of text flow.</div>
+        </div>
+      </div>
+    </div>
+
+    <h3 style="margin-top:24px;">Animation</h3>
+    <div style="background:var(--obsidian);border:1px solid var(--regolith-slate);border-radius:var(--r-card);padding:12px;font-size:10px;font-family:monospace;color:var(--cream);overflow-x:auto;margin-bottom:16px;">
+      <div>@keyframes dialogue-bounce {</div>
+      <div>&nbsp;&nbsp;0%, 100% { transform: translateY(0); }</div>
+      <div>&nbsp;&nbsp;50% { transform: translateY(-6px); }</div>
+      <div>}</div>
+      <div>&nbsp;</div>
+      <div>.dialogue-arrow {</div>
+      <div>&nbsp;&nbsp;animation: dialogue-bounce 1s ease-in-out infinite;</div>
+      <div>&nbsp;&nbsp;font-size: 14px;</div>
+      <div>&nbsp;&nbsp;color: var(--dust-shadow);</div>
+      <div>}</div>
+    </div>
+
+    <div class="rule"><strong>Pokemon-style UX:</strong> The arrow alone signals "more to come / press to advance" without needing text. Animation (gentle bounce, 1s loop) draws the eye without screaming. Text tooltip on hover keeps the UI clean until players need it. Total visual weight is minimal — the dialogue text is the primary element.</div>
+  </section>
+
+
+  <!-- ══ MISSION LOG EXAMPLE ════════════════════════════════════════ -->
+  <section id="ex-mission-log">
+    <h2>Example — Mission Log</h2>
+    <p>Interactive mission log. <strong>Completed missions</strong> collapse to a single row — click to reveal objective and what they unlocked. The <strong>active mission</strong> stays expanded with its semantic colour and live progress. <strong>Upcoming missions</strong> hint at what's ahead (name + type) but hide objectives until unlocked; click the next-in-line to surface the prerequisite. Distant missions are obscured entirely. Overall campaign progress shows at the top without spoilers.</p>
+
+    <div style="display:flex;gap:32px;align-items:flex-start;flex-wrap:wrap;">
+
+      <!-- Panel -->
+      <div>
+        <div style="font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--dust-shadow);margin-bottom:8px;">Click rows to interact</div>
+        <div class="game-panel" style="width:440px;padding:var(--pad-modal);display:flex;flex-direction:column;">
+
+          <!-- Header -->
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
+            <div style="font-size:14px;font-weight:700;letter-spacing:.08em;color:var(--ghost-white);">MISSION LOG</div>
+            <button class="btn btn-icon btn-ghost" style="color:var(--dust-shadow);"><svg viewBox="0 0 10 10" width="10" height="10" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M1 1l8 8M9 1L1 9"/></svg></button>
+          </div>
+
+          <!-- Campaign progress -->
+          <div class="progress-wrap campaign-progress">
+            <div class="progress-labels">
+              <span class="key">Campaign progress</span>
+              <span class="val">2 / 10</span>
+            </div>
+            <div class="progress-track"><div class="progress-fill" style="width:20%;"></div></div>
+          </div>
+          <div class="mission-list-divider"></div>
+
+          <!-- Scrollable mission list -->
+          <div id="ml-container" class="mission-list" data-mission-log>
+
+            <!-- DONE: 1. First Light -->
+            <div class="ml-row ml-row--done">
+              <div class="ml-row-header">
+                <span class="ml-badge">DONE</span>
+                <div class="ml-title">1. First Light</div>
+                <span class="ml-chev">▸</span>
+              </div>
+              <div class="ml-row-body" hidden>
+                <div class="ml-body-objective">Build 2 Generators to establish base power generation.</div>
+                <div class="ml-body-unlock">UNLOCKED &nbsp;<span class="ml-body-unlock-value">Battery Bank</span></div>
+              </div>
+            </div>
+
+            <!-- DONE: 2. Into the Night -->
+            <div class="ml-row ml-row--done">
+              <div class="ml-row-header">
+                <span class="ml-badge">DONE</span>
+                <div class="ml-title">2. Into the Night</div>
+                <span class="ml-chev">▸</span>
+              </div>
+              <div class="ml-row-body" hidden>
+                <div class="ml-body-objective">Build a Battery Bank to sustain power through the lunar night.</div>
+                <div class="ml-body-unlock">UNLOCKED &nbsp;<span class="ml-body-unlock-value">Food Fabricator</span></div>
+              </div>
+            </div>
+
+            <!-- ACTIVE: 3. Mouths to Feed -->
+            <div class="ml-row ml-row--active">
+              <div class="ml-row-header">
+                <span class="ml-badge">ACTIVE</span>
+                <div class="ml-title">3. Mouths to Feed</div>
+                <span class="ml-type">SURVIVAL</span>
+              </div>
+              <div class="ml-objective">Produce 30 Food to sustain the colony.</div>
+              <div class="progress-wrap">
+                <div class="progress-labels"><span class="key">Food produced</span><span class="val">12 / 30</span></div>
+                <div class="progress-track"><div class="progress-fill" style="width:40%;"></div></div>
+              </div>
+              <div class="ml-unlocks">UNLOCKS &nbsp;<span class="ml-unlocks-value">Electronics Fab · Oxygen Outpost</span></div>
+            </div>
+
+            <!-- Upcoming section label -->
+            <div class="ml-upcoming-label">
+              <div class="ml-upcoming-label-text">Upcoming</div>
+              <div class="ml-upcoming-divider"></div>
+            </div>
+
+            <!-- LOCKED (next up): 4. Unidentified Shipment — click to show prereq -->
+            <div class="ml-row ml-row--locked-next">
+              <div class="ml-row-header">
+                <span class="ml-lock-icon">
+                  <svg viewBox="0 0 12 14" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" class="lock-svg"><rect x="2" y="6.5" width="8" height="7" rx="1"/><path d="M4 6.5V4.5a3 3 0 016 0v2"/></svg>
+                </span>
+                <span class="ml-title">4. Unidentified Shipment</span>
+                <span class="ml-type">SUPPLY</span>
+              </div>
+              <div class="ml-locked-msg" hidden>Complete <em>Mouths to Feed</em> to unlock.</div>
+            </div>
+
+            <!-- LOCKED: 5. System Failure -->
+            <div class="ml-row ml-row--locked">
+              <div class="ml-row-header">
+                <span class="ml-lock-icon">
+                  <svg viewBox="0 0 12 14" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" class="lock-svg"><rect x="2" y="6.5" width="8" height="7" rx="1"/><path d="M4 6.5V4.5a3 3 0 016 0v2"/></svg>
+                </span>
+                <span class="ml-title">5. System Failure</span>
+                <span class="ml-type">EMERGENCY</span>
+              </div>
+            </div>
+
+            <!-- LOCKED: 6. Restore Comms -->
+            <div class="ml-row ml-row--locked">
+              <div class="ml-row-header">
+                <span class="ml-lock-icon">
+                  <svg viewBox="0 0 12 14" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" class="lock-svg"><rect x="2" y="6.5" width="8" height="7" rx="1"/><path d="M4 6.5V4.5a3 3 0 016 0v2"/></svg>
+                </span>
+                <span class="ml-title">6. Restore Comms</span>
+                <span class="ml-type">COMMS</span>
+              </div>
+            </div>
+
+            <!-- LOCKED: 7. Lunar Permanence -->
+            <div class="ml-row ml-row--locked">
+              <div class="ml-row-header">
+                <span class="ml-lock-icon">
+                  <svg viewBox="0 0 12 14" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" class="lock-svg"><rect x="2" y="6.5" width="8" height="7" rx="1"/><path d="M4 6.5V4.5a3 3 0 016 0v2"/></svg>
+                </span>
+                <span class="ml-title">7. Lunar Permanence</span>
+              </div>
+            </div>
+
+            <!-- DEEP LOCKED: 8–10 grouped -->
+            <div class="ml-row ml-row--deep-locked">
+              <div class="ml-row-header">
+                <span class="ml-lock-icon">
+                  <svg viewBox="0 0 12 14" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" class="lock-svg"><rect x="2" y="6.5" width="8" height="7" rx="1"/><path d="M4 6.5V4.5a3 3 0 016 0v2"/></svg>
+                </span>
+                <span class="ml-deep-locked-text">3 further missions &nbsp;···</span>
+              </div>
+            </div>
+
+          </div><!-- /mission list -->
+        </div><!-- /game-panel -->
+      </div>
+
+      <!-- Annotations -->
+      <div style="display:flex;flex-direction:column;gap:10px;padding-top:8px;min-width:240px;">
+        <div class="anno-header">Annotations</div>
+        <div class="anno-row">
+          <div class="anno-dot" style="background:var(--plasma-purple);"></div>
+          <div class="anno-text">Campaign progress bar (Plasma Purple, 20%) + "2 / 10" count. Gives overall context without spoiling objectives.</div>
+        </div>
+        <div class="anno-row">
+          <div class="anno-dot" style="background:var(--plasma-purple); opacity:.6;"></div>
+          <div class="anno-text">Completed: Plasma Purple DONE badge. Title struck-through in Dust Shadow. Collapsed by default — <strong>click to expand</strong> and see objective + what it unlocked.</div>
+        </div>
+        <div class="anno-row">
+          <div class="anno-dot" style="background:var(--arc-lime);"></div>
+          <div class="anno-text">Active: semantic colour card (arc-lime for Survival). 14px bold title, dim type label right-aligned, objective 12px Cream, live progress bar.</div>
+        </div>
+        <div class="anno-row">
+          <div class="anno-dot" style="background:var(--dust-shadow);"></div>
+          <div class="anno-text">"Upcoming" label + hairline rule separates active from locked. Next-in-line (4) at 75% opacity — <strong>click to reveal</strong> the prerequisite message. Further missions fade: 55% → 45% → 35%.</div>
+        </div>
+        <div class="anno-row">
+          <div class="anno-dot" style="background:var(--dust-shadow); opacity:.3;"></div>
+          <div class="anno-text">Deep-locked missions 8–10 collapsed to a single "3 further missions ···" row at 25% opacity. No names, no objectives — enough to signal more story exists.</div>
+        </div>
+      </div>
+
+    </div><!-- /flex -->
+  </section>
+
+
+  <!-- ══ QUICK REFERENCE ═════════════════════════════════════════════ -->
+  <section id="quickref">
+    <h2>Quick Reference</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Context</th><th>Font</th><th>Size</th><th>Colour</th><th>Radius</th><th>Padding</th></tr></thead>
+        <tbody>
+          <tr><td>Main menu title</td><td>Orbit-Headers</td><td>48 px</td><td>Scanline Cream</td><td>—</td><td>—</td></tr>
+          <tr><td>Main menu button</td><td>PIXEARG_</td><td>14–16 px</td><td>Scanline Cream</td><td>12 px</td><td>20 px</td></tr>
+          <tr><td>Modal panel header</td><td>Onest-Bold</td><td>14–16 px</td><td>Scanline Cream</td><td>12 px</td><td>20 px</td></tr>
+          <tr><td>Modal button (primary)</td><td>Onest-Bold</td><td>16 px</td><td>Dark on Cream bg</td><td>12 px</td><td>12×24 px</td></tr>
+          <tr><td>Modal button (secondary)</td><td>Onest-Bold</td><td>14 px</td><td>Cream on Slate bg</td><td>12 px</td><td>9×20 px</td></tr>
+          <tr><td>In-game panel header</td><td>Onest-Bold</td><td>16 px</td><td>Scanline Cream</td><td>12 px</td><td>12 px</td></tr>
+          <tr><td>In-game panel body</td><td>Onest-Bold</td><td>10–12 px</td><td>Dust Shadow</td><td>12 px</td><td>12 px</td></tr>
+          <tr><td>Panel action (main action)</td><td>Onest-Bold</td><td>10 px</td><td>Cream on Slate bg · <code>btn-xs btn-secondary</code></td><td>4 px</td><td>3×10 px</td></tr>
+          <tr><td>Panel action (dismissive)</td><td>Onest-Bold</td><td>10 px</td><td>Dust Shadow · <code>btn-xs btn-ghost</code></td><td>4 px</td><td>3×10 px</td></tr>
+          <tr><td>Panel action (destructive)</td><td>Onest-Bold</td><td>10 px</td><td>ARC Red tint · <code>btn-xs btn-danger</code></td><td>4 px</td><td>3×10 px</td></tr>
+          <tr><td>Inset / tech card</td><td>Onest-Bold</td><td>9 px</td><td>Dust Shadow</td><td>4 px</td><td>4×6 px</td></tr>
+          <tr><td>Inline action (btn-xs)</td><td>Onest-Bold</td><td>10 px</td><td>Cream on Slate bg</td><td>4 px</td><td>3×10 px</td></tr>
+          <tr><td>Icon button</td><td>—</td><td>—</td><td>Dust Shadow / Red</td><td>4 px</td><td>—</td></tr>
+          <tr><td>Tooltip</td><td>Onest-Bold</td><td>10 px</td><td>Dust Shadow</td><td>4 px</td><td>12 px</td></tr>
+          <tr><td>Progress bar</td><td>—</td><td>4 px h</td><td>Cyan → Red</td><td>2 px</td><td>—</td></tr>
+          <tr><td>Dialog speaker name</td><td>Onest-Bold</td><td>14 px</td><td>ARC Orange <code>#F28C38</code></td><td>—</td><td>—</td></tr>
+          <tr><td>Dialog portrait</td><td>—</td><td>80×80 px</td><td>—</td><td>4 px</td><td>—</td></tr>
+          <tr><td>Mission active badge</td><td>Onest-Bold</td><td>9 px</td><td>ARC Yellow</td><td>3 px</td><td>2×6 px</td></tr>
+          <tr><td>Mission complete badge</td><td>Onest-Bold</td><td>9 px</td><td>Plasma Purple <code>#A855F7</code></td><td>3 px</td><td>2×6 px</td></tr>
+          <tr><td>Alert banner</td><td>Onest-Bold</td><td>9 px</td><td>ARC Red</td><td>0 (full-width)</td><td>6×12 px</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+
+  <!-- ══ REMEDIATION ═════════════════════════════════════════════════ -->
+  <section id="fixes">
+    <h2>Remediation Checklist</h2>
+    <p>Confirmed divergences from this guide. Tick off as fixes land.</p>
+
+    <div style="background:var(--basalt);border-radius:var(--r-panel);overflow:hidden;">
+      <ul class="checklist">
+        <li>
+          <input type="checkbox">
+          <div><strong style="color:var(--cream);">button_danger.tres uses PIXEARG_</strong><span class="fix-tag">font</span><br>Replace with Onest-Bold for all in-game destructive actions: save-slot delete, building demolish, quit without saving.</div>
+        </li>
+        <li>
+          <input type="checkbox">
+          <div><strong style="color:var(--cream);">Pause menu title uses inline PIXEARG_ font override</strong><span class="fix-tag">font</span><br>Remove the override. Use Onest-Bold @ 16 px (section header size). File: <code>pause_menu.tscn</code>.</div>
+        </li>
+        <li>
+          <input type="checkbox">
+          <div><strong style="color:var(--cream);">card_front.tres corner radius is 6 px — must be 4 px</strong><span class="fix-tag">radius</span><br><code>card_bgr_panel.tres</code> is 12 px (outer). Change <code>card_front.tres</code> to exactly <strong>4 px</strong> (<code>--r-card</code>). 4 px is the only correct value for all inset cards.</div>
+        </li>
+        <li>
+          <input type="checkbox">
+          <div><strong style="color:var(--cream);">Building details panel disabled-state colour #BD4A7B</strong><span class="fix-tag">colour</span><br>Purple/rose, unrelated to palette. Replace with Dust Shadow <code>#8A8A7A</code> @ 50% alpha.</div>
+        </li>
+        <li>
+          <input type="checkbox">
+          <div><strong style="color:var(--cream);">Hab residents inline StyleBoxFlat selected-state colour</strong><span class="fix-tag">colour</span><br>Duplicates logic that should be a shared constant. Document the canonical value (<code>#4AC1F2</code> @ 25% alpha) and extract to a shared theme or constant.</div>
+        </li>
+        <li>
+          <input type="checkbox">
+          <div><strong style="color:var(--cream);">Font size overrides scattered as raw integers in .gd files</strong><span class="fix-tag">font</span><br>Audit all raw font_size assignments. Every value must match one of: 9, 10, 12, 14, or 16 px.</div>
+        </li>
+        <li>
+          <input type="checkbox">
+          <div><strong style="color:var(--cream);">Dialog speaker name uses Color(1, 0.71, 0.318)</strong><span class="fix-tag">colour</span><br>Golden orange hardcoded value. Map to ARC Orange <code>#F28C38</code> from the palette.</div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+</div>
+
+<script src="styleguide_resources/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Moon Colony RTS — UI Style Guide · Components</title>
+<link rel="stylesheet" href="styleguide_resources/style.css">
+</head>
+<body data-page="components">
+<div class="layout">
+
+<!-- ── NAV ──────────────────────────────────────────────────────────── -->
+<nav>
+  <div class="brand">
+    <a class="brand-title" href="UI_STYLE_GUIDE.html">ARC / MOON COLONY</a>
+    <div class="brand-sub">UI Style Guide · 2026-04-03</div>
+  </div>
+
+  <h2>Introduction</h2>
+  <a href="UI_STYLE_GUIDE.html#introduction">Getting Started</a>
+
+  <h2>Foundations</h2>
+  <a href="foundations.html#typography">Typography</a>
+  <a href="foundations.html#colour">Colour</a>
+  <a href="foundations.html#spacing">Spacing &amp; Radius</a>
+
+  <h2>Components</h2>
+  <a href="#buttons">Buttons</a>
+  <a href="#sliders">Sliders</a>
+  <a href="#toggles">Toggles &amp; Checkboxes</a>
+  <a href="#tabs">Tab Buttons</a>
+  <a href="#panels">Panel Anatomy</a>
+  <a href="#progress">Progress Bars</a>
+
+  <h2>Panel Examples</h2>
+  <a href="UI_STYLE_GUIDE.html#ex-bottom-tab-bar">Bottom Tab Bar</a>
+  <a href="UI_STYLE_GUIDE.html#ex-pause">Pause Menu</a>
+  <a href="UI_STYLE_GUIDE.html#ex-settings">Settings Panel</a>
+  <a href="UI_STYLE_GUIDE.html#ex-building">Building Details</a>
+  <a href="UI_STYLE_GUIDE.html#ex-hab">Hab Module</a>
+  <a href="UI_STYLE_GUIDE.html#ex-unit">Unit Details</a>
+  <a href="UI_STYLE_GUIDE.html#ex-dialogue">Dialogue Box</a>
+  <a href="UI_STYLE_GUIDE.html#mission-colors">Mission Colors</a>
+  <a href="UI_STYLE_GUIDE.html#ex-mission-log">Mission Log</a>
+
+  <h2>Reference</h2>
+  <a href="UI_STYLE_GUIDE.html#quickref">Quick Reference</a>
+  <a href="UI_STYLE_GUIDE.html#fixes">Remediation</a>
+</nav>
+
+<!-- ── MAIN ─────────────────────────────────────────────────────────── -->
+<main>
+
+  <div class="section-label">UI Style Guide — Widget Library</div>
+  <h1>UI Style Guide · Components</h1>
+  <p class="page-meta">Button variants, sliders, toggles, tab controls, panel anatomy, and progress bars. Implement using the theme files listed here.</p>
+
+  <!-- ══ BUTTONS ═════════════════════════════════════════════════════ -->
+  <section id="buttons">
+    <h2>Buttons</h2>
+
+    <!-- Design principle -->
+    <div class="rule" style="margin-bottom:28px;">
+      <strong>Core principle — button size signals context, not importance.</strong><br>
+      Large buttons appear in menus where the user's whole attention is on a single decision.
+      Smaller buttons appear inside panels where the UI must share space with information.
+      The <em>primary</em> variant still gets visual priority at any size.
+    </div>
+
+    <!-- Size tiers -->
+    <h3>Size tiers</h3>
+    <div class="table-wrap" style="margin-bottom:24px;">
+      <table>
+        <thead><tr><th>Tier</th><th>Height</th><th>Font</th><th>Width</th><th>When to use</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>Large <code>.btn-lg</code></td>
+            <td>52 px</td>
+            <td>Onest-Bold 16 px</td>
+            <td>Full width</td>
+            <td>Single full-screen confirmation dialogs only (e.g. "Are you sure you want to delete this save?"). <strong>Not</strong> for pause menu — use <code>btn-md</code> there.</td>
+          </tr>
+          <tr>
+            <td>Medium <code>.btn-md</code></td>
+            <td>40 px</td>
+            <td>Onest-Bold 14 px</td>
+            <td>Full width</td>
+            <td>Secondary actions in pause / settings menus — Save, Settings, Quit.</td>
+          </tr>
+          <tr>
+            <td>Small <code>.btn-sm</code></td>
+            <td>32 px</td>
+            <td>Onest-Bold 12 px</td>
+            <td>Auto / hug</td>
+            <td>Standalone modal actions only — not for detail panels. Use <code>btn-xs</code> inside any panel that contains information.</td>
+          </tr>
+          <tr>
+            <td>Extra-small <code>.btn-xs</code></td>
+            <td>24 px</td>
+            <td>Onest-Bold 10 px</td>
+            <td>Auto / hug</td>
+            <td>All actions inside detail panels (Assign Worker, Unassign, Demolish) and inline card controls. Default for any button inside an information-dense panel.</td>
+          </tr>
+          <tr>
+            <td>Icon <code>.btn-icon</code></td>
+            <td>24 × 24 px</td>
+            <td>—</td>
+            <td>24 px</td>
+            <td>Panel close, row-level actions (×), icon-only controls.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Live demo -->
+    <h3>Live examples</h3>
+    <div style="background:var(--basalt);border-radius:var(--r-panel);padding:24px;margin-bottom:24px;">
+      <div style="margin-bottom:20px;">
+        <div class="font-tag" style="margin-bottom:10px;">Large — pause / modal CTA</div>
+        <div style="max-width:360px;display:flex;flex-direction:column;gap:10px;">
+          <button class="btn btn-md btn-primary">Resume Game</button>
+          <button class="btn btn-md btn-secondary">Save Game</button>
+          <button class="btn btn-md btn-secondary">Settings</button>
+          <button class="btn btn-md btn-danger">Quit to Desktop</button>
+        </div>
+      </div>
+      <hr>
+      <div style="margin-top:20px;margin-bottom:20px;">
+        <div class="font-tag" style="margin-bottom:10px;">Extra-small — detail panel actions (building, unit, hab)</div>
+        <div class="btn-demo-row">
+          <button class="btn btn-xs btn-secondary">Assign Worker</button>
+          <button class="btn btn-xs btn-ghost">Unassign</button>
+          <button class="btn btn-xs btn-danger">Demolish</button>
+        </div>
+      </div>
+      <hr>
+      <div style="margin-top:20px;">
+        <div class="font-tag" style="margin-bottom:10px;">Extra-small — inline card / list row actions</div>
+        <div class="btn-demo-row">
+          <button class="btn btn-xs btn-secondary">Assign Resident</button>
+          <button class="btn btn-xs btn-secondary">Wake</button>
+          <button class="btn btn-icon btn-danger"><svg viewBox="0 0 10 10" width="9" height="9" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M1 1l8 8M9 1L1 9"/></svg></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Button types & color tokens -->
+    <h3>Button types &amp; color tokens</h3>
+    <p style="margin-bottom:16px;">Each button type maps to a fixed set of color tokens. Never override these per-node unless a one-off accessibility need arises — the theme file is the single source of truth.</p>
+
+    <!-- Color token swatches -->
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;margin-bottom:24px;">
+
+      <!-- Primary -->
+      <div style="background:var(--basalt);border-radius:var(--r-card);padding:16px;">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
+          <button class="btn btn-md btn-primary" style="pointer-events:none;flex:1;">Resume Game</button>
+        </div>
+        <div style="font-size:11px;font-weight:700;color:var(--cream);margin-bottom:6px;">btn-primary · <code>button_primary.tres</code></div>
+        <div style="display:flex;flex-direction:column;gap:4px;font-size:10px;color:var(--dust-shadow);">
+          <div style="display:flex;align-items:center;gap:8px;"><span style="width:14px;height:14px;border-radius:2px;background:#EAE0CD;flex-shrink:0;"></span>Background — <code>--cream #EAE0CD</code></div>
+          <div style="display:flex;align-items:center;gap:8px;"><span style="width:14px;height:14px;border-radius:2px;background:#0D0D12;flex-shrink:0;"></span>Text — <code>#0D0D12 (void-black)</code></div>
+        </div>
+        <div style="margin-top:8px;font-size:10px;color:var(--dust-shadow);">Use for: <strong style="color:var(--cream);">single primary CTA per panel</strong> — Resume, Confirm, Build</div>
+      </div>
+
+      <!-- Secondary -->
+      <div style="background:var(--basalt);border-radius:var(--r-card);padding:16px;">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
+          <button class="btn btn-md btn-secondary" style="pointer-events:none;flex:1;">Save Game</button>
+        </div>
+        <div style="font-size:11px;font-weight:700;color:var(--cream);margin-bottom:6px;">btn-secondary · <code>button_secondary.tres</code></div>
+        <div style="display:flex;flex-direction:column;gap:4px;font-size:10px;color:var(--dust-shadow);">
+          <div style="display:flex;align-items:center;gap:8px;"><span style="width:14px;height:14px;border-radius:2px;background:#2A2F37;flex-shrink:0;"></span>Background — <code>--regolith-slate #2A2F37</code></div>
+          <div style="display:flex;align-items:center;gap:8px;"><span style="width:14px;height:14px;border-radius:2px;background:#EAE0CD;flex-shrink:0;"></span>Text — <code>--cream #EAE0CD</code></div>
+        </div>
+        <div style="margin-top:8px;font-size:10px;color:var(--dust-shadow);">Use for: <strong style="color:var(--cream);">secondary / nav actions</strong> — Settings, Back, Save, Unassign</div>
+      </div>
+
+      <!-- Danger -->
+      <div style="background:var(--basalt);border-radius:var(--r-card);padding:16px;">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
+          <button class="btn btn-md btn-danger" style="pointer-events:none;flex:1;">Quit to Desktop</button>
+        </div>
+        <div style="font-size:11px;font-weight:700;color:var(--cream);margin-bottom:6px;">btn-danger · <code>button_danger.tres</code></div>
+        <div style="display:flex;flex-direction:column;gap:4px;font-size:10px;color:var(--dust-shadow);">
+          <div style="display:flex;align-items:center;gap:8px;"><span style="width:14px;height:14px;border-radius:2px;background:rgba(242,54,73,.15);border:1px solid rgba(242,54,73,.35);flex-shrink:0;"></span>Background — <code>rgba(--arc-red, 0.15)</code></div>
+          <div style="display:flex;align-items:center;gap:8px;"><span style="width:14px;height:14px;border-radius:2px;background:#F23649;flex-shrink:0;"></span>Text — <code>--arc-red #F23649</code></div>
+          <div style="display:flex;align-items:center;gap:8px;"><span style="width:14px;height:14px;border-radius:2px;background:transparent;border:1px solid rgba(242,54,73,.35);flex-shrink:0;"></span>Border — <code>rgba(--arc-red, 0.35)</code></div>
+        </div>
+        <div style="margin-top:8px;font-size:10px;color:var(--dust-shadow);">Use for: <strong style="color:var(--cream);">destructive actions only</strong> — Quit, Demolish, Delete Save</div>
+      </div>
+
+      <!-- Ghost -->
+      <div style="background:var(--basalt);border-radius:var(--r-card);padding:16px;">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
+          <button class="btn btn-xs btn-ghost" style="pointer-events:none;flex:1;">Unassign</button>
+        </div>
+        <div style="font-size:11px;font-weight:700;color:var(--cream);margin-bottom:6px;">btn-ghost · <em>no separate .tres</em></div>
+        <div style="display:flex;flex-direction:column;gap:4px;font-size:10px;color:var(--dust-shadow);">
+          <div style="display:flex;align-items:center;gap:8px;"><span style="width:14px;height:14px;border-radius:2px;background:transparent;border:1px solid #2A2F37;flex-shrink:0;"></span>Background — transparent</div>
+          <div style="display:flex;align-items:center;gap:8px;"><span style="width:14px;height:14px;border-radius:2px;background:#8A8A7A;flex-shrink:0;"></span>Text — <code>--dust-shadow #8A8A7A</code></div>
+        </div>
+        <div style="margin-top:8px;font-size:10px;color:var(--dust-shadow);">Use for: <strong style="color:var(--cream);">dismissive / low-priority</strong> — Unassign, Cancel, Close. Applied via node-level override.</div>
+      </div>
+
+    </div>
+
+    <!-- Variant guide table -->
+    <h3>Variant guide</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Theme file</th><th>Variant</th><th>Font</th><th>BG token</th><th>Text token</th><th>Use case</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><code>button_primary.tres</code></td>
+            <td><code>.btn-primary</code></td>
+            <td>Onest-Bold</td>
+            <td><code>--cream</code> (#EAE0CD)</td>
+            <td><code>#0D0D12</code></td>
+            <td>Single primary CTA per panel (Resume, Confirm, Build)</td>
+          </tr>
+          <tr>
+            <td><code>button_secondary.tres</code></td>
+            <td><code>.btn-secondary</code></td>
+            <td>Onest-Bold</td>
+            <td><code>--regolith-slate</code> (#2A2F37)</td>
+            <td><code>--cream</code></td>
+            <td>Secondary / nav (Settings, Back, Save, Unassign, Wake)</td>
+          </tr>
+          <tr>
+            <td><code>button_danger.tres</code></td>
+            <td><code>.btn-danger</code></td>
+            <td>Onest-Bold</td>
+            <td><code>rgba(--arc-red, 0.15)</code></td>
+            <td><code>--arc-red</code> (#F23649)</td>
+            <td>Destructive actions (Delete, Quit without saving, Demolish)</td>
+          </tr>
+          <tr>
+            <td><code>button_big.tres</code></td>
+            <td>—</td>
+            <td>PIXEARG_</td>
+            <td>—</td>
+            <td>—</td>
+            <td><strong>Main menu list buttons only.</strong> Never use in-game.</td>
+          </tr>
+          <tr>
+            <td><code>button_card.tres</code></td>
+            <td><code>.btn-xs</code></td>
+            <td>Onest-Bold</td>
+            <td><code>--regolith-slate</code></td>
+            <td><code>--cream</code></td>
+            <td>Compact inline actions inside cards (xs size, 4 px radius)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Main menu button style -->
+    <h3 style="margin-top:32px;">Main menu button style</h3>
+    <p>The main menu uses a distinct button pattern — hard corners, border-only default state, blue-filled selected state. This style is <strong>exclusive to the main menu</strong> (before the game world is visible). Once gameplay begins, all UI reverts to the rounded 12 px panel system.</p>
+
+    <div style="display:flex;gap:32px;align-items:flex-start;flex-wrap:wrap;margin-bottom:24px;">
+
+      <!-- Live demo -->
+      <div style="background:#0D0E14;padding:32px 24px;border-radius:4px;display:flex;flex-direction:column;gap:10px;width:300px;">
+        <button class="btn-menu">New Game</button>
+        <button class="btn-menu">Load Game</button>
+        <button class="btn-menu is-selected">Settings</button>
+        <button class="btn-menu">Visit Website</button>
+      </div>
+
+      <!-- Annotations -->
+      <div style="display:flex;flex-direction:column;gap:10px;padding-top:8px;min-width:240px;">
+        <div class="anno-header">Annotations</div>
+        <div class="anno-row">
+          <div style="width:8px;height:8px;background:var(--regolith-slate);border-radius:1px;margin-top:3px;flex-shrink:0;"></div>
+          <div class="anno-text">Corner radius: <strong>2 px</strong>. Hard edges signal pre-game context. All in-game panels use 12 px.</div>
+        </div>
+        <div class="anno-row">
+          <div style="width:8px;height:8px;background:#363C4A;border-radius:1px;margin-top:3px;flex-shrink:0;"></div>
+          <div class="anno-text">Default: <code>#111318</code> fill + <code>#363C4A</code> border (1px). Text: Cream.</div>
+        </div>
+        <div class="anno-row">
+          <div style="width:8px;height:8px;background:#3A506E;border-radius:1px;margin-top:3px;flex-shrink:0;"></div>
+          <div class="anno-text">Selected / hover: <code>#3A506E</code> fill + <code>#6B9FD4</code> border. Text: Ghost White.</div>
+        </div>
+        <div class="anno-row">
+          <div class="anno-dot" style="background:var(--cream);"></div>
+          <div class="anno-text">Font: <code>PIXEARG_</code> 15 px. The only place this font is used for interactive buttons.</div>
+        </div>
+        <div class="anno-row">
+          <div class="anno-dot" style="background:var(--arc-cyan); opacity:.5;"></div>
+          <div class="anno-text">The blue selected state echoes ARC Cyan's role but uses a desaturated variant so it doesn't compete with in-game UI chrome.</div>
+        </div>
+      </div>
+    </div>
+    <div class="rule"><strong>Do not apply this style inside in-game panels.</strong> The hard-corner + outlined style is a pre-game context signal. Once the game world is visible, all interactive elements use the rounded panel system (<code>--r-panel: 12px</code>, <code>--r-card: 4px</code>).</div>
+
+    <!-- Button variant usage guide -->
+    <h3>Button variants — usage matrix</h3>
+    <p style="margin-bottom:16px;">Choose variants based on <strong>context</strong>, not importance. The design keeps button styles explicit and purposeful across different UI densities.</p>
+    <div class="table-wrap" style="margin-bottom:24px;">
+      <table>
+        <thead><tr><th>Variant</th><th>Theme file</th><th>Visual style</th><th>Use case</th><th>Example contexts</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><code>button_big</code></td>
+            <td><code>button_big.tres</code></td>
+            <td>Textured, pixelated (PIXEARG font, 14 px)</td>
+            <td><strong>Main menu only.</strong> Each button gets full attention. Pixel-art aesthetic signals pre-game state.</td>
+            <td>Main menu (New Game, Load, Settings), Difficulty selection, Scenario picker</td>
+          </tr>
+          <tr>
+            <td><code>button_primary</code></td>
+            <td><code>button_primary.tres</code></td>
+            <td>Cream fill, rounded corners (Onest-Bold 12 px)</td>
+            <td><strong>Pause menu and full-screen modals.</strong> Single-decision panels with breathing room.</td>
+            <td>Pause menu (Resume, Save, Settings, Quit), Confirmation dialogs, Mission log actions</td>
+          </tr>
+          <tr>
+            <td><code>panel_button_primary</code></td>
+            <td><code>panel_button_primary.tres</code></td>
+            <td>Dark slate with magenta accent on hover (Onest-Bold 10 px)</td>
+            <td><strong>Detail panels (building, unit, hab).</strong> Compact, information-dense UI where buttons share space with data.</td>
+            <td>Building details panel (Repair), Hab module (Assign Resident), Bottom tab bar actions</td>
+          </tr>
+          <tr>
+            <td><code>button_secondary</code></td>
+            <td><code>button_secondary.tres</code></td>
+            <td>Slate background, neutral (Onest-Bold 12 px)</td>
+            <td><strong>Secondary actions in pause menu.</strong> Lower visual weight than primary.</td>
+            <td>Pause menu (Save Game, Settings), Confirmation dialogs (Cancel, Decline)</td>
+          </tr>
+          <tr>
+            <td><code>button_danger</code></td>
+            <td><code>button_danger.tres</code></td>
+            <td>Red tint, outlined (Onest-Bold 12 px)</td>
+            <td><strong>Destructive actions in pause/modal.</strong> Warns user before permanent loss.</td>
+            <td>Pause menu (Quit to Desktop), Delete save slot, Confirm demolition (full-screen dialog only)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="rule"><strong>Inline panel actions use btn-xs only.</strong> Never use full-width buttons inside detail panels. Size signals context: large buttons = menu focus, small buttons = data browsing. Demolish, Unassign, and similar panel actions are <code>btn-xs btn-danger</code> (red text on transparent), not full-width <code>button_danger.tres</code>.</div>
+
+    <div class="see-also"><strong>In context</strong> — see buttons assembled in real panels: <a href="UI_STYLE_GUIDE.html#ex-pause">Pause Menu</a>, <a href="UI_STYLE_GUIDE.html#ex-building">Building Details</a>, <a href="UI_STYLE_GUIDE.html#ex-hab">Hab Module</a></div>
+  </section>
+
+  <!-- ══ SLIDERS ═════════════════════════════════════════════════════ -->
+  <section id="sliders">
+    <h2>Sliders &amp; Range Controls</h2>
+
+    <p>Sliders let users adjust continuous values (volume, brightness). Soviet-functional style uses minimal visual noise — a simple track and highlighted grab area.</p>
+
+    <h3>Anatomy</h3>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px;margin-bottom:24px;">
+      <div style="background:var(--basalt);border-radius:var(--r-panel);padding:20px;">
+        <div style="margin-bottom:16px;">
+          <div style="font-size:10px;color:var(--dust-shadow);text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px;">Master volume</div>
+          <div style="display:flex;align-items:center;gap:12px;">
+            <input type="range" class="stg-range" id="demo-slider" min="0" max="100" value="65" style="flex:1;"
+              oninput="document.getElementById('demo-slider-val').textContent=this.value+'%'">
+            <div id="demo-slider-val" style="font-family:monospace;font-size:10px;color:var(--arc-cyan);width:28px;text-align:right;">65%</div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h4 style="font-size:12px;font-weight:700;color:var(--cream);margin-bottom:12px;">Key features</h4>
+        <ul style="list-style:none;padding:0;font-size:11px;color:var(--dust-shadow);">
+          <li style="margin-bottom:6px;"><strong style="color:var(--cream);">Track:</strong> 4 px height, light tint <code>rgba(255,255,255,.08)</code>, rounded caps</li>
+          <li style="margin-bottom:6px;"><strong style="color:var(--cream);">Fill:</strong> ARC Cyan <code>#4AC1F2</code>, shows progress from left to right</li>
+          <li style="margin-bottom:6px;"><strong style="color:var(--cream);">Grabber circle:</strong> 14 px diameter, cyan, centered on the fill. Includes subtle shadow ring <code>rgba(74,193,242,.15)</code> for depth. Cursor changes to <code>grab</code> on hover.</li>
+          <li style="margin-bottom:6px;"><strong style="color:var(--cream);">Label + value:</strong> 9/10 px text, label on left, value (%) on right in monospace</li>
+          <li style="margin-bottom:6px;"><strong style="color:var(--cream);">Theme resource:</strong> <code>slider_volume.tres</code> (HSlider node)</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>Usage rules</h3>
+    <ul style="font-size:12px;color:var(--dust-shadow);">
+      <li style="margin-bottom:10px;"><strong style="color:var(--cream);">Always show the current value.</strong> Display as percentage or absolute number (0–100) in monospace to the right of the track.</li>
+      <li style="margin-bottom:10px;"><strong style="color:var(--cream);">Use only in settings panels.</strong> Sliders are for configurations the player tweaks once. Not for in-game control (building power, research allocation, etc.) — use buttons or direct input for those.</li>
+      <li style="margin-bottom:10px;"><strong style="color:var(--cream);">Label at 10 px, uppercase.</strong> "Master Volume", "Music Volume", "Effects Volume" — same style as other setting labels.</li>
+      <li style="margin-bottom:10px;"><strong style="color:var(--cream);">Pair with a label.</strong> Never display a slider without identifying what it controls.</li>
+      <li style="margin-bottom:10px;"><strong style="color:var(--cream);">Maintain consistent width.</strong> All sliders in settings are full-width within their container (typically 240 px in a settings panel).</li>
+    </ul>
+
+    <div class="rule"><strong>Avoid horizontal scroll &amp; full-panel sliders.</strong> A slider that runs the full width of the panel competes with panel padding. Leave 12 px padding on left/right; slider track itself runs ~216 px (in a 240 px wide settings panel).</div>
+
+    <div class="see-also"><strong>In context</strong> — see sliders in the Settings panel: <a href="UI_STYLE_GUIDE.html#ex-settings">Settings Panel</a></div>
+  </section>
+
+  <!-- ══ TOGGLES ═════════════════════════════════════════════════════ -->
+  <section id="toggles">
+    <h2>Toggles &amp; Checkboxes</h2>
+
+    <p>Two toggle styles for in-game use: <strong>inline toggle switches</strong> (minimal) for settings rows, and <strong>checkbox buttons</strong> (CheckButton theme) for tab-like selection within panels.</p>
+
+    <h3>Toggle switch (settings row)</h3>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px;margin-bottom:24px;">
+      <div style="background:var(--basalt);border-radius:var(--r-panel);padding:20px;">
+        <div style="display:flex;align-items:center;justify-content:space-between;">
+          <div>
+            <div style="font-size:12px;font-weight:700;color:var(--cream);margin-bottom:2px;">Fullscreen mode</div>
+            <div style="font-size:10px;color:var(--dust-shadow);">Windowed or borderless</div>
+          </div>
+          <div style="position:relative;width:36px;height:20px;flex-shrink:0;cursor:pointer;">
+            <div style="position:absolute;inset:0;background:rgba(74,193,242,.2);border-radius:10px;"></div>
+            <div style="position:absolute;left:17px;top:3px;width:14px;height:14px;border-radius:50%;background:#4AC1F2;"></div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h4 style="font-size:12px;font-weight:700;color:var(--cream);margin-bottom:12px;">Toggle switch anatomy</h4>
+        <ul style="list-style:none;padding:0;font-size:11px;color:var(--dust-shadow);">
+          <li style="margin-bottom:6px;"><strong style="color:var(--cream);">Container:</strong> 36 px wide × 20 px tall, rounded pill (border-radius 10 px)</li>
+          <li style="margin-bottom:6px;"><strong style="color:var(--cream);">Off state:</strong> Slate background <code>#2A2F37</code>, gray knob on left</li>
+          <li style="margin-bottom:6px;"><strong style="color:var(--cream);">On state:</strong> Cyan tint <code>rgba(74,193,242,.2)</code>, cyan knob on right</li>
+          <li style="margin-bottom:6px;"><strong style="color:var(--cream);">Knob:</strong> 14 px circle, smooth 100ms transition on toggle</li>
+          <li style="margin-bottom:6px;"><strong style="color:var(--cream);">Theme:</strong> HTML toggle via <code>.stg-toggle</code> + <code>.stg-pill</code> (CSS-based)</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>Checkbox button (tab-like selection)</h3>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px;margin-bottom:24px;">
+      <div style="background:var(--basalt);border-radius:var(--r-panel);padding:20px;">
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px;">
+          <button style="background:transparent;border:none;cursor:pointer;font-size:10px;font-weight:700;color:var(--dust-shadow);padding:5px 0;border-radius:3px;font-family:inherit;">BASICS</button>
+          <button style="background:rgba(74,193,242,.1);border:none;cursor:pointer;font-size:10px;font-weight:700;color:#4AC1F2;padding:5px 0;border-radius:3px;font-family:inherit;">ADVANCED</button>
+          <button style="background:transparent;border:none;cursor:pointer;font-size:10px;font-weight:700;color:var(--dust-shadow);padding:5px 0;border-radius:3px;font-family:inherit;">DEBUG</button>
+        </div>
+        <div style="font-size:9px;color:var(--dust-shadow);">Mission Log tabs example</div>
+      </div>
+
+      <div>
+        <h4 style="font-size:12px;font-weight:700;color:var(--cream);margin-bottom:12px;">CheckButton usage (Godot)</h4>
+        <ul style="list-style:none;padding:0;font-size:11px;color:var(--dust-shadow);">
+          <li style="margin-bottom:6px;"><strong style="color:var(--cream);">Node type:</strong> <code>CheckButton</code> (built-in Godot control)</li>
+          <li style="margin-bottom:6px;"><strong style="color:var(--cream);">Theme:</strong> <code>button_toggle.tres</code> applies to the entire button</li>
+          <li style="margin-bottom:6px;"><strong style="color:var(--cream);">Inactive:</strong> Dust Shadow text, no background</li>
+          <li style="margin-bottom:6px;"><strong style="color:var(--cream);">Active (pressed):</strong> Cyan text + light cyan background, subtle rounded corners</li>
+          <li style="margin-bottom:6px;"><strong style="color:var(--cream);">Font:</strong> Onest-Bold 10 px, uppercase with 0.07 em letter-spacing</li>
+          <li style="margin-bottom:6px;"><strong style="color:var(--cream);">Spacing:</strong> Arrange in a horizontal row inside a VBox with 2–3 px padding + background tint</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>When to use each toggle type</h3>
+    <div class="table-wrap" style="margin-bottom:24px;">
+      <table>
+        <thead><tr><th>Type</th><th>Theme</th><th>Best for</th><th>Avoid</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>Toggle switch</td>
+            <td><code>.stg-toggle</code> (CSS)</td>
+            <td>Binary on/off settings in settings panel. One-line config rows with label + toggle.</td>
+            <td>In-game controls, mission log tabs, building mode selection — use CheckButton instead.</td>
+          </tr>
+          <tr>
+            <td>CheckButton (toggle)</td>
+            <td><code>button_toggle.tres</code></td>
+            <td>Multi-option tab selection: Mission Log tabs (All / Active / Complete), Building list filters, Mode selection.</td>
+            <td>Settings toggles — use toggle switch. Use as a decorative check icon — use icon font instead.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="rule"><strong>Toggle buttons are not radio buttons.</strong> CheckButton with <code>button_toggle.tres</code> can be used for exclusive selection (mission tabs) but the visual does not distinguish exclusivity. If users need to toggle between three options and only one can be active, document this behavior in code comments or preserve the state on close.</div>
+
+    <div class="see-also"><strong>In context</strong> — see toggles in the Settings panel: <a href="UI_STYLE_GUIDE.html#ex-settings">Settings Panel</a></div>
+  </section>
+
+  <!-- ══ TAB BUTTONS ═════════════════════════════════════════════════ -->
+  <section id="tabs">
+    <h2>Tab Buttons &amp; Segmented Selection</h2>
+
+    <p>Tab-like controls appear in mission log, building list filters, and mode selection. Use <code>CheckButton</code> with <code>button_toggle.tres</code> arranged horizontally, or apply <code>.mission-tabs</code> CSS class for web.</p>
+
+    <h3>Visual anatomy</h3>
+    <div style="background:var(--basalt);border-radius:var(--r-panel);padding:20px;margin-bottom:24px;">
+      <div style="margin-bottom:24px;">
+        <div style="font-size:10px;color:var(--dust-shadow);text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px;">Mission Log</div>
+        <div class="mission-tabs" id="tab-demo">
+          <button class="mission-tab">ALL</button>
+          <button class="mission-tab is-active">ACTIVE</button>
+          <button class="mission-tab">COMPLETE</button>
+        </div>
+      </div>
+      <script>
+        document.getElementById('tab-demo').addEventListener('click', e => {
+          const tab = e.target.closest('.mission-tab');
+          if (!tab) return;
+          document.querySelectorAll('#tab-demo .mission-tab').forEach(t => t.classList.remove('is-active'));
+          tab.classList.add('is-active');
+        });
+      </script>
+
+      <h4 style="font-size:12px;font-weight:700;color:var(--cream);margin-bottom:8px;">Visual breakdown</h4>
+      <ul style="list-style:none;padding:0;font-size:11px;color:var(--dust-shadow);">
+        <li style="margin-bottom:6px;"><strong style="color:var(--cream);">Container:</strong> Subtle background tint <code>rgba(255,255,255,.03)</code>, 4 px border-radius, 3 px padding inside</li>
+        <li style="margin-bottom:6px;"><strong style="color:var(--cream);">Inactive tab:</strong> Dust Shadow text <code>#8A8A7A</code>, transparent background, 3 px corner radius</li>
+        <li style="margin-bottom:6px;"><strong style="color:var(--cream);">Active tab:</strong> Cyan text <code>#4AC1F2</code>, 10% cyan tint background, smooth color transition (120 ms)</li>
+        <li style="margin-bottom:6px;"><strong style="color:var(--cream);">Font:</strong> Onest-Bold 10 px, uppercase, 0.07 em letter-spacing</li>
+        <li style="margin-bottom:6px;"><strong style="color:var(--cream);">Gap between tabs:</strong> 2 px (creates visual separation without borders)</li>
+      </ul>
+    </div>
+
+    <h3>Godot implementation</h3>
+    <div style="background:rgba(74,193,242,.05);border-left:3px solid #4AC1F2;border-radius:0 4px 4px 0;padding:12px 16px;font-size:11px;color:var(--cream);margin-bottom:24px;">
+      <strong style="color:#4AC1F2;">Structure:</strong> Use <code>HBoxContainer</code> with spacing set to 2 px. Add <code>CheckButton</code> children with theme <code>button_toggle.tres</code>. Use <code>group</code> property (without radio exclusivity) to manage visibility of content panels tied to each tab. Connect <code>toggled(bool)</code> signal to tab switching logic.
+    </div>
+
+    <h3>Usage guidelines</h3>
+    <ul style="font-size:12px;color:var(--dust-shadow);">
+      <li style="margin-bottom:10px;"><strong style="color:var(--cream);">Use when space is limited.</strong> Tabs pack 3–4 filter/mode options into one row. Prefer tabs over a dropdown for &lt; 5 options visible at once.</li>
+      <li style="margin-bottom:10px;"><strong style="color:var(--cream);">Label each tab clearly.</strong> "ALL", "ACTIVE", "COMPLETE" (mission log) or "FILTER_A", "FILTER_B" (building list). Keep labels short (≤ 10 chars).</li>
+      <li style="margin-bottom:10px;"><strong style="color:var(--cream);">Only one tab active at a time.</strong> Use code logic to enforce mutual exclusion, not Godot's RadioButton (which has different styling).</li>
+      <li style="margin-bottom:10px;"><strong style="color:var(--cream);">Align above the content they filter.</strong> Tabs sit at the top of a panel. Content below changes when user clicks a different tab.</li>
+      <li style="margin-bottom:10px;"><strong style="color:var(--cream);">Keyboard navigation: Tab key cycles tabs.</strong> Bind arrow keys (← / →) to switch tabs if needed.</li>
+    </ul>
+
+    <div class="rule"><strong>Tab buttons are not standalone buttons.</strong> Never use <code>button_toggle.tres</code> for a single on/off action. For binary toggles, use a toggle switch (<code>.stg-toggle</code>). Tabs are always grouped in a container with multiple options.</div>
+
+    <div class="see-also"><strong>In context</strong> — see tabs filtering content in the Mission Log: <a href="UI_STYLE_GUIDE.html#ex-mission-log">Mission Log</a></div>
+  </section>
+
+  <!-- ══ PANEL ANATOMY ═══════════════════════════════════════════════ -->
+  <section id="panels">
+    <h2>Panel Anatomy</h2>
+
+    <p>All panels share the same three-layer structure. Padding and separation values differ between modal (full-attention) and compact (in-game) contexts.</p>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:32px;">
+
+      <!-- Modal -->
+      <div>
+        <h3 style="margin-bottom:12px;">Modal / menu</h3>
+        <div class="anatomy-demo" style="background:var(--basalt);">
+          <div class="anatomy-label">PanelContainer · card_bgr_panel.tres · r=12px</div>
+          <div class="anatomy-margin" style="margin:20px;">
+            <div class="anatomy-label">MarginContainer · 20px all sides</div>
+            <div class="anatomy-vbox" style="display:flex;flex-direction:column;gap:12px;padding:8px;">
+              <div class="anatomy-label">VBoxContainer · sep=12px</div>
+              <div style="font-size:12px;color:var(--cream);padding:4px 0;">Title label — 16px</div>
+              <div class="demo-divider"></div>
+              <button class="btn btn-lg btn-primary" style="pointer-events:none;">Primary action</button>
+              <button class="btn btn-md btn-secondary" style="pointer-events:none;">Secondary action</button>
+            </div>
+          </div>
+        </div>
+        <p style="margin-top:8px;font-size:11px;">Padding: 20 px · Sep: 12 px</p>
+      </div>
+
+      <!-- Compact -->
+      <div>
+        <h3 style="margin-bottom:12px;">In-game panel (compact)</h3>
+        <div class="anatomy-demo" style="background:var(--basalt);">
+          <div class="anatomy-label">PanelContainer · card_bgr_panel.tres · r=12px</div>
+          <div class="anatomy-margin" style="margin:12px;">
+            <div class="anatomy-label">MarginContainer · 12px all sides</div>
+            <div class="anatomy-vbox" style="display:flex;flex-direction:column;gap:6px;padding:8px;">
+              <div class="anatomy-label">VBoxContainer · sep=6–8px</div>
+              <div style="font-size:14px;color:var(--cream);font-weight:700;">Building Name</div>
+              <div class="status-lbl">Status info · 10px</div>
+              <div style="background:var(--obsidian);border:1px solid var(--regolith-slate);border-radius:4px;padding:6px;font-size:9px;color:var(--dust-shadow);">Inset card · r=4px · 1px border</div>
+              <div style="display:flex;gap:8px;">
+                <button class="btn btn-sm btn-primary" style="pointer-events:none;flex:1;">Assign</button>
+                <button class="btn btn-sm btn-secondary" style="pointer-events:none;flex:1;">Unassign</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p style="margin-top:8px;font-size:11px;">Padding: 12 px · Sep: 6–8 px</p>
+      </div>
+
+    </div>
+
+    <!-- Detail panel philosophy -->
+    <div style="background:var(--obsidian);border:1px solid var(--regolith-slate);border-radius:var(--r-panel);padding:20px;margin-bottom:16px;">
+      <h3 style="margin-bottom:12px;color:var(--arc-cyan);">Detail panel philosophy — quick overview, main tasks first</h3>
+      <p style="margin-bottom:12px;">A player opening a detail panel is scanning, not reading. The panel must answer three questions instantly:</p>
+      <ol style="color:var(--cream);font-size:13px;display:flex;flex-direction:column;gap:8px;margin-bottom:16px;">
+        <li><strong style="color:var(--arc-cyan);">1. What is this?</strong> — Name + icon in the header. Prominent, always visible.</li>
+        <li><strong style="color:var(--arc-cyan);">2. Is there a problem?</strong> — Alert banner, status colour, warning text. Surfaces urgency before anything else.</li>
+        <li><strong style="color:var(--arc-cyan);">3. What can I do?</strong> — One primary action button, immediately visible without scrolling.</li>
+      </ol>
+      <p style="margin-bottom:0;">Everything else (stats, assignments, secondary info) fills the rest of the panel in descending priority. All action buttons in detail panels use <code>btn-xs</code> (24px) — never <code>btn-sm</code> or larger. Use <code>btn-secondary</code> for the main action and <code>btn-ghost</code> for dismissive ones; the data should draw the eye, not the buttons.</p>
+    </div>
+
+    <div class="rule">
+      <strong>Vertical order inside a detail panel:</strong>
+      Header (name + icon) → Alert banner (if any) → Stats at a glance → <strong>Primary action</strong> → Secondary/optional info → Fine-print metadata.
+    </div>
+
+    <div class="see-also"><strong>In context</strong> — see panel anatomy applied in real panels: <a href="UI_STYLE_GUIDE.html#ex-building">Building Details</a>, <a href="UI_STYLE_GUIDE.html#ex-hab">Hab Module</a>, <a href="UI_STYLE_GUIDE.html#ex-unit">Unit Details</a></div>
+  </section>
+
+  <!-- ══ PROGRESS BARS ═══════════════════════════════════════════════ -->
+  <section id="progress">
+    <h2>Progress Bars</h2>
+    <p>Height: 4 px · Radius: 2 px · Track: <code>rgba(255,255,255,.08)</code></p>
+    <div style="background:var(--basalt);border-radius:var(--r-panel);padding:20px;display:flex;flex-direction:column;gap:10px;max-width:320px;">
+      <div class="progress-wrap">
+        <div class="progress-labels"><span class="key">Health</span><span class="val" style="color:var(--arc-lime);">Healthy</span></div>
+        <div class="progress-track"><div class="progress-fill fill-health" style="width:88%;"></div></div>
+      </div>
+      <div class="progress-wrap">
+        <div class="progress-labels"><span class="key">Oxygen</span><span class="val" style="color:var(--arc-cyan);">Stable</span></div>
+        <div class="progress-track"><div class="progress-fill fill-oxygen" style="width:72%;"></div></div>
+      </div>
+      <div class="progress-wrap">
+        <div class="progress-labels"><span class="key">Hunger</span><span class="val" style="color:var(--arc-orange);">Well fed</span></div>
+        <div class="progress-track"><div class="progress-fill fill-hunger" style="width:60%;"></div></div>
+      </div>
+      <div class="progress-wrap">
+        <div class="progress-labels"><span class="key">Energy</span><span class="val" style="color:var(--arc-yellow);">Rested</span></div>
+        <div class="progress-track"><div class="progress-fill fill-energy" style="width:80%;"></div></div>
+      </div>
+      <div class="progress-wrap">
+        <div class="progress-labels"><span class="key">Health</span><span class="val" style="color:var(--arc-red);">Critical</span></div>
+        <div class="progress-track"><div class="progress-fill fill-warn" style="width:12%;"></div></div>
+      </div>
+    </div>
+
+    <div class="see-also"><strong>In context</strong> — see progress bars in colonist and hab panels: <a href="UI_STYLE_GUIDE.html#ex-unit">Unit Details</a>, <a href="UI_STYLE_GUIDE.html#ex-hab">Hab Module</a></div>
+  </section>
+
+</main>
+</div>
+<script src="styleguide_resources/main.js" defer></script>
+</body>
+</html>

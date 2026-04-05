@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Moon Colony RTS — UI Style Guide · Foundations</title>
+<link rel="stylesheet" href="styleguide_resources/style.css">
+</head>
+<body data-page="foundations">
+<div class="layout">
+
+<!-- ── NAV ──────────────────────────────────────────────────────────── -->
+<nav>
+  <div class="brand">
+    <a class="brand-title" href="UI_STYLE_GUIDE.html">ARC / MOON COLONY</a>
+    <div class="brand-sub">UI Style Guide · 2026-04-03</div>
+  </div>
+
+  <h2>Introduction</h2>
+  <a href="UI_STYLE_GUIDE.html#introduction">Getting Started</a>
+
+  <h2>Foundations</h2>
+  <a href="#typography">Typography</a>
+  <a href="#colour">Colour</a>
+  <a href="#spacing">Spacing &amp; Radius</a>
+
+  <h2>Components</h2>
+  <a href="components.html#buttons">Buttons</a>
+  <a href="components.html#sliders">Sliders</a>
+  <a href="components.html#toggles">Toggles &amp; Checkboxes</a>
+  <a href="components.html#tabs">Tab Buttons</a>
+  <a href="components.html#panels">Panel Anatomy</a>
+  <a href="components.html#progress">Progress Bars</a>
+
+  <h2>Panel Examples</h2>
+  <a href="UI_STYLE_GUIDE.html#ex-bottom-tab-bar">Bottom Tab Bar</a>
+  <a href="UI_STYLE_GUIDE.html#ex-pause">Pause Menu</a>
+  <a href="UI_STYLE_GUIDE.html#ex-settings">Settings Panel</a>
+  <a href="UI_STYLE_GUIDE.html#ex-building">Building Details</a>
+  <a href="UI_STYLE_GUIDE.html#ex-hab">Hab Module</a>
+  <a href="UI_STYLE_GUIDE.html#ex-unit">Unit Details</a>
+  <a href="UI_STYLE_GUIDE.html#ex-dialogue">Dialogue Box</a>
+  <a href="UI_STYLE_GUIDE.html#mission-colors">Mission Colors</a>
+  <a href="UI_STYLE_GUIDE.html#ex-mission-log">Mission Log</a>
+
+  <h2>Reference</h2>
+  <a href="UI_STYLE_GUIDE.html#quickref">Quick Reference</a>
+  <a href="UI_STYLE_GUIDE.html#fixes">Remediation</a>
+</nav>
+
+<!-- ── MAIN ─────────────────────────────────────────────────────────── -->
+<main>
+
+  <div class="section-label">UI Style Guide — Tokens &amp; Scale</div>
+  <h1>UI Style Guide · Foundations</h1>
+  <p class="page-meta">Primitive &amp; semantic tokens, typography scale, colour system, and spacing rules. These foundations underpin every component and panel.</p>
+
+  <!-- ══ TYPOGRAPHY ══════════════════════════════════════════════════ -->
+  <section id="typography">
+    <h2>Typography</h2>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Font file</th><th>Where used</th><th>Sizes</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><code>Orbit-Regular-Headers.ttf</code></td>
+            <td>Main menu big title only</td>
+            <td>48 px</td>
+          </tr>
+          <tr>
+            <td><code>PIXEARG_.TTF</code></td>
+            <td>Main menu buttons &amp; labels only</td>
+            <td>14–16 px</td>
+          </tr>
+          <tr>
+            <td><code>Onest-Bold.ttf</code></td>
+            <td>Every in-game panel, tooltip, dialog, pause menu body</td>
+            <td>9–16 px</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="rule"><strong>Rule:</strong> Pixel font (<code>PIXEARG_</code>) is main menu only. Once the game world is visible — building panels, unit details, pause menu, hab display, dialogs — use <strong>Onest-Bold</strong>.</div>
+
+    <h3>Size scale</h3>
+    <div class="font-specimen">
+      <div class="font-tag">Onest-Bold / in-game</div>
+      <div class="spec-row">
+        <div class="spec-meta">16 px · Section header</div>
+        <div class="spec-sample" style="font-size:16px;font-weight:700;">Hab Module Alpha</div>
+      </div>
+      <div class="spec-row">
+        <div class="spec-meta">14 px · Sub-header</div>
+        <div class="spec-sample" style="font-size:14px;font-weight:700;">Colonist Assignment</div>
+      </div>
+      <div class="spec-row">
+        <div class="spec-meta">12 px · Body / button</div>
+        <div class="spec-sample" style="font-size:12px;">Assign worker · Power: 4.2 kW</div>
+      </div>
+      <div class="spec-row">
+        <div class="spec-meta">10 px · Secondary</div>
+        <div class="spec-sample" style="font-size:10px;color:var(--dust-shadow);">O2: Oxygen Gen A · 3 / 4 slots filled</div>
+      </div>
+      <div class="spec-row">
+        <div class="spec-meta">9 px · Fine print</div>
+        <div class="spec-sample" style="font-size:9px;color:var(--dust-shadow);">Power: 12.5 kW · Sleeping · 30s</div>
+      </div>
+    </div>
+
+    <div class="font-specimen">
+      <div class="font-tag">PIXEARG_ / main menu only</div>
+      <div class="spec-row">
+        <div class="spec-meta">16 px · Button</div>
+        <div class="spec-sample" style="font-size:16px;letter-spacing:.04em;font-family:'PIXEARG',monospace;">NEW GAME</div>
+      </div>
+      <div class="spec-row">
+        <div class="spec-meta">14 px · Label</div>
+        <div class="spec-sample" style="font-size:14px;color:var(--dust-shadow);letter-spacing:.04em;font-family:'PIXEARG',monospace;">LOAD GAME</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ COLOUR ══════════════════════════════════════════════════════ -->
+  <section id="colour">
+    <h2>Colour</h2>
+    <p>Two layers: <strong>primitive tokens</strong> hold raw hex values with material/visual names — no intent implied. <strong>Semantic tokens</strong> map a role onto a primitive. Components only ever reference the semantic layer; they never touch a primitive or hardcode a hex value. Change a primitive hex and the whole system ripples.</p>
+
+    <h3>Primitive palette</h3>
+    <p style="margin-bottom:8px;">Material and visual names only — a primitive name says <em>what it looks like</em>, never <em>where it is used</em>.</p>
+
+    <div class="panel-section-label" style="margin-bottom:8px;">Darks</div>
+    <div class="swatches" style="margin-bottom:16px;">
+      <div class="swatch"><div class="swatch-color" style="background:var(--void-black);"></div><div class="swatch-info"><span class="swatch-name">--void-black</span><span class="swatch-hex">#0A0A10</span></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:var(--basalt);"></div><div class="swatch-info"><span class="swatch-name">--basalt</span><span class="swatch-hex">#151618</span></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:var(--obsidian);"></div><div class="swatch-info"><span class="swatch-name">--obsidian</span><span class="swatch-hex">#1E1F21</span></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:var(--lunar-dust);"></div><div class="swatch-info"><span class="swatch-name">--lunar-dust</span><span class="swatch-hex">#1F232A</span></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:var(--regolith-slate);"></div><div class="swatch-info"><span class="swatch-name">--regolith-slate</span><span class="swatch-hex">#2A2F37</span></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:var(--crater-beige);"></div><div class="swatch-info"><span class="swatch-name">--crater-beige</span><span class="swatch-hex">#3A3A2E</span></div></div>
+    </div>
+
+    <div class="panel-section-label" style="margin-bottom:8px;">Neutrals</div>
+    <div class="swatches" style="margin-bottom:16px;">
+      <div class="swatch"><div class="swatch-color" style="background:var(--dust-shadow);"></div><div class="swatch-info"><span class="swatch-name">--dust-shadow</span><span class="swatch-hex">#8A8A7A</span></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:var(--cream);"></div><div class="swatch-info"><span class="swatch-name">--cream</span><span class="swatch-hex">#EAE0CD</span></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:var(--ghost-white);"></div><div class="swatch-info"><span class="swatch-name">--ghost-white</span><span class="swatch-hex">#F5F5F0</span></div></div>
+    </div>
+
+    <div class="panel-section-label" style="margin-bottom:8px;">Accents</div>
+    <div class="swatches" style="margin-bottom:32px;">
+      <div class="swatch"><div class="swatch-color" style="background:var(--arc-cyan);"></div><div class="swatch-info"><span class="swatch-name">--arc-cyan</span><span class="swatch-hex">#4AC1F2</span></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:var(--arc-lime);"></div><div class="swatch-info"><span class="swatch-name">--arc-lime</span><span class="swatch-hex">#7EEB92</span></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:var(--arc-yellow);"></div><div class="swatch-info"><span class="swatch-name">--arc-yellow</span><span class="swatch-hex">#F8E870</span></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:var(--arc-orange);"></div><div class="swatch-info"><span class="swatch-name">--arc-orange</span><span class="swatch-hex">#F28C38</span></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:var(--arc-red);"></div><div class="swatch-info"><span class="swatch-name">--arc-red</span><span class="swatch-hex">#F23649</span></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:var(--fern-green);"></div><div class="swatch-info"><span class="swatch-name">--fern-green</span><span class="swatch-hex">#4CAF50</span></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:var(--plasma-purple);"></div><div class="swatch-info"><span class="swatch-name">--plasma-purple</span><span class="swatch-hex">#A855F7</span></div></div>
+    </div>
+
+    <h3>Semantic tokens</h3>
+    <p>Map a design role onto a primitive. Components reference <code>--interactive</code>, never <code>--arc-cyan</code>. To retheme, change the primitive; all semantics follow.</p>
+
+    <div class="table-wrap" style="margin-bottom:8px;">
+      <table>
+        <thead><tr><th>Semantic token</th><th>→ Primitive</th><th></th><th>Role</th></tr></thead>
+        <tbody>
+          <tr><td colspan="4" style="background:rgba(255,255,255,.03);color:var(--dust-shadow);font-size:9px;text-transform:uppercase;letter-spacing:.1em;">Surfaces</td></tr>
+          <tr><td><code>--surface-base</code></td><td><code>--void-black</code></td><td><span style="display:inline-block;width:14px;height:14px;background:var(--void-black);border-radius:2px;border:1px solid rgba(255,255,255,.1);vertical-align:middle;"></span></td><td>Deepest background, modal overlay</td></tr>
+          <tr><td><code>--surface-raised</code></td><td><code>--basalt</code></td><td><span style="display:inline-block;width:14px;height:14px;background:var(--basalt);border-radius:2px;border:1px solid rgba(255,255,255,.1);vertical-align:middle;"></span></td><td>All panel / HUD backgrounds</td></tr>
+          <tr><td><code>--surface-inset</code></td><td><code>--obsidian</code></td><td><span style="display:inline-block;width:14px;height:14px;background:var(--obsidian);border-radius:2px;border:1px solid rgba(255,255,255,.1);vertical-align:middle;"></span></td><td>Inset cards, list rows, code blocks</td></tr>
+          <tr><td><code>--surface-border</code></td><td><code>--regolith-slate</code></td><td><span style="display:inline-block;width:14px;height:14px;background:var(--regolith-slate);border-radius:2px;border:1px solid rgba(255,255,255,.1);vertical-align:middle;"></span></td><td>Dividers, card borders, separators</td></tr>
+
+          <tr><td colspan="4" style="background:rgba(255,255,255,.03);color:var(--dust-shadow);font-size:9px;text-transform:uppercase;letter-spacing:.1em;">Text</td></tr>
+          <tr><td><code>--text-body</code></td><td><code>--cream</code></td><td><span style="display:inline-block;width:14px;height:14px;background:var(--cream);border-radius:2px;border:1px solid rgba(255,255,255,.1);vertical-align:middle;"></span></td><td>All primary readable text</td></tr>
+          <tr><td><code>--text-dim</code></td><td><code>--dust-shadow</code></td><td><span style="display:inline-block;width:14px;height:14px;background:var(--dust-shadow);border-radius:2px;border:1px solid rgba(255,255,255,.1);vertical-align:middle;"></span></td><td>Labels, secondary info, section headings</td></tr>
+          <tr><td><code>--text-on-light</code></td><td><code>--void-black</code></td><td><span style="display:inline-block;width:14px;height:14px;background:var(--void-black);border-radius:2px;border:1px solid rgba(255,255,255,.1);vertical-align:middle;"></span></td><td>Text on cream-filled buttons (btn-primary)</td></tr>
+
+          <tr><td colspan="4" style="background:rgba(255,255,255,.03);color:var(--dust-shadow);font-size:9px;text-transform:uppercase;letter-spacing:.1em;">Interactive</td></tr>
+          <tr><td><code>--interactive</code></td><td><code>--arc-cyan</code></td><td><span style="display:inline-block;width:14px;height:14px;background:var(--arc-cyan);border-radius:2px;border:1px solid rgba(255,255,255,.1);vertical-align:middle;"></span></td><td>Selection, active tabs, progress bars, highlights</td></tr>
+          <tr><td><code>--interactive-subtle</code></td><td><code>--arc-cyan @10%</code></td><td><span style="display:inline-block;width:14px;height:14px;background:rgba(var(--arc-cyan-rgb),.10);border-radius:2px;border:1px solid rgba(255,255,255,.1);vertical-align:middle;"></span></td><td>Active tab background tint</td></tr>
+
+          <tr><td colspan="4" style="background:rgba(255,255,255,.03);color:var(--dust-shadow);font-size:9px;text-transform:uppercase;letter-spacing:.1em;">Status</td></tr>
+          <tr><td><code>--status-ok</code></td><td><code>--arc-lime</code></td><td><span style="display:inline-block;width:14px;height:14px;background:var(--arc-lime);border-radius:2px;border:1px solid rgba(255,255,255,.1);vertical-align:middle;"></span></td><td>Health bar, working colonist, success state</td></tr>
+          <tr><td><code>--status-caution</code></td><td><code>--arc-yellow</code></td><td><span style="display:inline-block;width:14px;height:14px;background:var(--arc-yellow);border-radius:2px;border:1px solid rgba(255,255,255,.1);vertical-align:middle;"></span></td><td>Energy bar, low-priority alert</td></tr>
+          <tr><td><code>--status-warn</code></td><td><code>--arc-orange</code></td><td><span style="display:inline-block;width:14px;height:14px;background:var(--arc-orange);border-radius:2px;border:1px solid rgba(255,255,255,.1);vertical-align:middle;"></span></td><td>Hunger bar, moderate alert, warning text</td></tr>
+          <tr><td><code>--status-danger</code></td><td><code>--arc-red</code></td><td><span style="display:inline-block;width:14px;height:14px;background:var(--arc-red);border-radius:2px;border:1px solid rgba(255,255,255,.1);vertical-align:middle;"></span></td><td>Critical health, damage, destructive action text</td></tr>
+          <tr><td><code>--status-special</code></td><td><code>--plasma-purple</code></td><td><span style="display:inline-block;width:14px;height:14px;background:var(--plasma-purple);border-radius:2px;border:1px solid rgba(255,255,255,.1);vertical-align:middle;"></span></td><td>Mission-complete state only</td></tr>
+
+          <tr><td colspan="4" style="background:rgba(255,255,255,.03);color:var(--dust-shadow);font-size:9px;text-transform:uppercase;letter-spacing:.1em;">Action fills (button backgrounds)</td></tr>
+          <tr><td><code>--fill-primary</code></td><td><code>--cream</code></td><td><span style="display:inline-block;width:14px;height:14px;background:var(--cream);border-radius:2px;border:1px solid rgba(255,255,255,.1);vertical-align:middle;"></span></td><td>btn-primary — single CTA per panel</td></tr>
+          <tr><td><code>--fill-secondary</code></td><td><code>--regolith-slate</code></td><td><span style="display:inline-block;width:14px;height:14px;background:var(--regolith-slate);border-radius:2px;border:1px solid rgba(255,255,255,.1);vertical-align:middle;"></span></td><td>btn-secondary — nav and supporting actions</td></tr>
+          <tr><td><code>--fill-danger</code></td><td><code>--arc-red @15%</code></td><td><span style="display:inline-block;width:14px;height:14px;background:rgba(var(--arc-red-rgb),.15);border-radius:2px;border:1px solid rgba(255,255,255,.1);vertical-align:middle;"></span></td><td>btn-danger — destructive actions</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="rule" style="margin-bottom:32px;"><strong>Never use a primitive token in a component.</strong> If you reach for <code>--arc-cyan</code> directly, ask: "is there a semantic token for this role?" Components reference <code>--interactive</code>; only the token mapping file ever touches <code>--arc-cyan</code>. This means a full retheme requires changing only the primitive values.</div>
+
+    <div class="rule"><strong>neon-edge (#00D4FF) removed.</strong> It is perceptually indistinguishable from ARC Cyan and had no assigned semantic role. Use <code>--arc-cyan</code> for all selection/highlight needs. <strong>plasma-purple</strong> is reserved for mission-complete state only — do not use as a general accent.</div>
+
+    <h3>Cyan usage in panels — when to restrain</h3>
+    <p style="margin-bottom:12px;"><strong>ARC Cyan is a high-energy accent, not a neutral UI colour.</strong> Use it sparingly inside information panels to avoid visual fatigue. It should mark critical state changes, not routine information.</p>
+    <div class="table-wrap" style="margin-bottom:16px;">
+      <table>
+        <thead><tr><th>Context</th><th>Cyan usage</th><th>Example</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><strong>Selection / active state</strong></td>
+            <td>✓ Use cyan boldly</td>
+            <td>Selected colonist in list (cyan bg + bright text). Mission tab active (cyan highlight). Selected building (cyan border outline in game world).</td>
+          </tr>
+          <tr>
+            <td><strong>Progress / measurement</strong></td>
+            <td>✓ Use cyan as fill</td>
+            <td>Progress bars, resource meters, thermal load bar. Cyan = "it's running" or "capacity used".</td>
+          </tr>
+          <tr>
+            <td><strong>Normal status text</strong></td>
+            <td>✗ Use Dust Shadow instead</td>
+            <td>Power: 12.5 kW, Operator: Boris, Worker slot: 2/4. These are informational, not warnings. Use <code>#8A8A7A</code>.</td>
+          </tr>
+          <tr>
+            <td><strong>Inactive UI controls</strong></td>
+            <td>✗ Use neutral slate</td>
+            <td>Slider track background, toggle switch background when off, disabled button text. Keep these visually quiet.</td>
+          </tr>
+          <tr>
+            <td><strong>Panel text labels</strong></td>
+            <td>✗ Never use</td>
+            <td>Never colour routine labels or section headers in cyan. Use Dust Shadow (9–10 px, uppercase).</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="warn"><strong>Soviet-functional aesthetic:</strong> Cyan should feel like an <em>exception</em>, not the default. Your eye should move to cyan elements because something changed state or needs attention — not because every UI element is bright. Panels are places to <em>read</em>, not to be bombarded with colour. Default to Cream (text), Dust Shadow (secondary), and Slate (backgrounds). Cyan earns its place only when it signals state.</div>
+  </section>
+
+  <!-- ══ SPACING & RADIUS ════════════════════════════════════════════ -->
+  <section id="spacing">
+    <h2>Spacing &amp; Corner Radius</h2>
+
+    <h3>Spacing tokens</h3>
+    <div class="spacing-grid" style="margin-bottom:32px;">
+      <div class="sp-row"><div class="sp-label">Panel padding — modal</div><div class="sp-bar-wrap"><div class="sp-bar" style="width:200px;"></div></div><div class="sp-val">20 px</div></div>
+      <div class="sp-row"><div class="sp-label">Panel padding — compact</div><div class="sp-bar-wrap"><div class="sp-bar" style="width:120px;"></div></div><div class="sp-val">12 px</div></div>
+      <div class="sp-row"><div class="sp-label">Section separation — large</div><div class="sp-bar-wrap"><div class="sp-bar" style="width:120px;"></div></div><div class="sp-val">12 px</div></div>
+      <div class="sp-row"><div class="sp-label">Section separation — compact</div><div class="sp-bar-wrap"><div class="sp-bar" style="width:60px;"></div></div><div class="sp-val">6–8 px</div></div>
+      <div class="sp-row"><div class="sp-label">Inline element gap (icon+label)</div><div class="sp-bar-wrap"><div class="sp-bar" style="width:40px;"></div></div><div class="sp-val">4 px</div></div>
+      <div class="sp-row"><div class="sp-label">Bottom bar button gap</div><div class="sp-bar-wrap"><div class="sp-bar" style="width:80px;"></div></div><div class="sp-val">8 px</div></div>
+    </div>
+
+    <h3>Corner radius</h3>
+    <div class="radius-row">
+      <div class="radius-sample">
+        <div class="radius-box" style="border-radius:12px;"></div>
+        <div class="radius-caption">Modal / menu panel<br><span class="radius-val">12 px</span></div>
+      </div>
+      <div class="radius-sample">
+        <div class="radius-box" style="border-radius:4px;"></div>
+        <div class="radius-caption">Inline / tech card<br><span class="radius-val">4 px</span></div>
+      </div>
+      <div class="radius-sample">
+        <div class="radius-box" style="border-radius:2px;height:16px;align-self:flex-end;"></div>
+        <div class="radius-caption">Progress bar<br><span class="radius-val">2 px</span></div>
+      </div>
+    </div>
+
+    <div class="rule"><strong>Do not mix radii within the same panel hierarchy.</strong> If the outer container is 12 px (<code>card_bgr_panel.tres</code>), every inset card inside it is <strong>4 px</strong> (<code>--r-card</code>). Never 6 px or 12 px on inset elements. <code>card_front.tres</code> must be updated from 6 px → 4 px.</div>
+  </section>
+
+</main>
+</div>
+<script src="styleguide_resources/main.js" defer></script>
+</body>
+</html>

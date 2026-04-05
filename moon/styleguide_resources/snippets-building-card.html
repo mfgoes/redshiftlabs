@@ -1,0 +1,24 @@
+<!-- Building card component for building grids -->
+<!-- Data attributes: data-icon, data-name, data-cost -->
+<!-- Example: <div class="building-card" data-icon="⚙" data-name="Refiner" data-cost="80 Al"></div> -->
+<template id="building-card-template">
+  <div class="building-card">
+    <div class="building-card-icon">⚙</div>
+    <div class="building-card-name">Building</div>
+    <div class="building-card-cost">0 Al</div>
+  </div>
+</template>
+
+<script>
+// Helper function to create building cards
+function createBuildingCard(icon, name, cost) {
+  const template = document.getElementById('building-card-template');
+  const card = template.content.cloneNode(true);
+
+  card.querySelector('.building-card-icon').textContent = icon;
+  card.querySelector('.building-card-name').textContent = name;
+  card.querySelector('.building-card-cost').textContent = cost;
+
+  return card;
+}
+</script>

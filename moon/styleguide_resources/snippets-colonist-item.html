@@ -1,0 +1,30 @@
+<!-- Colonist list item component -->
+<!-- Data attributes: data-name, data-status, data-state (active|sleeping|idle) -->
+<!-- Example: <div class="colonist-item" data-name="Boris" data-status="Working · Refiner Alpha" data-state="active"></div> -->
+<template id="colonist-item-template">
+  <div class="colonist-item">
+    <div class="colonist-avatar">👤</div>
+    <div class="colonist-info">
+      <div class="colonist-name">Colonist</div>
+      <div class="colonist-status">Status here</div>
+    </div>
+    <div class="colonist-state active">● Active</div>
+  </div>
+</template>
+
+<script>
+// Helper function to create colonist items
+function createColonistItem(name, status, state = 'idle') {
+  const template = document.getElementById('colonist-item-template');
+  const item = template.content.cloneNode(true);
+
+  item.querySelector('.colonist-name').textContent = name;
+  item.querySelector('.colonist-status').textContent = status;
+
+  const stateEl = item.querySelector('.colonist-state');
+  stateEl.textContent = `● ${state.charAt(0).toUpperCase() + state.slice(1)}`;
+  stateEl.className = 'colonist-state ' + state;
+
+  return item;
+}
+</script>

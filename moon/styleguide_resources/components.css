@@ -1,0 +1,203 @@
+/* ── Reusable Components ──────────────────────────────────────────────── */
+/* Bootstrap-style component system for UI Style Guide examples */
+
+/* ── Viewport / Canvas ──────────────────────────────────────────────── */
+.demo-viewport {
+  position: relative;
+  background: var(--void-black);
+  border-radius: var(--r-panel);
+  border: 1px solid var(--regolith-slate);
+  height: 380px;
+  overflow: hidden;
+  margin-bottom: 24px;
+  user-select: none;
+}
+
+.demo-viewport::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, #0a0c10 0%, #111720 60%, #0d1218 100%);
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+.demo-viewport-label {
+  position: absolute;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 9px;
+  color: rgba(255, 255, 255, 0.15);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ── Tab Bar (Bottom Pill) ──────────────────────────────────────────── */
+.tab-bar {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(21, 22, 24, 0.95);
+  border: 1px solid #474747;
+  border-radius: 4px;
+  padding: 4px;
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  z-index: 10;
+}
+
+.tab-button {
+  min-width: 80px;
+  height: 32px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 0 10px;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  color: #999;
+  transition: color 0.1s, background 0.1s;
+}
+
+.tab-button.active {
+  color: #4AC1F2;
+  background: rgba(74, 193, 242, 0.1);
+}
+
+.tab-button svg {
+  width: 12px;
+  height: 12px;
+  flex-shrink: 0;
+}
+
+/* ── Panel (Floating above Tab Bar) ──────────────────────────────────── */
+.panel-floating {
+  position: absolute;
+  bottom: 52px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 320px;
+  background: #151618;
+  border-radius: var(--r-panel) var(--r-panel) 0 0;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-bottom: none;
+  padding: 14px 16px;
+  display: none;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 9;
+}
+
+.panel-floating.visible {
+  display: flex;
+}
+
+.panel-title {
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #8A8A7A;
+  margin-bottom: 2px;
+}
+
+/* ── Building Grid (3-column) ──────────────────────────────────────── */
+.building-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 6px;
+}
+
+.building-card {
+  background: #1E1F21;
+  border: 1px solid #2A2F37;
+  border-radius: 4px;
+  padding: 8px 6px;
+  text-align: center;
+}
+
+.building-card-icon {
+  font-size: 18px;
+  margin-bottom: 4px;
+}
+
+.building-card-name {
+  font-size: 9px;
+  color: #EAE0CD;
+}
+
+.building-card-cost {
+  font-size: 8px;
+  color: #8A8A7A;
+  margin-top: 2px;
+}
+
+/* ── Colonist List ──────────────────────────────────────────────── */
+.colonist-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.colonist-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(42, 47, 55, 0.6);
+}
+
+.colonist-item:last-child {
+  border-bottom: none;
+}
+
+.colonist-avatar {
+  width: 28px;
+  height: 28px;
+  background: #1E1F21;
+  border-radius: 4px;
+  border: 1px solid #2A2F37;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+
+.colonist-info {
+  flex: 1;
+}
+
+.colonist-name {
+  font-size: 11px;
+  color: #EAE0CD;
+  font-weight: 700;
+}
+
+.colonist-status {
+  font-size: 9px;
+  color: #8A8A7A;
+}
+
+.colonist-state {
+  font-size: 9px;
+  color: #8A8A7A;
+  white-space: nowrap;
+}
+
+.colonist-state.active {
+  color: #7EEB92;
+}
+
+.colonist-state.sleeping {
+  color: #99CCFF;
+}

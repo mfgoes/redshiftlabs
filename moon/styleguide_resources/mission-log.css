@@ -1,0 +1,297 @@
+/* ── Mission Log Components ────────────────────────────────────────── */
+
+/* Mission List Container */
+.mission-list {
+  overflow-y: auto;
+  max-height: 390px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Campaign Progress Bar ────────────────────────────────────────── */
+.campaign-progress {
+  margin-bottom: 14px;
+}
+
+.campaign-progress .progress-labels .val {
+  color: var(--plasma-purple);
+}
+
+.campaign-progress .progress-fill {
+  background: var(--plasma-purple);
+}
+
+.mission-list-divider {
+  height: 1px;
+  background: var(--regolith-slate);
+  margin-bottom: 12px;
+}
+
+/* ── Mission Row Base ──────────────────────────────────────────────– */
+.ml-row {
+  display: flex;
+  flex-direction: column;
+  padding: 7px 10px;
+  border-radius: var(--r-card);
+  cursor: pointer;
+  user-select: none;
+  transition: opacity 0.2s;
+}
+
+.ml-row-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ml-row-body {
+  margin-top: 8px;
+  padding: 6px 8px;
+  border-radius: var(--r-card);
+  border-top: 1px solid;
+}
+
+.ml-row-body[hidden] {
+  display: none;
+}
+
+/* Badge styling */
+.ml-badge {
+  font-size: 9px;
+  letter-spacing: 0.06em;
+  border: 1px solid;
+  border-radius: 3px;
+  padding: 2px 6px;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.ml-title {
+  flex: 1;
+  font-size: 12px;
+  color: var(--cream);
+}
+
+.ml-type {
+  font-size: 9px;
+  letter-spacing: 0.05em;
+  color: var(--dust-shadow);
+}
+
+.ml-chev {
+  font-size: 9px;
+  color: var(--dust-shadow);
+  flex-shrink: 0;
+}
+
+/* ── Mission States ────────────────────────────────────────────────– */
+
+/* DONE (Completed) */
+.ml-row--done {
+  /* Plasma purple at 4% opacity for background */
+  --ml-bg: rgba(var(--arc-orange-rgb), 0.04);
+  --ml-border: rgba(168, 85, 247, 0.15);
+  --ml-badge-bg: rgba(168, 85, 247, 0.15);
+  --ml-badge-border: rgba(168, 85, 247, 0.4);
+
+  background: var(--ml-bg);
+  border: 1px solid var(--ml-border);
+  margin-bottom: 4px;
+}
+
+.ml-row--done .ml-badge {
+  background: var(--ml-badge-bg);
+  border-color: var(--ml-badge-border);
+  color: var(--plasma-purple);
+}
+
+.ml-row--done .ml-title {
+  color: var(--dust-shadow);
+  text-decoration: line-through;
+}
+
+.ml-row--done .ml-row-body {
+  background: rgba(168, 85, 247, 0.04);
+  border-top-color: rgba(168, 85, 247, 0.1);
+}
+
+.ml-row--done .ml-body-objective {
+  font-size: 11px;
+  color: var(--cream);
+  margin-bottom: 5px;
+}
+
+.ml-row--done .ml-body-unlock {
+  font-size: 9px;
+  color: var(--dust-shadow);
+}
+
+.ml-row--done .ml-body-unlock-value {
+  color: var(--plasma-purple);
+  font-weight: 700;
+}
+
+/* ACTIVE (Current Mission) */
+.ml-row--active {
+  background: rgba(var(--arc-lime-rgb), 0.05);
+  border: 1px solid rgba(var(--arc-lime-rgb), 0.2);
+  padding: 12px 14px;
+  margin-bottom: 12px;
+}
+
+.ml-row--active .ml-badge {
+  background: rgba(var(--arc-lime-rgb), 0.15);
+  border-color: rgba(var(--arc-lime-rgb), 0.4);
+  color: var(--arc-lime);
+}
+
+.ml-row--active .ml-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--arc-lime);
+}
+
+.ml-row--active .ml-type {
+  opacity: 0.7;
+}
+
+.ml-row--active .ml-objective {
+  font-size: 12px;
+  color: var(--cream);
+  padding-left: 2px;
+  margin-bottom: 10px;
+}
+
+.ml-row--active .progress-wrap {
+  margin: 0;
+}
+
+.ml-row--active .progress-labels .val {
+  color: var(--arc-lime);
+}
+
+.ml-row--active .progress-fill {
+  background: var(--arc-lime);
+}
+
+.ml-row--active .ml-unlocks {
+  margin-top: 9px;
+  font-size: 9px;
+  color: var(--dust-shadow);
+}
+
+.ml-row--active .ml-unlocks-value {
+  color: var(--cream);
+}
+
+/* UPCOMING LABEL */
+.ml-upcoming-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+  margin-top: 8px;
+}
+
+.ml-upcoming-label-text {
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--dust-shadow);
+}
+
+.ml-upcoming-divider {
+  flex: 1;
+  height: 1px;
+  background: var(--regolith-slate);
+}
+
+/* LOCKED (Next-in-line, shows prerequisite) */
+.ml-row--locked-next {
+  padding: 7px 10px;
+  border-bottom: 1px solid rgba(42, 47, 55, 0.5);
+  opacity: 0.75;
+  margin-bottom: 0;
+}
+
+.ml-row--locked-next .ml-lock-icon {
+  color: var(--dust-shadow);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+.ml-locked-msg {
+  padding: 5px 0 2px 20px;
+  font-size: 10px;
+  color: var(--dust-shadow);
+}
+
+.ml-locked-msg[hidden] {
+  display: none;
+}
+
+.ml-locked-msg em {
+  color: var(--cream);
+  font-style: italic;
+}
+
+/* LOCKED (Standard far-off missions) */
+.ml-row--locked {
+  padding: 7px 10px;
+  border-bottom: 1px solid rgba(42, 47, 55, 0.5);
+  margin-bottom: 0;
+}
+
+.ml-row--locked .ml-lock-icon {
+  color: var(--dust-shadow);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+.ml-row--locked .ml-title {
+  color: var(--cream);
+}
+
+/* Opacity progression for locked missions (fade into distance) */
+.ml-row--locked:nth-child(6) {
+  opacity: 0.55;
+}
+
+.ml-row--locked:nth-child(7) {
+  opacity: 0.45;
+}
+
+.ml-row--locked:nth-child(8) {
+  opacity: 0.35;
+}
+
+/* DEEP-LOCKED (Grouped far future missions) */
+.ml-row--deep-locked {
+  padding: 8px 10px;
+  border-bottom: none;
+  opacity: 0.25;
+}
+
+.ml-row--deep-locked .ml-lock-icon {
+  color: var(--dust-shadow);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+.ml-deep-locked-text {
+  font-size: 11px;
+  color: var(--dust-shadow);
+  font-style: italic;
+}
+
+/* Lock icon SVG */
+.lock-svg {
+  width: 11px;
+  height: 12px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+}
