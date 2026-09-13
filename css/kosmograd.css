@@ -1,4 +1,6 @@
 /* Kosmograd interface layer — shared by the home, devlog, and press pages. */
+
+/* ── Fonts ──────────────────────────────────────────────────────────── */
 @font-face {
 	font-family: 'Kosmograd HUD';
 	src: url('../assets/fonts/MGS1%20HUD.ttf') format('truetype');
@@ -6,9 +8,18 @@
 	font-style: normal;
 	font-weight: 400;
 }
+@font-face {
+	font-family: 'Kosmograd Pixel';
+	src: url('../assets/fonts/PIXEARG_.TTF') format('truetype');
+	font-display: swap;
+	font-style: normal;
+	font-weight: 400;
+}
 
+/* ── Tokens ─────────────────────────────────────────────────────────── */
 :root {
 	--kg-display: 'Kosmograd HUD', 'Orbitron', sans-serif;
+	--kg-display-pixel: 'Kosmograd Pixel', var(--kg-display);
 	--kg-void: #0a0d10;
 	--kg-void-raised: #12171c;
 	--kg-panel: #171d23;
@@ -20,14 +31,27 @@
 	--kg-cyan-deep: #117e9f;
 	--kg-amber: #ffb64a;
 	--kg-lunar: #d7d8d2;
+	--rl-red: #c65a54;
 }
 
+/* ── Base typography ────────────────────────────────────────────────── */
 /* The in-game HUD typeface carries the site’s hierarchy; body text stays conventional and readable. */
 h1, h2, .hero-title, .section-title {
 	font-family: var(--kg-display);
 	font-weight: 400;
 }
 
+.kg-kicker,
+.kg-label {
+	color: var(--kg-cyan);
+	font-family: var(--kg-display);
+	font-size: 1rem;
+	font-weight: 700;
+	letter-spacing: .16em;
+	text-transform: uppercase;
+}
+
+/* ── Page shells ────────────────────────────────────────────────────── */
 .kg-page-shell {
 	background: #e8ebe8;
 	color: var(--kg-ink);
@@ -41,7 +65,6 @@ h1, h2, .hero-title, .section-title {
 	background: var(--kg-void) !important;
 	border-bottom: 1px solid rgba(89, 216, 255, .42);
 }
-
 .kg-hero::before {
 	content: '';
 	position: absolute;
@@ -49,34 +72,17 @@ h1, h2, .hero-title, .section-title {
 	background: radial-gradient(circle at 50% -35%, rgba(89, 216, 255, .2), transparent 52%), repeating-linear-gradient(90deg, transparent 0 7px, rgba(255,255,255,.025) 7px 8px);
 	pointer-events: none;
 }
-
 .kg-hero .container { position: relative; }
-
-.kg-kicker,
-.kg-label {
-	font-family: var(--kg-display);
-	font-size: .7rem;
-	font-weight: 700;
-	letter-spacing: .16em;
-	text-transform: uppercase;
-	color: var(--kg-cyan);
-}
-
-.kg-hero .hero-title {
-	font-size: clamp(2rem, 5vw, 3.25rem);
-	letter-spacing: .04em;
-	margin-bottom: .6rem;
-}
-
+.kg-hero .hero-title { font-size: clamp(2rem, 5vw, 3.25rem); letter-spacing: .04em; margin-bottom: .6rem; }
 .kg-hero .hero-subtitle { color: #b7c3c8; font-size: 1rem; }
 
+/* ── Panels, copy & lists (press kit, etc.) ────────────────────────────── */
 .kg-panel {
 	background: var(--kg-panel-light);
 	border: 1px solid var(--kg-line);
 	border-radius: 0;
 	box-shadow: 5px 5px 0 rgba(23, 28, 32, .12);
 }
-
 .kg-panel > .card-body { padding: clamp(1.25rem, 3vw, 2rem); }
 
 .kg-panel-title {
@@ -87,11 +93,7 @@ h1, h2, .hero-title, .section-title {
 	color: var(--kg-ink);
 	margin: 0;
 }
-
-.kg-panel-title::before {
-	content: '// ';
-	color: var(--kg-cyan-deep);
-}
+.kg-panel-title::before { content: '// '; color: var(--kg-cyan-deep); }
 
 .kg-copy { color: #3e4a51; line-height: 1.7; }
 .kg-copy a, .kg-text-link { color: #096f91; font-weight: 650; }
@@ -123,13 +125,14 @@ h1, h2, .hero-title, .section-title {
 
 .kg-screenshot-grid img { aspect-ratio: 16 / 9; border: 1px solid #56636a; object-fit: cover; width: 100%; }
 
+/* ── Buttons ────────────────────────────────────────────────────────── */
 .kg-button {
 	background: var(--kg-void);
 	border: 1px solid var(--kg-void);
 	border-radius: 0;
 	color: #fff;
 	font-family: var(--kg-display);
-	font-size: .72rem;
+	font-size: .8rem;
 	font-weight: 700;
 	letter-spacing: .05em;
 	padding: .6rem .8rem;
@@ -137,164 +140,7 @@ h1, h2, .hero-title, .section-title {
 }
 .kg-button:hover { background: var(--kg-cyan-deep); border-color: var(--kg-cyan-deep); color: #fff; }
 
-/* Compact, forum-like devlog feed. */
-.kg-devlog-section { padding: 2.5rem 0 4rem; }
-.kg-devlog-stream { border-top: 2px solid #25343b; }
-.kg-devlog-entry {
-	background: rgba(255, 255, 255, .72);
-	border: 1px solid var(--kg-line);
-	border-top: 0;
-	box-shadow: none;
-	margin: 0;
-	padding: 1.35rem 1.5rem;
-	position: relative;
-}
-.kg-devlog-entry::before { background: var(--kg-cyan-deep); content: ''; height: 100%; left: 0; position: absolute; top: 0; width: 4px; }
-.kg-devlog-entry:nth-child(3n + 2)::before { background: var(--kg-amber); }
-.kg-devlog-entry:nth-child(3n)::before { background: #8e9da4; }
-.kg-devlog-entry-header { border: 0; margin: 0 0 .6rem; padding: 0; }
-.kg-devlog-entry-title { color: var(--kg-ink); font-family: var(--kg-display); font-size: clamp(1.15rem, 2vw, 1.55rem); font-weight: 400; line-height: 1.3; margin: 0 0 .4rem; }
-.kg-devlog-entry-meta { color: var(--kg-muted); font-size: .8rem; gap: .5rem; text-transform: uppercase; letter-spacing: .04em; }
-.kg-devlog-entry .devlog-content { color: #3e4a51; font-size: .97rem; line-height: 1.6; }
-.kg-devlog-entry .devlog-content p { color: inherit; margin: 0; }
-.kg-devlog-entry .devlog-footer { border: 0; color: var(--kg-muted); margin: .8rem 0 0; padding: 0; }
-.kg-devlog-entry .devlog-footer img { display: none; }
-
-.kg-devlog-rail { border-left: 1px solid #9ca7aa; padding-left: 1.5rem; }
-.kg-rail-block { border-bottom: 1px solid #9ca7aa; padding: 0 0 1.2rem; margin-bottom: 1.2rem; }
-.kg-rail-block:last-child { border-bottom: 0; }
-.kg-rail-title { color: var(--kg-ink); font-family: var(--kg-display); font-size: .85rem; letter-spacing: .05em; }
-.kg-progress { background: #c7ced0; border-radius: 0; height: 5px; }
-.kg-progress .progress-bar { background: var(--kg-cyan-deep) !important; }
-
-/* Homepage: separate the player-facing update feed from editorial writing. */
-.kg-home-feed { background: #e8ebe8; padding: 4rem 0; }
-.kg-section-heading { color: var(--kg-ink); font-family: var(--kg-display); font-size: clamp(1.55rem, 3vw, 2.15rem); font-weight: 400; letter-spacing: .03em; }
-.kg-dispatch-card {
-	background: #f8f9f7;
-	border-bottom: 1px solid #aeb9bc;
-	display: grid;
-	gap: 1.25rem;
-	grid-template-columns: 72px 1fr auto;
-	padding: 1.5rem 1.25rem;
-	text-decoration: none;
-	transition: background .12s ease, transform .12s ease;
-}
-.kg-dispatch-card:first-of-type { border-top: 2px solid #25343b; }
-.kg-dispatch-card:hover { background: #eef1ee; transform: translateX(4px); }
-.kg-dispatch-index { color: var(--kg-cyan-deep); font-family: var(--kg-display); font-size: .95rem; letter-spacing: .08em; padding-top: .3rem; }
-.kg-dispatch-card h3 { color: var(--kg-ink); font-family: var(--kg-display); font-size: 1.2rem; font-weight: 400; margin: 0 0 .5rem; }
-.kg-dispatch-card p { color: var(--kg-muted); font-size: 1rem; line-height: 1.6; margin: 0; }
-.kg-dispatch-meta { color: var(--kg-muted); font-size: .85rem; letter-spacing: .05em; padding-top: .3rem; text-transform: uppercase; white-space: nowrap; }
-.kg-dispatch-card .kg-dispatch-index::after {
-	color: var(--kg-cyan-deep);
-	content: '\2192';
-	display: block;
-	font-size: 1.1rem;
-	margin-top: .5rem;
-	opacity: 0;
-	transition: opacity .12s ease, transform .12s ease;
-	transform: translateX(-4px);
-}
-.kg-dispatch-card:hover .kg-dispatch-index::after { opacity: 1; transform: translateX(0); }
-
-/* Home roadmap becomes a mission-control rail rather than a generic table. */
-.kg-roadmap { background: var(--kg-void); color: #fff; padding: 4rem 0; position: relative; }
-.kg-roadmap::before { background: linear-gradient(90deg, rgba(89, 216, 255, .08), transparent 40%); content: ''; inset: 0; pointer-events: none; position: absolute; }
-.kg-roadmap .container { position: relative; }
-.kg-roadmap .kg-section-heading { color: #fff; }
-.kg-roadmap-copy { color: #abb8be; max-width: 40rem; }
-.kg-mission-list { border-top: 1px solid #445159; margin: 2rem 0 0; }
-.kg-mission { align-items: center; border-bottom: 1px solid #445159; display: grid; gap: 1rem; grid-template-columns: 130px 1fr auto; padding: 1rem 0; }
-.kg-mission-date { color: var(--kg-cyan); font-family: var(--kg-display); font-size: .78rem; letter-spacing: .06em; }
-.kg-mission-feature { color: #e2e9eb; }
-.kg-status { border: 1px solid currentColor; color: #b7c4c9; font-family: var(--kg-display); font-size: .65rem; font-weight: 400; letter-spacing: .08em; padding: .35rem .5rem; text-transform: uppercase; }
-.kg-status--complete { color: var(--kg-cyan); }
-
-body.dark-mode .kg-page-shell, body.dark-mode .kg-home-feed { background-color: #101519 !important; color: #e2e9eb; }
-body.dark-mode .kg-panel { background: #171e23 !important; border-color: #3a484f !important; box-shadow: 5px 5px 0 rgba(0,0,0,.35); }
-body.dark-mode .kg-panel-title, body.dark-mode .kg-facts dd, body.dark-mode .kg-feature-list strong, body.dark-mode .kg-rail-title, body.dark-mode .kg-devlog-entry-title, body.dark-mode .kg-section-heading { color: #eff5f6 !important; }
-body.dark-mode .kg-copy, body.dark-mode .kg-feature-list li, body.dark-mode .kg-devlog-entry .devlog-content, body.dark-mode .kg-dispatch-card p { color: #b9c6cb !important; }
-body.dark-mode .kg-facts > div, body.dark-mode .kg-feature-list li, body.dark-mode .kg-devlog-entry, body.dark-mode .kg-devlog-stream, body.dark-mode .kg-devlog-rail, body.dark-mode .kg-rail-block, body.dark-mode .kg-dispatch-card { border-color: #3a484f !important; }
-body.dark-mode .kg-devlog-entry, body.dark-mode .kg-dispatch-card { background: #171e23 !important; }
-body.dark-mode .kg-facts dt, body.dark-mode .kg-devlog-entry-meta, body.dark-mode .kg-dispatch-meta { color: #8fa2a9 !important; }
-
-@media (max-width: 991px) {
-	.kg-devlog-rail { border-left: 0; border-top: 1px solid #9ca7aa; margin-top: 2rem; padding: 1.5rem 0 0; }
-}
-@media (max-width: 767px) {
-	.kg-hero { padding: 3rem 0 !important; }
-	.kg-devlog-entry { padding: 1.15rem 1.25rem; }
-	.kg-dispatch-card { grid-template-columns: 52px 1fr; padding: 1.25rem 1rem; }
-	.kg-dispatch-meta { grid-column: 2; padding-top: 0; }
-	.kg-mission { align-items: start; grid-template-columns: 1fr auto; }
-	.kg-mission-feature { grid-column: 1 / -1; grid-row: 2; }
-}
-
-/* ── Homepage: main-menu treatment ─────────────────────────────────────
-   Mirrors the in-game title screen (see moon/styleguide_resources/style.css)
-   so the marketing site reads as an extension of the actual UI. */
-@font-face {
-	font-family: 'Kosmograd Pixel';
-	src: url('../assets/fonts/PIXEARG_.TTF') format('truetype');
-	font-display: swap;
-	font-style: normal;
-	font-weight: 400;
-}
-
-:root {
-	--kg-display-pixel: 'Kosmograd Pixel', var(--kg-display);
-	--rl-red: #c65a54;
-	/* Exact in-game main-menu button palette */
-	--mm-btn-bg: #111318;
-	--mm-btn-border: #363c4a;
-	--mm-btn-hover-bg: #263248;
-	--mm-btn-hover-border: #5a7fbc;
-	--mm-btn-sel-bg: #3a506e;
-	--mm-btn-sel-border: #6b9fd4;
-}
-
-/* Brand wordmark - used in the navbar */
-.rl-brand {
-	align-items: center;
-	display: inline-flex;
-	font-family: var(--kg-display-pixel);
-	font-size: 1.1rem;
-	gap: .55rem;
-	letter-spacing: .03em;
-}
-.rl-brand-mark { color: var(--rl-red); }
-.rl-brand-icon { height: 26px; width: 26px; }
-
-/* Hero rebuilt as a title-screen: no product shot, centered menu stack. */
-.rl-menu-hero {
-	padding-bottom: 3.5rem !important;
-	padding-top: 4.5rem !important;
-	text-align: center;
-}
-.rl-hero-title {
-	font-family: var(--kg-display-pixel);
-	font-size: clamp(2rem, 5.5vw, 3.75rem);
-	letter-spacing: .02em;
-	line-height: 1.35;
-}
-.rl-hero-sub {
-	color: #b7c3c8;
-	font-size: 1.05rem;
-	margin: 0 auto 2rem;
-	max-width: 34rem;
-}
-
-.rl-menu-stack {
-	display: flex;
-	flex-direction: column;
-	gap: .65rem;
-	max-width: 360px;
-	width: 100%;
-}
-
-/* Header hero buttons: one primary (cyan fill) + secondary outline buttons,
-   replacing the old mixed dark-gray / blue-selected palette. */
+/* Header hero buttons: one primary (cyan fill) + secondary outline buttons. */
 .kg-menu-btn {
 	background: transparent;
 	border: 1px solid var(--kg-cyan-deep);
@@ -325,47 +171,6 @@ body.dark-mode .kg-facts dt, body.dark-mode .kg-devlog-entry-meta, body.dark-mod
 	border-color: var(--kg-cyan-deep);
 	color: #fff;
 }
-.kg-menu-btn-note {
-	color: #8a97a0;
-	display: block;
-	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-	font-size: .78rem;
-	letter-spacing: .04em;
-	margin-top: .3rem;
-	text-transform: uppercase;
-}
-
-/* Devlog teaser + roadmap already share the void-black "mission control"
-   surface; bring the feed panel into the same family instead of a bright
-   white band breaking up the page. */
-.kg-home-feed {
-	background: var(--kg-void-raised);
-	padding: 4rem 0;
-}
-.kg-home-feed .kg-kicker { color: var(--kg-cyan); }
-.kg-home-feed .kg-section-heading { color: #eff5f6; }
-.kg-dispatch-card {
-	background: var(--kg-panel);
-	border-bottom: 1px solid #2a333a;
-}
-.kg-dispatch-card:first-of-type { border-top: 2px solid var(--kg-cyan-deep); }
-.kg-dispatch-card:hover { background: #1c242b; }
-.kg-dispatch-card h3 { color: #eff5f6; }
-.kg-dispatch-card p,
-.kg-dispatch-meta { color: #8fa2a9; }
-.kg-home-feed .kg-button { background: var(--kg-cyan-deep); border-color: var(--kg-cyan-deep); }
-.kg-home-feed .kg-button:hover { background: var(--kg-cyan); border-color: var(--kg-cyan); color: var(--kg-ink); }
-
-/* Accessibility: raise the smallest UI type to a readable floor. */
-.kg-kicker, .kg-label { font-size: .78rem; }
-.kg-status { font-size: .78rem; }
-.kg-button { font-size: .8rem; }
-
-@media (max-width: 767px) {
-	.rl-menu-hero { padding-top: 3rem !important; }
-	.rl-menu-stack { margin-left: auto; margin-right: auto; }
-}
-
 
 /* Navbar CTA - kept in the same cyan family as every other interactive
    element on the site, instead of a competing orange accent. */
@@ -386,19 +191,29 @@ body.dark-mode .kg-facts dt, body.dark-mode .kg-devlog-entry-meta, body.dark-mod
 	color: #fff !important;
 }
 
-/* Brand mark stays a quiet accent, not a second competing hue. */
-.rl-brand { font-size: 1rem; opacity: .92; }
-
-/* Nav links in the same pixel typeface as the brand mark and hero title. */
-.navbar-nav .nav-link {
-	font-family: var(--kg-display-pixel);
-	font-size: .85rem;
-	letter-spacing: .02em;
+/* ── Devlog entries & rail ──────────────────────────────────────────── */
+/* Compact, forum-like devlog feed. */
+.kg-devlog-section { padding: 2.5rem 0 4rem; }
+.kg-devlog-stream { border-top: 2px solid #25343b; }
+.kg-devlog-entry {
+	background: rgba(255, 255, 255, .72);
+	border: 1px solid var(--kg-line);
+	border-top: 0;
+	box-shadow: none;
+	margin: 0;
+	padding: 1.35rem 1.5rem;
+	position: relative;
 }
-
-/* Devlog post pages: header hierarchy inside the article body should read
-   clearly above paragraph copy, and links need a visible color on the
-   default-dark surface (they were only ever styled for the light shell). */
+.kg-devlog-entry::before { background: var(--kg-cyan-deep); content: ''; height: 100%; left: 0; position: absolute; top: 0; width: 4px; }
+.kg-devlog-entry:nth-child(3n + 2)::before { background: var(--kg-amber); }
+.kg-devlog-entry:nth-child(3n)::before { background: #8e9da4; }
+.kg-devlog-entry-header { border: 0; margin: 0 0 .6rem; padding: 0; }
+.kg-devlog-entry-title { color: var(--kg-ink); font-family: var(--kg-display); font-size: clamp(1.15rem, 2vw, 1.55rem); font-weight: 400; line-height: 1.3; margin: 0 0 .4rem; }
+.kg-devlog-entry-meta { color: var(--kg-muted); font-size: .8rem; gap: .5rem; text-transform: uppercase; letter-spacing: .04em; }
+.kg-devlog-entry .devlog-content { color: #3e4a51; font-size: .97rem; line-height: 1.6; }
+.kg-devlog-entry .devlog-content p { color: inherit; margin: 0; }
+.kg-devlog-entry .devlog-content p,
+.kg-devlog-entry .devlog-content li { font-size: 1rem; }
 .kg-devlog-entry .devlog-content h5 {
 	color: var(--kg-ink);
 	font-family: var(--kg-display);
@@ -408,30 +223,123 @@ body.dark-mode .kg-facts dt, body.dark-mode .kg-devlog-entry-meta, body.dark-mod
 	margin: 1.85rem 0 .85rem;
 }
 .kg-devlog-entry .devlog-content h5:first-child { margin-top: 0; }
-.kg-devlog-entry .devlog-content p,
-.kg-devlog-entry .devlog-content li { font-size: 1rem; }
-
-body.dark-mode .kg-devlog-entry .devlog-content h5 { color: #eff5f6 !important; }
-body.dark-mode .kg-copy a, body.dark-mode .kg-text-link { color: var(--kg-cyan) !important; }
-body.dark-mode .kg-copy a:hover, body.dark-mode .kg-text-link:hover { color: #fff !important; }
-body.dark-mode .kg-label { color: #8fa2a9 !important; }
+.kg-devlog-entry .devlog-footer { border: 0; color: var(--kg-muted); margin: .8rem 0 0; padding: 0; }
+.kg-devlog-entry .devlog-footer img { display: none; }
 
 /* A single, "solo" article page can sit a little more spaciously than a
    compact list entry. */
 .kg-devlog-entry--solo { padding: 2rem 2.25rem; }
-@media (max-width: 767px) {
-	.kg-devlog-entry--solo { padding: 1.5rem 1.25rem; }
-}
 
-/* Dispatch cards used outside the homepage's own dark-by-default feed
-   (e.g. the devlog index page) still need their dark-mode colors. */
-body.dark-mode .kg-dispatch-card h3 { color: #eff5f6 !important; }
-body.dark-mode .kg-dispatch-card:first-of-type { border-top-color: var(--kg-cyan-deep) !important; }
-body.dark-mode .kg-dispatch-card:hover { background: #1c242b !important; }
+.kg-devlog-rail { border-left: 1px solid #9ca7aa; padding-left: 1.5rem; }
+.kg-rail-block { border-bottom: 1px solid #9ca7aa; padding: 0 0 1.2rem; margin-bottom: 1.2rem; }
+.kg-rail-block:last-child { border-bottom: 0; }
+.kg-rail-title { color: var(--kg-ink); font-family: var(--kg-display); font-size: .85rem; letter-spacing: .05em; }
+.kg-progress { background: #c7ced0; border-radius: 0; height: 5px; }
+.kg-progress .progress-bar { background: var(--kg-cyan-deep) !important; }
+
+/* ── Homepage: dark "mission control" feed & dispatch cards ────────────
+   The devlog teaser + roadmap share the void-black surface; dispatch
+   cards are styled dark unconditionally since every page that uses them
+   (homepage feed, devlog index) is dark by default. */
+.kg-home-feed { background: var(--kg-void-raised); padding: 4rem 0; }
+.kg-home-feed .kg-kicker { color: var(--kg-cyan); }
+.kg-section-heading { color: var(--kg-ink); font-family: var(--kg-display); font-size: clamp(1.55rem, 3vw, 2.15rem); font-weight: 400; letter-spacing: .03em; }
+.kg-home-feed .kg-section-heading { color: #eff5f6; }
+
+.kg-dispatch-card {
+	background: var(--kg-panel);
+	border-bottom: 1px solid #2a333a;
+	display: grid;
+	gap: 1.25rem;
+	grid-template-columns: 72px 1fr auto;
+	padding: 1.5rem 1.25rem;
+	text-decoration: none;
+	transition: background .12s ease, transform .12s ease;
+}
+.kg-dispatch-card:first-of-type { border-top: 2px solid var(--kg-cyan-deep); }
+.kg-dispatch-card:hover { background: #1c242b; transform: translateX(4px); }
+.kg-dispatch-index { color: var(--kg-cyan-deep); font-family: var(--kg-display); font-size: .95rem; letter-spacing: .08em; padding-top: .3rem; }
+.kg-dispatch-card h3 { color: #eff5f6; font-family: var(--kg-display); font-size: 1.2rem; font-weight: 400; margin: 0 0 .5rem; }
+.kg-dispatch-card p { color: #8fa2a9; font-size: 1rem; line-height: 1.6; margin: 0; }
+.kg-dispatch-meta { color: #8fa2a9; font-size: .85rem; letter-spacing: .05em; padding-top: .3rem; text-transform: uppercase; white-space: nowrap; }
+.kg-dispatch-card .kg-dispatch-index::after {
+	color: var(--kg-cyan-deep);
+	content: '\2192';
+	display: block;
+	font-size: 1.1rem;
+	margin-top: .5rem;
+	opacity: 0;
+	transition: opacity .12s ease, transform .12s ease;
+	transform: translateX(-4px);
+}
+.kg-dispatch-card:hover .kg-dispatch-index::after { opacity: 1; transform: translateX(0); }
+
+.kg-home-feed .kg-button { background: var(--kg-cyan-deep); border-color: var(--kg-cyan-deep); }
+.kg-home-feed .kg-button:hover { background: var(--kg-cyan); border-color: var(--kg-cyan); color: var(--kg-ink); }
 
 /* Index page: give the list a little more room to breathe than the
    compact homepage teaser. */
 .kg-devlog-stream--index .kg-dispatch-card { padding: 1.75rem 1.5rem; }
+
+/* ── Roadmap / mission status ───────────────────────────────────────── */
+.kg-roadmap { background: var(--kg-void); color: #fff; padding: 4rem 0; position: relative; }
+.kg-roadmap::before { background: linear-gradient(90deg, rgba(89, 216, 255, .08), transparent 40%); content: ''; inset: 0; pointer-events: none; position: absolute; }
+.kg-roadmap .container { position: relative; }
+.kg-roadmap .kg-section-heading { color: #fff; }
+.kg-roadmap-copy { color: #abb8be; max-width: 40rem; }
+.kg-mission-list { border-top: 1px solid #445159; margin: 2rem 0 0; }
+.kg-mission { align-items: center; border-bottom: 1px solid #445159; display: grid; gap: 1rem; grid-template-columns: 130px 1fr auto; padding: 1rem 0; }
+.kg-mission-date { color: var(--kg-cyan); font-family: var(--kg-display); font-size: .78rem; letter-spacing: .06em; }
+.kg-mission-feature { color: #e2e9eb; }
+.kg-status { border: 1px solid currentColor; color: #b7c4c9; font-family: var(--kg-display); font-size: .78rem; font-weight: 400; letter-spacing: .08em; padding: .35rem .5rem; text-transform: uppercase; }
+.kg-status--complete { color: var(--kg-cyan); }
+
+/* ── Brand & navbar ─────────────────────────────────────────────────── */
+.rl-brand {
+	align-items: center;
+	display: inline-flex;
+	font-family: var(--kg-display-pixel);
+	font-size: 1rem;
+	gap: .55rem;
+	letter-spacing: .03em;
+	opacity: .92;
+}
+.rl-brand-mark { color: var(--rl-red); }
+.rl-brand-icon { height: 26px; width: 26px; }
+
+/* Nav links in the same pixel typeface as the brand mark and hero title. */
+.navbar-nav .nav-link {
+	font-family: var(--kg-display-pixel);
+	font-size: .85rem;
+	letter-spacing: .02em;
+}
+
+/* ── Hero rebuilt as a title-screen ─────────────────────────────────────
+   No product shot, centered menu stack, mirrors the in-game title screen
+   (see moon/styleguide_resources/style.css). */
+.rl-menu-hero {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	min-height: 88vh;
+	padding-bottom: 3.5rem !important;
+	padding-top: 4.5rem !important;
+	position: relative;
+	text-align: center;
+}
+.rl-hero-title {
+	font-family: var(--kg-display-pixel);
+	font-size: clamp(2rem, 5.5vw, 3.75rem);
+	letter-spacing: .02em;
+	line-height: 1.35;
+}
+.rl-menu-stack {
+	display: flex;
+	flex-direction: column;
+	gap: .65rem;
+	max-width: 360px;
+	width: 100%;
+}
 
 /* "Last updated" line replaces the old (fixed, inaccurate) progress
    counter — it should stay legible against the void-black hero and
@@ -450,9 +358,9 @@ body.dark-mode .kg-dispatch-card:hover { background: #1c242b !important; }
 	text-decoration: underline;
 }
 
-/* Bluesky section: match the pixel-font heading system used by the rest
-   of the homepage instead of a generic Bootstrap-style title + solid
-   brand-blue button. */
+/* ── Bluesky section ────────────────────────────────────────────────── */
+/* Match the pixel-font heading system used by the rest of the homepage
+   instead of a generic Bootstrap-style title + solid brand-blue button. */
 .bluesky-section-title {
 	color: #eff5f6;
 	font-family: var(--kg-display);
@@ -461,3 +369,102 @@ body.dark-mode .kg-dispatch-card:hover { background: #1c242b !important; }
 	letter-spacing: .02em;
 }
 .bluesky-logo { height: 28px; }
+
+/* ── Dark-mode overrides (press-kit, devlog pages via the theme toggle) ─ */
+body.dark-mode .kg-page-shell { background-color: #101519 !important; color: #e2e9eb; }
+body.dark-mode .kg-panel { background: #171e23 !important; border-color: #3a484f !important; box-shadow: 5px 5px 0 rgba(0,0,0,.35); }
+body.dark-mode .kg-panel-title, body.dark-mode .kg-facts dd, body.dark-mode .kg-feature-list strong, body.dark-mode .kg-rail-title, body.dark-mode .kg-devlog-entry-title, body.dark-mode .kg-section-heading { color: #eff5f6 !important; }
+body.dark-mode .kg-copy, body.dark-mode .kg-feature-list li, body.dark-mode .kg-devlog-entry .devlog-content { color: #b9c6cb !important; }
+body.dark-mode .kg-devlog-entry .devlog-content h5 { color: #eff5f6 !important; }
+body.dark-mode .kg-copy a, body.dark-mode .kg-text-link { color: var(--kg-cyan) !important; }
+body.dark-mode .kg-copy a:hover, body.dark-mode .kg-text-link:hover { color: #fff !important; }
+body.dark-mode .kg-label { color: #8fa2a9 !important; }
+body.dark-mode .kg-facts > div, body.dark-mode .kg-feature-list li, body.dark-mode .kg-devlog-entry, body.dark-mode .kg-devlog-stream, body.dark-mode .kg-devlog-rail, body.dark-mode .kg-rail-block { border-color: #3a484f !important; }
+body.dark-mode .kg-devlog-entry { background: #171e23 !important; }
+body.dark-mode .kg-facts dt, body.dark-mode .kg-devlog-entry-meta { color: #8fa2a9 !important; }
+
+/* ── Responsive ─────────────────────────────────────────────────────── */
+@media (max-width: 991px) {
+	.kg-devlog-rail { border-left: 0; border-top: 1px solid #9ca7aa; margin-top: 2rem; padding: 1.5rem 0 0; }
+}
+@media (max-width: 767px) {
+	.kg-hero { padding: 3rem 0 !important; }
+	.kg-devlog-entry { padding: 1.15rem 1.25rem; }
+	.kg-devlog-entry--solo { padding: 1.5rem 1.25rem; }
+	.kg-dispatch-card { grid-template-columns: 52px 1fr; padding: 1.25rem 1rem; }
+	.kg-dispatch-meta { grid-column: 2; padding-top: 0; }
+	.kg-mission { align-items: start; grid-template-columns: 1fr auto; }
+	.kg-mission-feature { grid-column: 1 / -1; grid-row: 2; }
+	.rl-menu-hero { padding-top: 3rem !important; }
+	.rl-menu-stack { margin-left: auto; margin-right: auto; }
+}
+
+/* ── Homepage navbar: integrated into the hero instead of a solid bar ── */
+body.page-home #navbar-container {
+	height: 0;
+	position: relative;
+	z-index: 20;
+}
+body.page-home #navbar-container .navbar {
+	background: transparent !important;
+	left: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+/* Once the mobile menu opens it needs a solid surface of its own,
+   otherwise its links sit unreadably over the hero art beneath it. */
+@media (max-width: 991px) {
+	body.page-home #navbar-container .navbar-collapse.show {
+		background: rgba(10, 13, 16, .98);
+		margin-top: .5rem;
+	}
+}
+/* The hero already has enough top padding to clear the overlaid navbar
+   on desktop; give it a touch more on the smallest screens. */
+@media (max-width: 480px) {
+	body.page-home .rl-menu-hero { padding-top: 5.5rem !important; }
+}
+
+.rl-scroll-cue {
+	align-items: center;
+	bottom: 1.75rem;
+	color: #8a97a0;
+	display: flex;
+	flex-direction: column;
+	font-family: var(--kg-display-pixel);
+	gap: .35rem;
+	left: 50%;
+	position: absolute;
+	text-decoration: none;
+	transform: translateX(-50%);
+}
+.rl-scroll-cue:hover { color: var(--kg-cyan); }
+.rl-scroll-cue-label { font-size: .7rem; letter-spacing: .12em; text-transform: uppercase; }
+.rl-scroll-cue-arrow { animation: rl-scroll-bounce 1.8s ease-in-out infinite; font-size: 1.1rem; line-height: 1; }
+@keyframes rl-scroll-bounce {
+	0%, 100% { transform: translateY(0); }
+	50% { transform: translateY(6px); }
+}
+
+@media (max-width: 767px) {
+	.rl-menu-hero { min-height: 80vh; }
+}
+
+/* Mobile menu toggle: replace Bootstrap's default gray focus ring + stock
+   hamburger icon with something that matches the pixel/cyan system. */
+.navbar-toggler {
+	border: 1px solid var(--kg-cyan-deep);
+	border-radius: 2px;
+	padding: .4rem .6rem;
+}
+.navbar-toggler:focus,
+.navbar-toggler:focus-visible {
+	box-shadow: 0 0 0 2px rgba(89, 216, 255, .35);
+	outline: none;
+}
+.navbar-toggler-icon {
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath stroke='%2359d8ff' stroke-width='2' stroke-linecap='square' d='M2 5h20M2 12h20M2 19h20'/%3E%3C/svg%3E");
+	height: 1.15em;
+	width: 1.15em;
+}
