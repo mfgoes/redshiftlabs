@@ -314,10 +314,16 @@ h1, h2, .hero-title, .section-title {
 	letter-spacing: .02em;
 }
 
-/* Bottom nav bar - used on "solo" pages (e.g. individual devlog posts) that
-   drop the top navbar so the page starts right at the header, itch.io-style. */
+/* Bottom nav bar - a mobile-only pattern used on "solo" pages (e.g.
+   individual devlog posts): on phones the page starts right at the header,
+   itch.io-style, with a fixed bottom bar instead of the top navbar. At
+   desktop widths this reverts to the normal top navbar - a bottom tab bar
+   is a thumb-reach affordance that doesn't belong on a wide screen. */
 body.kg-solo-page {
 	padding-bottom: 3.75rem;
+}
+body.kg-solo-page #navbar-container {
+	display: none;
 }
 .rl-bottom-nav {
 	background: #121212;
@@ -356,13 +362,31 @@ body.kg-solo-page {
 	color: #fff;
 }
 
-/* Solo pages also drop the footer's copyright/press-kit line - it's
-   redundant with the bottom nav and reads as clutter, itch.io-style. */
+/* Solo pages also drop the footer's copyright/press-kit line on mobile -
+   it's redundant with the bottom nav and reads as clutter, itch.io-style. */
 body.kg-solo-page footer .text-start {
 	display: none;
 }
 body.kg-solo-page footer .d-flex {
 	justify-content: center;
+}
+
+@media (min-width: 768px) {
+	body.kg-solo-page {
+		padding-bottom: 0;
+	}
+	body.kg-solo-page #navbar-container {
+		display: block;
+	}
+	body.kg-solo-page .rl-bottom-nav {
+		display: none;
+	}
+	body.kg-solo-page footer .text-start {
+		display: block;
+	}
+	body.kg-solo-page footer .d-flex {
+		justify-content: space-between;
+	}
 }
 
 /* ── Hero rebuilt as a title-screen ─────────────────────────────────────
