@@ -217,10 +217,10 @@ h1, h2, .hero-title, .section-title {
 .kg-devlog-entry .devlog-content h5 {
 	color: var(--kg-ink);
 	font-family: var(--kg-display);
-	font-size: 1.2rem;
+	font-size: clamp(1.35rem, 2.4vw, 1.65rem);
 	font-weight: 700;
 	letter-spacing: .02em;
-	margin: 1.85rem 0 .85rem;
+	margin: 2.1rem 0 .9rem;
 }
 .kg-devlog-entry .devlog-content h5:first-child { margin-top: 0; }
 .kg-devlog-entry .devlog-footer { border: 0; color: var(--kg-muted); margin: .8rem 0 0; padding: 0; }
@@ -312,6 +312,57 @@ h1, h2, .hero-title, .section-title {
 	font-family: var(--kg-display-pixel);
 	font-size: .85rem;
 	letter-spacing: .02em;
+}
+
+/* Bottom nav bar - used on "solo" pages (e.g. individual devlog posts) that
+   drop the top navbar so the page starts right at the header, itch.io-style. */
+body.kg-solo-page {
+	padding-bottom: 3.75rem;
+}
+.rl-bottom-nav {
+	background: #121212;
+	border-top: 1px solid #2c2c2c;
+	bottom: 0;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	left: 0;
+	padding: .7rem .5rem;
+	position: fixed;
+	right: 0;
+	z-index: 1030;
+}
+.rl-bottom-nav-link {
+	color: var(--kg-lunar);
+	font-family: var(--kg-display-pixel);
+	font-size: .8rem;
+	letter-spacing: .02em;
+	padding: .3rem .6rem;
+	text-align: center;
+	text-decoration: none;
+	transition: color .1s ease;
+}
+.rl-bottom-nav-link:hover,
+.rl-bottom-nav-link.active {
+	color: var(--kg-cyan);
+}
+.rl-bottom-nav-cta {
+	border: 1px solid var(--kg-cyan-deep);
+	border-radius: 2px;
+	color: #fff;
+}
+.rl-bottom-nav-cta:hover {
+	background: var(--kg-cyan-deep);
+	color: #fff;
+}
+
+/* Solo pages also drop the footer's copyright/press-kit line - it's
+   redundant with the bottom nav and reads as clutter, itch.io-style. */
+body.kg-solo-page footer .text-start {
+	display: none;
+}
+body.kg-solo-page footer .d-flex {
+	justify-content: center;
 }
 
 /* ── Hero rebuilt as a title-screen ─────────────────────────────────────

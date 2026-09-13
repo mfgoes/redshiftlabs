@@ -7,7 +7,8 @@ document.addEventListener('DOMContentLoaded', async function() {
         // Load navbar and footer components in parallel
         await window.ComponentLoader.loadMultiple([
             { name: 'navbar', container: '#navbar-container' },
-            { name: 'footer', container: '#footer-container' }
+            { name: 'footer', container: '#footer-container' },
+            { name: 'bottom-navbar', container: '#bottom-navbar-container' }
         ]);
 
         // Set active nav link based on current page
@@ -30,7 +31,7 @@ document.addEventListener('DOMContentLoaded', async function() {
  */
 function setActiveNavLink() {
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-    const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+    const navLinks = document.querySelectorAll('.navbar-nav .nav-link, .rl-bottom-nav-link');
 
     navLinks.forEach(link => {
         const linkPage = link.getAttribute('href');

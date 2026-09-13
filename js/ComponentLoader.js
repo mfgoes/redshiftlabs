@@ -17,7 +17,11 @@
                 const container = document.querySelector(containerSelector);
 
                 if (!container) {
-                    throw new Error(`Container not found: ${containerSelector}`);
+                    // Some pages intentionally omit a container (e.g. devlog posts
+                    // that skip the navbar) - skip quietly instead of failing the
+                    // whole loadMultiple() batch.
+                    console.warn(`Container not found, skipping: ${containerSelector}`);
+                    return null;
                 }
 
                 // Fetch the component HTML (use base path if defined for subdirectories)
