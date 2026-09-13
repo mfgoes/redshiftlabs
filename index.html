@@ -61,23 +61,18 @@
 	<!-- Navbar Component -->
 	<div id="navbar-container"></div>
 
-	<!-- Hero Section -->
-	<section class="hero-section py-5">
+	<!-- Hero Section - styled as the game's own title screen -->
+	<section class="hero-section kg-hero rl-menu-hero">
 		<div class="container">
-			<div class="row g-4 align-items-center">
-				<!-- Mobile: Image first (order-1 on mobile, order-2 on desktop) -->
-				<div class="col-lg-6 order-1 order-lg-2">
-					<img src="images/img_base.jpg" alt="Kosmograd Game" class="img-fluid rounded">
-				</div>
+			<p class="kg-kicker mb-2">Kosmograd / lunar colony RTS</p>
+			<h1 class="rl-hero-title mb-4">Survive the darkness<br>expand your base</h1>
 
-				<!-- Desktop: Content on left (order-2 on mobile, order-1 on desktop) -->
-				<div class="col-lg-6 order-2 order-lg-1">
-					<h1 class="hero-title mb-4">Survive the void<br>one base at a time</h1>
-					<!--<p class="hero-subtitle mb-3">Building an RTS in my spare time.</p>-->
-					<a href="https://mischa.itch.io/kosmograd" class="btn btn-orange btn-lg px-4 mb-2">Play Demo</a>
-					<p class="progress-text mb-4">Game progress: <span id="progress-counter">0</span>%</p>
-				</div>
+			<div class="rl-menu-stack mx-auto">
+				<a href="https://mischa.itch.io/kosmograd" class="kg-menu-btn is-selected">Play Demo</a>
+				<a href="https://mischa.itch.io/kosmograd" class="kg-menu-btn">Play in Browser</a>
 			</div>
+
+			<p class="progress-text mb-0 mt-3">Last updated <a href="devlog-making-survival-matter.html" class="rl-last-updated-link">Sep 13, 2026</a></p>
 		</div>
 	</section>
 
@@ -86,14 +81,35 @@
 		<div class="container">
 			<div class="d-flex flex-wrap justify-content-between gap-3 align-items-end mb-4">
 				<div>
-					<p class="kg-kicker mb-2" style="color: #117e9f;">Lunar colony / field record</p>
+					<p class="kg-kicker mb-2">Lunar colony / field record</p>
 					<h2 class="kg-section-heading mb-0">Latest devlog</h2>
 				</div>
 				<a href="devlog.html" class="btn kg-button">Open full log</a>
 			</div>
-			<a href="devlog.html#dec13-2025" class="kg-dispatch-card"><span class="kg-dispatch-index">LOG 04</span><span><h3>Quest System Planning</h3><p>A goal-driven progression layer for the colony’s next phase.</p></span><span class="kg-dispatch-meta">Dec 13, 2025 · 3 min</span></a>
-			<a href="devlog.html#nov16-2025" class="kg-dispatch-card"><span class="kg-dispatch-index">LOG 03</span><span><h3>Food &amp; Survival System</h3><p>Colonist survival stats turn the stockpile into a meaningful decision.</p></span><span class="kg-dispatch-meta">Nov 16, 2025 · 4 min</span></a>
-			<a href="devlog.html#nov-oxygen" class="kg-dispatch-card"><span class="kg-dispatch-index">LOG 02</span><span><h3>Oxygen Consumption System</h3><p>Pressure zones and aluminium upkeep create immediate environmental risk.</p></span><span class="kg-dispatch-meta">Nov 15, 2025 · 3 min</span></a>
+			<a href="devlog-making-survival-matter.html" class="kg-dispatch-card">
+				<span class="kg-dispatch-index">LOG 05</span>
+				<span class="kg-dispatch-body">
+					<h3>Making Survival Matter</h3>
+					<p>The early food loop gets a big overhaul — Food Fabricator becomes an emergency fallback, Hydroponics Bay ties long-term survival to a real supply line, plus a continued pixel-art UI pass across the whole interface.</p>
+				</span>
+				<span class="kg-dispatch-meta">Sep 13, 2026 · 5 min</span>
+			</a>
+			<a href="devlog-quest-system-planning.html" class="kg-dispatch-card">
+				<span class="kg-dispatch-index">LOG 04</span>
+				<span class="kg-dispatch-body">
+					<h3>Quest System Planning</h3>
+					<p>A goal-driven progression layer for the colony's next phase. Objectives now unlock new buildings as rewards, replacing idle waiting with a clear sense of progress.</p>
+				</span>
+				<span class="kg-dispatch-meta">Dec 13, 2025 · 3 min</span>
+			</a>
+			<a href="devlog-food-survival-system.html" class="kg-dispatch-card">
+				<span class="kg-dispatch-index">LOG 03</span>
+				<span class="kg-dispatch-body">
+					<h3>Food &amp; Survival System</h3>
+					<p>Colonist survival stats turn the stockpile into a meaningful decision. Stronghold-style food mechanics track hunger per colonist, so a shortage has real consequences.</p>
+				</span>
+				<span class="kg-dispatch-meta">Nov 16, 2025 · 4 min</span>
+			</a>
 		</div>
 	</section>
 
@@ -103,20 +119,21 @@
 			<div class="row g-4 align-items-start">
 				<!-- Left: Text and Button -->
 				<div class="col-lg-5 col-md-12">
+					<p class="kg-kicker mb-2">Kosmograd / transmissions</p>
 					<h2 class="bluesky-section-title">
-						<img src="images/Bluesky_logo.png" alt="Bluesky" class="bluesky-logo">
+						<img src="images/Bluesky_logo.png" alt="" class="bluesky-logo">
 						Bluesky Updates
 					</h2>
 					<p class="bluesky-section-description">
 						Daily progress updates, behind-the-scenes development, and direct answers to community questions. Join the conversation on Bluesky.
 					</p>
-					<a href="https://bsky.app/profile/mishotofu.bsky.social" class="bluesky-follow-button">Follow on Bluesky</a>
+					<a href="https://bsky.app/profile/mishotofu.bsky.social" class="kg-button">Follow on Bluesky</a>
 				</div>
 
 				<!-- Right: Feed -->
 				<div class="col-lg-7 col-md-12">
 					<div class="bsky-feed-container">
-						<bsky-embed id="bskyEmbed" limit="3" mode="light" username="mishotofu.bsky.social"></bsky-embed>
+						<bsky-embed id="bskyEmbed" limit="3" mode="dark" username="mishotofu.bsky.social"></bsky-embed>
 					</div>
 				</div>
 			</div>
@@ -141,14 +158,14 @@
 	<!-- Contact Section -->
 	<section class="contact-section py-5">
 		<div class="container text-center">
-			<h2 class="section-header mb-3">Get in touch</h2>
-			<p class="bluesky-section-description mb-4">
+			<h2 class="kg-section-heading mb-3">Get in touch</h2>
+			<p class="bluesky-section-description mb-4 mx-auto" style="max-width: 34rem;">
 				Questions, feedback, or playtester applications welcome!
 			</p>
 			<div class="d-flex gap-3 justify-content-center flex-wrap">
-				<a href="mailto:mfgoes1@gmail.com" class="btn btn-x px-4">Email</a>
-				<a href="https://discord.gg/RbzwwYn945" class="btn btn-x px-4">Discord</a>
-				<a href="https://bsky.app/profile/mishotofu.bsky.social" class="btn btn-x px-4">Bluesky</a>
+				<a href="mailto:mfgoes1@gmail.com" class="kg-button">Email</a>
+				<a href="https://discord.gg/RbzwwYn945" class="kg-button">Discord</a>
+				<a href="https://bsky.app/profile/mishotofu.bsky.social" class="kg-button">Bluesky</a>
 			</div>
 		</div>
 	</section>
@@ -158,14 +175,14 @@
 	<footer class="py-4" style="background-color: #0a0a0a; border-top: 1px solid #2c2c2c;">
 		<div class="container">
 			<div class="text-center">
-				<p class="mb-2" style="color: #6e6e73; font-size: 0.875rem;">
+				<p class="mb-2" style="color: #8a8a8f; font-size: 0.875rem;">
 					Redshift Labs &copy; 2025
 				</p>
 				<p class="mb-0">
-					<a href="press-kit.html" style="color: #6e6e73; font-size: 0.75rem; text-decoration: none;">Press Kit</a>
+					<a href="press-kit.html" style="color: #8a8a8f; font-size: 0.8125rem; text-decoration: none;">Press Kit</a>
 				</p>
 				<p class="mb-0">
-					<a href="moon/UI_STYLE_GUIDE.html" style="color: #6e6e73; font-size: 0.75rem; text-decoration: none;">Design System</a>
+					<a href="moon/UI_STYLE_GUIDE.html" style="color: #8a8a8f; font-size: 0.8125rem; text-decoration: none;">Design System</a>
 				</p>
 			</div>
 		</div>
@@ -179,30 +196,6 @@
 	<script src="js/ComponentLoader.js"></script>
 	<script src="js/navbar-init.js"></script>
 
-	<!-- Progress Counter Animation -->
-	<script>
-		// Animate progress counter on page load
-		document.addEventListener('DOMContentLoaded', function() {
-			const counter = document.getElementById('progress-counter');
-			const target = 84;
-			const duration = 2000; // 2 seconds
-			const steps = 60;
-			const increment = target / steps;
-			const stepDuration = duration / steps;
-			let current = 0;
-			
-			const timer = setInterval(function() {
-				current += increment;
-				if (current >= target) {
-					counter.textContent = target;
-					clearInterval(timer);
-				} else {
-					counter.textContent = Math.floor(current);
-				}
-			}, stepDuration);
-		});
-	</script>
-	
 	<!-- JSON-LD Structured Data -->
 	<script type="application/ld+json">
 	{

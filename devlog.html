@@ -29,7 +29,7 @@
 	<!-- Bluesky Embed -->
 	<script async src="https://cdn.jsdelivr.net/npm/bsky-embed/dist/bsky-embed.es.js" type="module"></script>
 </head>
-<body class="bg-dark text-white">
+<body class="bg-dark text-white dark-mode">
 
 	<!-- Navbar Component -->
 	<div id="navbar-container"></div>
@@ -38,8 +38,9 @@
 	<section class="py-5 kg-hero">
 		<div class="container text-center">
 			<p class="kg-kicker mb-2">Kosmograd / field record</p>
-			<h1 class="hero-title mb-2">Development Log</h1>
-			<p class="hero-subtitle mb-0">Systems, setbacks, and signals from the lunar colony.</p>
+			<h1 class="rl-hero-title mb-2" style="font-size: clamp(1.75rem, 4.5vw, 2.75rem);">Development Log</h1>
+			<p class="hero-subtitle mb-2">Systems, setbacks, and signals from the lunar colony.</p>
+			<a href="https://mischa.itch.io/kosmograd/devlog" target="_blank" rel="noopener noreferrer" class="kg-text-link" style="font-size: .85rem;">Also following along on itch.io &#8599;</a>
 		</div>
 	</section>
 
@@ -49,238 +50,47 @@
 			<div class="row">
 				<!-- Main Content -->
 				<div class="col-lg-8">
-					<div class="kg-devlog-stream">
-
-					<!-- Entry: Dec 13, 2025 - Quest System Planning (NEWEST) -->
-					<article id="dec13-2025" class="devlog-entry kg-devlog-entry">
-						<div class="devlog-entry-header">
-							<h2 class="devlog-entry-title">Quest System Planning</h2>
-							<div class="devlog-entry-meta">
-								<small class="timeline-date">Dec 13, 2025</small>
-								<small class="timeline-date">·</small>
-								<small class="timeline-date">3 min read</small>
-							</div>
-						</div>
-
-						<div class="devlog-content">
-							<p class="mb-4">Planned comprehensive quest system to solve core engagement issues and transform gameplay from passive waiting into goal-driven progression.</p>
-
-							<h5>The Problem</h5>
-							<ul class="mb-4">
-								<li>Players had "nothing to do while waiting for resources"</li>
-								<li>Building system felt "too free" - could build anything anywhere</li>
-								<li>No sense of progression or accomplishment</li>
-							</ul>
-
-							<h5>Design Philosophy</h5>
-							<p class="mb-3">Inspired by <strong>Terrafactor</strong> (quest-gated unlocks), <strong>Factorio</strong> (production milestones), and <strong>Stronghold</strong> (mission objectives), the quest system will provide clear objectives and unlock buildings as rewards.</p>
-
-							<h5>Quest Progression</h5>
-							<ol class="mb-4">
-								<li><strong>First Light:</strong> Build 2 Solar Panels → unlocks Battery</li>
-								<li><strong>Through the Night:</strong> Survive until Day 2 → unlocks Food Fabricator</li>
-								<li><strong>Colony Nutrition:</strong> Produce 30 Food → unlocks Comms Center</li>
-								<li><strong>Earth Contact:</strong> Order supply drop → unlocks Pressure Dome</li>
-								<li><strong>Lunar Permanence:</strong> Survive 7 days with 3+ colonists → Victory!</li>
-							</ol>
-
-							<h5>Technical Architecture</h5>
-							<ul class="mb-4">
-								<li><strong>QuestManager:</strong> Tracks quest status, progress, and triggers unlocks</li>
-								<li><strong>Quest Panel UI:</strong> Side panel showing active objective and rewards</li>
-								<li><strong>Comms Center:</strong> New building for ordering supply drops from Earth</li>
-								<li><strong>Building locks:</strong> Only starter buildings available, rest unlocked via quests</li>
-							</ul>
-
-							<p class="mb-0"><em>Target: 7-day implementation sprint. This system is critical for establishing a clear gameplay loop and sense of accomplishment.</em></p>
-						</div>
-
-						<div class="devlog-footer">
-							<img src="images/moon_icon.png" alt="Mischa" style="width: 20px; height: 20px; border-radius: 50%; object-fit: cover; margin-right: 6px; vertical-align: middle;">
-							<small class="text-muted">Mischa (with Claude)</small>
-						</div>
-					</article>
-
-					<!-- Entry: Nov 16, 2025 - Food & Survival System -->
-					<article id="nov16-2025" class="devlog-entry kg-devlog-entry">
-						<div class="devlog-entry-header">
-							<h2 class="devlog-entry-title">Food & Survival System</h2>
-							<div class="devlog-entry-meta">
-								<small class="timeline-date">Nov 16, 2025</small>
-								<small class="timeline-date">·</small>
-								<small class="timeline-date">4 min read</small>
-							</div>
-						</div>
-
-						<div class="devlog-content">
-							<p class="mb-4">Implemented Stronghold-style food mechanics and individual survival stats to create a compelling survival loop for Kosmograd.</p>
-
-							<img class="img-fluid" src="https://i.imgur.com/wo6xADv.gif" alt="">
-							
-							<h5>Food System</h5>
-							<ul class="mb-4">
-								<li>Global consumption: 10 food/colonist/day from stockpile</li>
-								<li>If sufficient food → colonists eat, hunger resets</li>
-								<li>If insufficient → nobody eats, health/morale decline begins</li>
-							</ul>
-
-							<h5>Survival Stats (UnitDetails.gd)</h5>
-							<ul class="mb-4">
-								<li><strong>Hunger:</strong> Depletes 33%/day without food, critical at day 3</li>
-								<li><strong>Health:</strong> Master stat, damaged by starvation (-34/day) and oxygen loss (-20/min)</li>
-								<li><strong>Morale:</strong> Crashes during starvation (-40/day), slow decay otherwise (-2/day)</li>
-							</ul>
-
-							<h5>Death & Game Over</h5>
-							<ul class="mb-4">
-								<li>Colonists die at 0 health</li>
-								<li>Game over screen shows death causes by type (starvation, oxygen deprivation)</li>
-							</ul>
-
-							<h5>UI Improvements</h5>
-							<ul class="mb-4">
-								<li>Day counter tracks current sol</li>
-								<li>Resource panel displays consumption rates (e.g., "Food: 500 (-30/day)")</li>
-								<li>Unit details panel ready for stat visualization</li>
-								<li>Debug key ']' to skip days for testing</li>
-							</ul>
-
-							<p class="mb-0"><em>Timeline example: 500 food + 3 colonists = starvation begins ~day 17, deaths ~day 21</em></p>
-						</div>
-
-						<div class="devlog-footer">
-							<img src="images/moon_icon.png" alt="Mischa" style="width: 20px; height: 20px; border-radius: 50%; object-fit: cover; margin-right: 6px; vertical-align: middle;">
-							<small class="text-muted">Mischa (with Claude)</small>
-						</div>
-					</article>
-
-					<!-- Entry: Nov 15, 2025 - Oxygen System -->
-					<article id="nov-oxygen" class="devlog-entry kg-devlog-entry">
-						<div class="devlog-entry-header">
-							<h2 class="devlog-entry-title">Oxygen Consumption System</h2>
-							<div class="devlog-entry-meta">
-								<small class="timeline-date">Nov 15, 2025</small>
-								<small class="timeline-date">·</small>
-								<small class="timeline-date">3 min read</small>
-							</div>
-						</div>
-
-						<div class="devlog-content">
-							<p class="mb-4">Added atmospheric pressure zones to buildings with aluminium-based oxygen generation, creating a critical resource management layer.</p>
-
-							<img src="https://i.imgur.com/vkWi1L7.jpeg" alt="Oxygen system UI" class="img-fluid rounded mb-4">
-
-							<h5>Oxygen System</h5>
-							<ul class="mb-4">
-								<li><strong>Renamed zones:</strong> InsideZone → PressureZone across all buildings</li>
-								<li><strong>Aluminium consumption:</strong> Buildings with pressure zones consume aluminium to maintain oxygen</li>
-								<li><strong>Zone failure:</strong> Oxygen zones fail when aluminium depleted (collision disabled)</li>
-								<li><strong>Immediate danger:</strong> Units inside failed zones start losing oxygen immediately</li>
-							</ul>
-
-							<h5>Building Details Panel</h5>
-							<ul class="mb-4">
-								<li>Shows oxygen consumption: "Generates oxygen zone. Cost: 1 alu/10s"</li>
-								<li>Displays oxygen status (Active/FAILING) for pressure zone buildings</li>
-								<li>Updated power display formatting for cleaner units</li>
-								<li>ResourcesLabel repurposed for oxygen info display</li>
-							</ul>
-
-							<h5>Design Improvements</h5>
-							<ul class="mb-4">
-								<li>Made building UI panel larger to accommodate oxygen and power information</li>
-								<li>Better visual hierarchy for critical system status</li>
-							</ul>
-
-							<p class="mb-0"><em>This system creates tension between expansion and resource management - every pressurized building needs constant aluminium supply to keep colonists alive.</em></p>
-						</div>
-
-						<div class="devlog-footer">
-							<img src="images/moon_icon.png" alt="Mischa" style="width: 20px; height: 20px; border-radius: 50%; object-fit: cover; margin-right: 6px; vertical-align: middle;">
-							<small class="text-muted">Mischa</small>
-						</div>
-					</article>
-
-					<!-- Entry: Oct 28, 2025 - Game Direction Document (OLDEST) -->
-					<article id="claude-doc" class="devlog-entry kg-devlog-entry">
-						<div class="devlog-entry-header">
-							<h2 class="devlog-entry-title">Game Direction & Technical Overview</h2>
-							<div class="devlog-entry-meta">
-								<small class="timeline-date">Oct 28, 2025</small>
-								<small class="timeline-date">·</small>
-								<small class="timeline-date">2 min read</small>
-							</div>
-						</div>
-
-						<div class="devlog-content">
-							<p class="mb-4">Created comprehensive CLAUDE.md document to establish the game's vision, core mechanics, and technical architecture.</p>
-
-							<!-- Audio Player -->
-							<div class="mb-4">
-								<audio controls style="width: 100%;">
-									<source src="audio/Track 1 Moon.mp3" type="audio/mpeg">
-									Your browser does not support the audio element.
-								</audio>
-							</div>
-
-							<h5>Game Vision</h5>
-							<ul class="mb-4">
-								<li>Soviet lunar colony management with 1970s aesthetic and Cold War tension</li>
-								<li>Focus on survival, resource scarcity, and tough moral decisions</li>
-								<li><strong>Inspired by classics:</strong> Stronghold Crusader's economic chains and castle-building, RimWorld's emergent storytelling and colonist management</li>
-								<li>Every decision matters: balance expansion vs. survival, production vs. consumption, safety vs. efficiency</li>
-								<li><strong>Estimated price:</strong> 15 EUR at launch</li>
-								<li>Target platform: Steam (PC), January 2026 demo release</li>
-							</ul>
-
-							<h5>Core Mechanics Documented</h5>
-							<ul class="mb-4">
-								<li><strong>Resource management:</strong> Minerals, food, power, oxygen, aluminium</li>
-								<li><strong>Building systems:</strong> Placement, power grids, production chains</li>
-								<li><strong>Unit systems:</strong> Worker assignment, survival stats, pathfinding</li>
-								<li><strong>Day/night cycle:</strong> 24-hour sol system for pacing</li>
-							</ul>
-
-							<h5>Technical Stack</h5>
-							<ul class="mb-4">
-								<li>Engine: Godot 4.4</li>
-								<li>Language: GDScript</li>
-								<li>Architecture: Scene-based with singleton managers</li>
-								<li>UI: Custom panels with real-time stat tracking</li>
-							</ul>
-
-							<p class="mb-0"><em>This document serves as the development north star - defining scope, mechanics, and technical decisions to keep the project focused during solo development.</em></p>
-						</div>
-						
-						<div class="devlog-footer">
-							<img src="images/moon_icon.png" alt="Mischa" style="width: 20px; height: 20px; border-radius: 50%; object-fit: cover; margin-right: 6px; vertical-align: middle;">
-							<small class="text-muted">Mischa</small>
-						</div>
-					</article>
-
-					<!-- Template for future entries (copy this structure) -->
-					<!--
-					<article id="unique-id" class="devlog-entry">
-						<div class="devlog-entry-header">
-							<h2 class="devlog-entry-title">Entry Title</h2>
-							<div class="devlog-entry-meta">
-								<span class="badge badge-complete">Complete</span>
-								<small class="timeline-date">Month Day, Year</small>
-								<small class="timeline-date">·</small>
-								<small class="timeline-date">X min read</small>
-							</div>
-						</div>
-						
-						<div class="devlog-content">
-							<p>Entry content goes here...</p>
-						</div>
-						
-						<div class="devlog-footer">
-							<small class="text-muted">-Claude</small>
-						</div>
-					</article>
-					-->
-
+					<div class="kg-devlog-stream kg-devlog-stream--index">
+					<a href="devlog-making-survival-matter.html" class="kg-dispatch-card">
+						<span class="kg-dispatch-index">LOG 05</span>
+						<span class="kg-dispatch-body">
+							<h3>Making Survival Matter</h3>
+							<p>The early food loop gets a big overhaul — Food Fabricator becomes an emergency fallback, Hydroponics Bay ties long-term survival to a real supply line, plus a continued pixel-art UI pass across the whole interface.</p>
+						</span>
+						<span class="kg-dispatch-meta">Sep 13, 2026 · 5 min</span>
+					</a>
+					<a href="devlog-quest-system-planning.html" class="kg-dispatch-card">
+						<span class="kg-dispatch-index">LOG 04</span>
+						<span class="kg-dispatch-body">
+							<h3>Quest System Planning</h3>
+							<p>A goal-driven progression layer for the colony's next phase. Objectives now unlock new buildings as rewards, replacing idle waiting with a clear sense of progress.</p>
+						</span>
+						<span class="kg-dispatch-meta">Dec 13, 2025 · 3 min</span>
+					</a>
+					<a href="devlog-food-survival-system.html" class="kg-dispatch-card">
+						<span class="kg-dispatch-index">LOG 03</span>
+						<span class="kg-dispatch-body">
+							<h3>Food & Survival System</h3>
+							<p>Colonist survival stats turn the stockpile into a meaningful decision. Stronghold-style food mechanics track hunger per colonist, so a shortage has real consequences.</p>
+						</span>
+						<span class="kg-dispatch-meta">Nov 16, 2025 · 4 min</span>
+					</a>
+					<a href="devlog-oxygen-consumption-system.html" class="kg-dispatch-card">
+						<span class="kg-dispatch-index">LOG 02</span>
+						<span class="kg-dispatch-body">
+							<h3>Oxygen Consumption System</h3>
+							<p>Pressure zones and aluminium upkeep create immediate environmental risk. Buildings now consume oxygen locally, so a single failure can cascade fast.</p>
+						</span>
+						<span class="kg-dispatch-meta">Nov 15, 2025 · 3 min</span>
+					</a>
+					<a href="devlog-game-direction-technical-overview.html" class="kg-dispatch-card">
+						<span class="kg-dispatch-index">LOG 01</span>
+						<span class="kg-dispatch-body">
+							<h3>Game Direction &amp; Technical Overview</h3>
+							<p>Created a comprehensive design document to establish the game's vision, core mechanics, and technical architecture before building further.</p>
+						</span>
+						<span class="kg-dispatch-meta">Oct 28, 2025 · 2 min</span>
+					</a>
 					</div>
 				</div>
 				
@@ -304,7 +114,7 @@
 										<small class="timeline-description"><strong>65%</strong></small>
 									</div>
 									<div class="progress kg-progress">
-										<div class="progress-bar" role="progressbar" style="width: 65%; background-color: #ff9500;" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+										<div class="progress-bar" role="progressbar" style="width: 65%; background-color: #117e9f;" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
 									</div>
 								</div>
 								<small class="timeline-date">Target: January 2026 Demo</small>

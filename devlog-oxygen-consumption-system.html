@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- SEO Meta Tags -->
+	<title>Oxygen Consumption System | Devlog | Redshift Labs</title>
+	<meta name="description" content="Pressure zones and aluminium upkeep create immediate environmental risk. Buildings now consume oxygen locally, so a single failure can cascade fast.">
+	<meta name="author" content="Redshift Labs">
+	<meta name="robots" content="index, follow">
+	<link rel="canonical" href="https://mfgoes.github.io/redshiftlabs/devlog-oxygen-consumption-system.html">
+
+	<!-- Open Graph -->
+	<meta property="og:type" content="article">
+	<meta property="og:site_name" content="Redshift Labs">
+	<meta property="og:title" content="Oxygen Consumption System">
+	<meta property="og:description" content="Pressure zones and aluminium upkeep create immediate environmental risk. Buildings now consume oxygen locally, so a single failure can cascade fast.">
+	<meta property="og:url" content="https://mfgoes.github.io/redshiftlabs/devlog-oxygen-consumption-system.html">
+
+	<!-- Favicon -->
+	<link rel="icon" type="image/x-icon" href="images/moon_icon.png">
+
+	<!-- Google Fonts - Orbitron -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+	<!-- Bootstrap CSS -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/devlog-styles.css">
+	<link rel="stylesheet" href="css/kosmograd.css">
+</head>
+<body class="bg-dark text-white dark-mode">
+
+	<!-- Navbar Component -->
+	<div id="navbar-container"></div>
+
+	<!-- Devlog Post Header -->
+	<section class="py-5 kg-hero">
+		<div class="container">
+			<a href="devlog.html" class="kg-text-link mb-3 d-inline-block">&larr; All devlogs</a>
+			<p class="kg-kicker mb-2">Kosmograd / field record</p>
+			<h1 class="rl-hero-title mb-2" style="font-size: clamp(1.75rem, 4.5vw, 2.75rem); text-align: left;">Oxygen Consumption System</h1>
+			<p class="hero-subtitle mb-0">Nov 15, 2025 &middot; 3 min read &middot; Mischa</p>
+		</div>
+	</section>
+
+	<!-- Devlog Post -->
+	<section class="kg-page-shell kg-devlog-section">
+		<div class="container">
+			<div class="row">
+				<!-- Main Content -->
+				<div class="col-lg-8">
+					<article class="devlog-entry kg-devlog-entry kg-devlog-entry--solo">
+						<div class="devlog-content">
+
+			<p class="mb-4">Added atmospheric pressure zones to buildings with aluminium-based oxygen generation, creating a critical resource management layer.</p>
+
+			<img src="https://i.imgur.com/vkWi1L7.jpeg" alt="Oxygen system UI" class="img-fluid rounded mb-4">
+
+			<h5>Oxygen System</h5>
+			<ul class="mb-4">
+				<li><strong>Renamed zones:</strong> InsideZone → PressureZone across all buildings</li>
+				<li><strong>Aluminium consumption:</strong> Buildings with pressure zones consume aluminium to maintain oxygen</li>
+				<li><strong>Zone failure:</strong> Oxygen zones fail when aluminium depleted (collision disabled)</li>
+				<li><strong>Immediate danger:</strong> Units inside failed zones start losing oxygen immediately</li>
+			</ul>
+
+			<h5>Building Details Panel</h5>
+			<ul class="mb-4">
+				<li>Shows oxygen consumption: "Generates oxygen zone. Cost: 1 alu/10s"</li>
+				<li>Displays oxygen status (Active/FAILING) for pressure zone buildings</li>
+				<li>Updated power display formatting for cleaner units</li>
+				<li>ResourcesLabel repurposed for oxygen info display</li>
+			</ul>
+
+			<h5>Design Improvements</h5>
+			<ul class="mb-4">
+				<li>Made building UI panel larger to accommodate oxygen and power information</li>
+				<li>Better visual hierarchy for critical system status</li>
+			</ul>
+
+			<p class="mb-0"><em>This system creates tension between expansion and resource management - every pressurized building needs constant aluminium supply to keep colonists alive.</em></p>
+						</div>
+
+						<div class="devlog-footer d-flex justify-content-between align-items-center flex-wrap gap-2">
+							<span>
+								<img src="images/moon_icon.png" alt="Mischa" style="width: 20px; height: 20px; border-radius: 50%; object-fit: cover; margin-right: 6px; vertical-align: middle;">
+								<small class="text-muted">Mischa</small>
+							</span>
+							<a href="https://mischa.itch.io/kosmograd/devlog" target="_blank" rel="noopener noreferrer" class="kg-text-link" style="font-size: .85rem;">Also on itch.io &#8599;</a>
+						</div>
+					</article>
+
+					<nav class="article-navigation">
+						<a href="devlog-game-direction-technical-overview.html" class="article-nav-link"><span class="article-nav-label">Older</span><span class="article-nav-title">Game Direction &amp; Technical Overview</span></a>
+						<a href="devlog-food-survival-system.html" class="article-nav-link next"><span class="article-nav-label">Newer</span><span class="article-nav-title">Food & Survival System</span></a>
+					</nav>
+				</div>
+
+				<!-- Sidebar -->
+				<div class="col-lg-4">
+					<aside class="kg-devlog-rail sticky-top" style="top: 2rem;">
+
+						<!-- About -->
+						<div class="kg-rail-block">
+							<p class="kg-label mb-2">Transmission</p>
+							<p class="kg-copy mb-2">A Soviet lunar colony RTS built solo in Godot.</p>
+							<a href="index.html" class="kg-text-link">Return to mission control</a>
+						</div>
+
+						<!-- More posts -->
+						<div class="kg-rail-block">
+							<h2 class="kg-rail-title mb-3">More posts</h2>
+							<div class="d-flex flex-column gap-3">
+								<a href="devlog-making-survival-matter.html" class="kg-text-link d-flex justify-content-between gap-2"><span>Making Survival Matter</span><span class="kg-dispatch-meta" style="padding-top:0;">Sep 13, 2026</span></a>
+								<a href="devlog-quest-system-planning.html" class="kg-text-link d-flex justify-content-between gap-2"><span>Quest System Planning</span><span class="kg-dispatch-meta" style="padding-top:0;">Dec 13, 2025</span></a>
+								<a href="devlog-food-survival-system.html" class="kg-text-link d-flex justify-content-between gap-2"><span>Food & Survival System</span><span class="kg-dispatch-meta" style="padding-top:0;">Nov 16, 2025</span></a>
+								<a href="devlog-game-direction-technical-overview.html" class="kg-text-link d-flex justify-content-between gap-2"><span>Game Direction &amp; Technical Overview</span><span class="kg-dispatch-meta" style="padding-top:0;">Oct 28, 2025</span></a>
+							</div>
+						</div>
+
+						<!-- Bluesky Feed -->
+						<div class="kg-rail-block">
+							<h2 class="kg-rail-title mb-3">Follow development</h2>
+								<div class="d-flex flex-column gap-2">
+									<a href="https://bsky.app/profile/mishotofu.bsky.social" class="kg-text-link">Bluesky</a>
+									<a href="https://x.com/MishoWave" class="kg-text-link">X / Twitter</a>
+									<a href="https://store.steampowered.com/app/387060/Earth_Overclocked/" class="kg-text-link">Previous game</a>
+								</div>
+						</div>
+
+					</aside>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Footer Component -->
+	<div id="footer-container"></div>
+
+	<!-- Bootstrap JS -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+	<!-- Component Loader -->
+	<script src="js/ComponentLoader.js"></script>
+	<script src="js/navbar-init.js"></script>
+</body>
+</html>
