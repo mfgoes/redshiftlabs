@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>Kosmograd | Redshift Labs</title>
+	<meta name="description" content="Kosmograd is a tiny lunar colony sim about keeping three people alive on a hostile moon. Manage power, oxygen and food, and survive storms, breakdowns and shortages.">
+	<meta name="keywords" content="Kosmograd, lunar colony sim, colony management, survival strategy, Soviet space, indie game">
+	<meta name="author" content="Redshift Labs">
+	<meta name="robots" content="index, follow, max-image-preview:large">
+	<link rel="canonical" href="https://mfgoes.github.io/redshiftlabs/kosmograd.html">
+	<meta name="theme-color" content="#0a0d10">
+
+	<meta property="og:type" content="website">
+	<meta property="og:site_name" content="Redshift Labs">
+	<meta property="og:title" content="Kosmograd | A tiny lunar colony sim">
+	<meta property="og:description" content="Keep three people alive on a hostile moon.">
+	<meta property="og:url" content="https://mfgoes.github.io/redshiftlabs/kosmograd.html">
+	<meta property="og:image" content="https://mfgoes.github.io/redshiftlabs/images/o9DtpA.png">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:site" content="@mishotofu">
+	<meta name="twitter:image" content="https://mfgoes.github.io/redshiftlabs/images/o9DtpA.png">
+
+	<link rel="icon" type="image/svg+xml" href="assets/branding/Logo%20nly.svg">
+	<link rel="icon" type="image/x-icon" href="favicon.ico">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Onest:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/devlog-styles.css">
+	<link rel="stylesheet" href="css/kosmograd.css">
+</head>
+<body class="bg-dark text-white rl-overlay-nav">
+
+	<div id="navbar-container"></div>
+
+	<section class="rl-game-hero">
+		<div class="container">
+			<p class="rl-eyebrow mb-2">A game by Redshift Labs</p>
+			<h1>Kosmograd</h1>
+			<p class="rl-lede mb-3">A tiny lunar colony sim about keeping three people alive on a hostile moon.</p>
+			<div class="rl-tags mb-4"><span>Colony Sim</span><span>Strategy</span><span>Survival</span><span>Automation</span><span>Pixel Art</span></div>
+			<div class="rl-btn-row">
+				<a href="https://mischa.itch.io/kosmograd" class="rl-btn rl-btn--primary">Play the Demo</a>
+				<a href="https://discord.gg/RbzwwYn945" class="rl-btn">Join the Discord</a>
+			</div>
+			<p class="rl-note">Steam page coming soon.</p>
+			<div class="rl-readout" aria-hidden="true">
+				<span><i class="rl-dot"></i>Colonists <b>3/3</b></span>
+				<span>O&#8322; <b>Nominal</b></span>
+				<span>Dust storm in <b data-storm>02:14</b></span>
+			</div>
+		</div>
+	</section>
+
+	<nav class="rl-subnav" aria-label="Kosmograd sections">
+		<div class="container">
+			<a href="#features">Features</a>
+			<a href="#overview">Overview</a>
+			<a href="#gameplay">Gameplay</a>
+			<a href="#moon">The Moon</a>
+			<a href="#screenshots">Screenshots</a>
+			<a href="#development">Development</a>
+		</div>
+	</nav>
+
+	<section class="rl-section" id="features">
+		<div class="container">
+			<div class="rl-usps">
+				<div class="rl-usp">
+					<svg class="rl-usp-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.2A8.5 8.5 0 1 1 9.8 3.5a6.7 6.7 0 0 0 10.7 10.7z"/></svg>
+					<h3>Survive the Moon</h3>
+					<p>Keep your tiny colony alive through oxygen shortages, power failures, scarce resources, and brutal lunar storms.</p>
+				</div>
+				<div class="rl-usp">
+					<svg class="rl-usp-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M5 21V11l7-6 7 6v10M10 21v-6h4v6"/></svg>
+					<h3>Build a Living Outpost</h3>
+					<p>Design and automate a self-sufficient Soviet-inspired moon base, from basic survival systems to advanced production.</p>
+				</div>
+				<div class="rl-usp">
+					<svg class="rl-usp-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg>
+					<h3>Every Day Is a Crisis</h3>
+					<p>Balance limited resources, unreliable machinery, and unpredictable events where one failure can cascade into disaster.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="rl-section rl-section--raised" id="overview">
+		<div class="container">
+			<div class="row g-4 g-lg-5 align-items-center">
+				<div class="col-lg-5">
+					<p class="rl-eyebrow mb-2">Overview</p>
+					<h2 class="rl-h2">Small systems. Big problems.</h2>
+					<p class="rl-text">Build a Soviet-inspired lunar outpost, manage oxygen, food and power, and keep your colonists alive through freezing nights and violent dust storms. Expand your base, automate essential systems and make difficult choices when something inevitably breaks.</p>
+				</div>
+				<div class="col-lg-7">
+					<!-- TODO: swap for a YouTube embed once the trailer exists. -->
+					<div class="rl-trailer"><span>Trailer coming soon</span></div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="rl-section" id="gameplay">
+		<div class="container">
+			<p class="rl-eyebrow mb-2">Gameplay</p>
+			<h2 class="rl-h2 mb-4">Keep the colony running</h2>
+			<div class="rl-pillars">
+				<div>
+					<h3>Keep 3 colonists alive</h3>
+					<p>Keep them fed, supplied with oxygen and protected from the moon's harsh environment. Losing even one person can change what your colony is capable of.</p>
+				</div>
+				<div>
+					<h3>Build your lunar outpost</h3>
+					<p>Build habitats, power systems, food production and industrial machinery. Oxygen is limited, so where you place each building matters &mdash; your colony needs to keep working when conditions turn against you.</p>
+				</div>
+				<div>
+					<h3>Survive the environment</h3>
+					<p>Lunar nights are cold, power is limited, and dust storms can bring your carefully planned systems to a halt. Prepare your colony before conditions deteriorate.</p>
+				</div>
+				<div id="moon">
+					<h3>Explore a strange, unforgiving moon</h3>
+					<p>Venture beyond the safety of your base to gather resources and discover new environments. Explore three distinct lunar biomes, each offering new resources, hazards and reasons to leave the comfort of your colony.</p>
+				</div>
+				<div class="rl-pillar-wide">
+					<h3>When machines fail, do it yourself</h3>
+					<p><strong style="color:#f2f3f3;">Machinery makes life easier &mdash; until it breaks.</strong> When production goes offline or power fails, your colonists can step in and mine resources manually. It's slower. It's riskier. Sometimes it's the only option.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="rl-section rl-section--raised" id="feature-summary">
+		<div class="container">
+			<p class="rl-eyebrow mb-2">Feature summary</p>
+			<h2 class="rl-h2 mb-4">At a glance</h2>
+			<ul class="rl-checklist">
+				<li><strong>Manage a tiny colony</strong><span>Keep three colonists alive while balancing food, oxygen and power.</span></li>
+				<li><strong>Build &amp; automate</strong><span>Construct production chains and infrastructure to keep the colony running.</span></li>
+				<li><strong>Survive lunar conditions</strong><span>Prepare for freezing nights, dust storms and unexpected breakdowns.</span></li>
+				<li><strong>Explore three biomes</strong><span>Leave the safety of your base to find new resources and hazards.</span></li>
+				<li><strong>Adapt when things go wrong</strong><span>Repair systems, ration resources and mine manually when automation fails.</span></li>
+				<li><strong>A calm but unforgiving atmosphere</strong><span>A tiny colony surrounded by a vast, hostile moon.</span></li>
+			</ul>
+		</div>
+	</section>
+
+	<section class="rl-section" id="screenshots">
+		<div class="container">
+			<p class="rl-eyebrow mb-2">Screenshots</p>
+			<h2 class="rl-h2 mb-4">From the surface</h2>
+			<div class="rl-shots">
+				<figure class="rl-shot"><button type="button" aria-label="Enlarge: Colony overview"><img src="images/o9DtpA.png" alt="Kosmograd colony overview" loading="lazy"></button><figcaption>Colony overview</figcaption></figure>
+				<figure class="rl-shot"><button type="button" aria-label="Enlarge: Main menu"><img src="images/devlog-images/main-menu.png" alt="Kosmograd main menu" loading="lazy"></button><figcaption>Main menu</figcaption></figure>
+				<figure class="rl-shot"><button type="button" aria-label="Enlarge: Colonists at work"><img src="images/devlog-images/8bArCF.gif" alt="Colonists at work around the base" loading="lazy"></button><figcaption>Colonists at work</figcaption></figure>
+				<figure class="rl-shot"><button type="button" aria-label="Enlarge: Base activity"><img src="images/devlog-images/OKaTHF.gif" alt="Base activity in the current build" loading="lazy"></button><figcaption>Base activity, current build</figcaption></figure>
+			</div>
+		</div>
+	</section>
+
+	<section class="rl-section rl-section--raised" id="development">
+		<div class="container">
+			<p class="rl-eyebrow mb-2">Development</p>
+			<h2 class="rl-h2">Work in progress</h2>
+			<p class="rl-text mb-4" style="max-width: 40rem;">Kosmograd is in active development. A playable demo is available on itch.io, and progress is written up in the devlog.</p>
+			<div class="rl-cards mb-3">
+				<a href="devlog-making-survival-matter.html" class="rl-card"><h3>Making Survival Matter</h3><span class="rl-card-meta">Devlog &middot; 5 min</span></a>
+				<a href="devlog-quest-system-planning.html" class="rl-card"><h3>Quest System Planning</h3><span class="rl-card-meta">Devlog &middot; 3 min</span></a>
+				<a href="devlog-food-survival-system.html" class="rl-card"><h3>Food &amp; Survival System</h3><span class="rl-card-meta">Devlog &middot; 4 min</span></a>
+			</div>
+			<a href="devlog.html" class="rl-more">Read the full devlog &rarr;</a>
+
+			<h3 class="rl-h2 mt-5" style="font-size:1.4rem;">Team</h3>
+			<div class="rl-team">
+				<div class="rl-person"><h3>Mischa</h3><p class="rl-role">Founder &middot; Designer &middot; Programmer &middot; Artist</p><p>Built the colony. Broke the colony. Fixed the colony. Made some music too.</p></div>
+				<div class="rl-person"><h3>Laurens</h3><p class="rl-role">Playtester &middot; QA</p><p>Helped test, record and stress-test the colony from the early builds onwards.</p></div>
+				<div class="rl-person"><h3>Robin</h3><p class="rl-role">Playtester &middot; QA</p><p>Helped test, record and stress-test the colony from the early builds onwards.</p></div>
+			</div>
+		</div>
+	</section>
+
+	<div id="footer-container"></div>
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="js/ComponentLoader.js"></script>
+	<script src="js/navbar-init.js"></script>
+	<script src="js/site.js"></script>
+
+	<script type="application/ld+json">
+	{
+		"@context": "https://schema.org",
+		"@type": "VideoGame",
+		"name": "Kosmograd",
+		"description": "A tiny lunar colony sim about keeping three people alive on a hostile moon.",
+		"url": "https://mfgoes.github.io/redshiftlabs/kosmograd.html",
+		"image": "https://mfgoes.github.io/redshiftlabs/images/o9DtpA.png",
+		"genre": ["Strategy", "Colony Management", "Survival"],
+		"gamePlatform": ["PC", "Steam"],
+		"inLanguage": "en-US",
+		"publisher": { "@type": "Organization", "name": "Redshift Labs", "url": "https://mfgoes.github.io/redshiftlabs/" }
+	}
+	</script>
+</body>
+</html>

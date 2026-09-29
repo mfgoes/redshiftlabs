@@ -13,130 +13,80 @@
 	<link rel="canonical" href="https://mfgoes.github.io/redshiftlabs/devlog.html">
 	
 	<!-- Favicon -->
-	<link rel="icon" type="image/x-icon" href="images/moon_icon.png">
-	
-	<!-- Google Fonts - Orbitron -->
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+	<link rel="icon" type="image/svg+xml" href="assets/branding/Logo%20nly.svg">
+	<link rel="icon" type="image/x-icon" href="favicon.ico">
 	
 	<!-- Bootstrap CSS -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Onest:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="css/main.css">
 	<link rel="stylesheet" href="css/devlog-styles.css">
 	<link rel="stylesheet" href="css/kosmograd.css">
-
-	<!-- Bluesky Embed -->
-	<script async src="https://cdn.jsdelivr.net/npm/bsky-embed/dist/bsky-embed.es.js" type="module"></script>
 </head>
-<body class="bg-dark text-white dark-mode">
+<body class="bg-dark text-white dark-mode rl-overlay-nav">
 
-	<!-- Navbar Component -->
 	<div id="navbar-container"></div>
 
-	<!-- Devlog Header -->
-	<section class="py-5 kg-hero">
-		<div class="container text-center">
-			<p class="kg-kicker mb-2">Kosmograd / field record</p>
-			<h1 class="rl-hero-title mb-2" style="font-size: clamp(1.75rem, 4.5vw, 2.75rem);">Development Log</h1>
-			<p class="hero-subtitle mb-2">Systems, setbacks, and signals from the lunar colony.</p>
-			<a href="https://mischa.itch.io/kosmograd/devlog" target="_blank" rel="noopener noreferrer" class="kg-text-link" style="font-size: .85rem;">Also following along on itch.io &#8599;</a>
+	<section class="rl-hero">
+		<div class="container">
+			<p class="rl-eyebrow mb-2">Kosmograd devlog</p>
+			<h1>Development log</h1>
+			<p class="rl-lede">Systems, setbacks and progress from the making of Kosmograd.</p>
 		</div>
 	</section>
 
-	<!-- Devlog Entries -->
-	<section class="kg-page-shell kg-devlog-section">
+	<section class="rl-section">
 		<div class="container">
-			<div class="row">
-				<!-- Main Content -->
+			<div class="row g-4 g-lg-5">
 				<div class="col-lg-8">
-					<div class="kg-devlog-stream kg-devlog-stream--index">
-					<a href="devlog-making-survival-matter.html" class="kg-dispatch-card">
-						<span class="kg-dispatch-index">LOG 05</span>
-						<span class="kg-dispatch-body">
-							<h3>Making Survival Matter</h3>
-							<p>The early food loop gets a big overhaul — Food Fabricator becomes an emergency fallback, Hydroponics Bay ties long-term survival to a real supply line, plus a continued pixel-art UI pass across the whole interface.</p>
-						</span>
-						<span class="kg-dispatch-meta">Sep 13, 2026 · 5 min</span>
+					<div class="rl-devlog-list">
+					<a href="devlog-making-survival-matter.html" class="rl-card">
+						<span class="rl-card-meta mb-2">LOG 05 &middot; Sep 13, 2026 · 5 min</span>
+						<h3>Making Survival Matter</h3>
+						<p class="mb-0">The early food loop gets a big overhaul — Food Fabricator becomes an emergency fallback, Hydroponics Bay ties long-term survival to a real supply line, plus a continued pixel-art UI pass across the whole interface.</p>
 					</a>
-					<a href="devlog-quest-system-planning.html" class="kg-dispatch-card">
-						<span class="kg-dispatch-index">LOG 04</span>
-						<span class="kg-dispatch-body">
-							<h3>Quest System Planning</h3>
-							<p>A goal-driven progression layer for the colony's next phase. Objectives now unlock new buildings as rewards, replacing idle waiting with a clear sense of progress.</p>
-						</span>
-						<span class="kg-dispatch-meta">Dec 13, 2025 · 3 min</span>
+					<a href="devlog-quest-system-planning.html" class="rl-card">
+						<span class="rl-card-meta mb-2">LOG 04 &middot; Dec 13, 2025 · 3 min</span>
+						<h3>Quest System Planning</h3>
+						<p class="mb-0">A goal-driven progression layer for the colony's next phase. Objectives now unlock new buildings as rewards, replacing idle waiting with a clear sense of progress.</p>
 					</a>
-					<a href="devlog-food-survival-system.html" class="kg-dispatch-card">
-						<span class="kg-dispatch-index">LOG 03</span>
-						<span class="kg-dispatch-body">
-							<h3>Food & Survival System</h3>
-							<p>Colonist survival stats turn the stockpile into a meaningful decision. Stronghold-style food mechanics track hunger per colonist, so a shortage has real consequences.</p>
-						</span>
-						<span class="kg-dispatch-meta">Nov 16, 2025 · 4 min</span>
+					<a href="devlog-food-survival-system.html" class="rl-card">
+						<span class="rl-card-meta mb-2">LOG 03 &middot; Nov 16, 2025 · 4 min</span>
+						<h3>Food & Survival System</h3>
+						<p class="mb-0">Colonist survival stats turn the stockpile into a meaningful decision. Stronghold-style food mechanics track hunger per colonist, so a shortage has real consequences.</p>
 					</a>
-					<a href="devlog-oxygen-consumption-system.html" class="kg-dispatch-card">
-						<span class="kg-dispatch-index">LOG 02</span>
-						<span class="kg-dispatch-body">
-							<h3>Oxygen Consumption System</h3>
-							<p>Pressure zones and aluminium upkeep create immediate environmental risk. Buildings now consume oxygen locally, so a single failure can cascade fast.</p>
-						</span>
-						<span class="kg-dispatch-meta">Nov 15, 2025 · 3 min</span>
+					<a href="devlog-oxygen-consumption-system.html" class="rl-card">
+						<span class="rl-card-meta mb-2">LOG 02 &middot; Nov 15, 2025 · 3 min</span>
+						<h3>Oxygen Consumption System</h3>
+						<p class="mb-0">Pressure zones and aluminium upkeep create immediate environmental risk. Buildings now consume oxygen locally, so a single failure can cascade fast.</p>
 					</a>
-					<a href="devlog-game-direction-technical-overview.html" class="kg-dispatch-card">
-						<span class="kg-dispatch-index">LOG 01</span>
-						<span class="kg-dispatch-body">
-							<h3>Game Direction &amp; Technical Overview</h3>
-							<p>Created a comprehensive design document to establish the game's vision, core mechanics, and technical architecture before building further.</p>
-						</span>
-						<span class="kg-dispatch-meta">Oct 28, 2025 · 2 min</span>
+					<a href="devlog-game-direction-technical-overview.html" class="rl-card">
+						<span class="rl-card-meta mb-2">LOG 01 &middot; Oct 28, 2025 · 2 min</span>
+						<h3>Game Direction &amp; Technical Overview</h3>
+						<p class="mb-0">Created a comprehensive design document to establish the game's vision, core mechanics, and technical architecture before building further.</p>
 					</a>
 					</div>
 				</div>
-				
-				<!-- Sidebar -->
-				<div class="col-lg-4">
-					<aside class="kg-devlog-rail sticky-top" style="top: 2rem;">
-						
-						<!-- About -->
-						<div class="kg-rail-block">
-							<p class="kg-label mb-2">Transmission</p>
-							<p class="kg-copy mb-2">A Soviet lunar colony RTS built solo in Godot.</p>
-							<a href="index.html" class="kg-text-link">Return to mission control</a>
+				<aside class="col-lg-4">
+					<div class="rl-devlog-aside">
+						<p class="rl-eyebrow mb-3">About the devlog</p>
+						<p class="rl-text">Kosmograd is a tiny lunar colony sim by Redshift Labs. These posts cover how its systems are designed, built and broken.</p>
+						<a href="kosmograd.html" class="rl-more">About the game &rarr;</a>
+						<p class="rl-eyebrow mt-5 mb-3">Follow along</p>
+						<div class="rl-footer-links flex-column">
+							<a href="https://mischa.itch.io/kosmograd/devlog" target="_blank" rel="noopener noreferrer">itch.io devlog</a>
+							<a href="https://discord.gg/RbzwwYn945">Discord</a>
+							<a href="https://bsky.app/profile/mishotofu.bsky.social">Bluesky</a>
+							<a href="https://x.com/MishoWave">X</a>
 						</div>
-						
-						<!-- Progress -->
-						<div class="kg-rail-block">
-							<h2 class="kg-rail-title mb-3">Mission progress</h2>
-							<div class="mb-2">
-									<div class="d-flex justify-content-between mb-1">
-										<small class="timeline-description">Overall</small>
-										<small class="timeline-description"><strong>65%</strong></small>
-									</div>
-									<div class="progress kg-progress">
-										<div class="progress-bar" role="progressbar" style="width: 65%; background-color: #117e9f;" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
-									</div>
-								</div>
-								<small class="timeline-date">Target: January 2026 Demo</small>
-						</div>
-						
-						<!-- Bluesky Feed -->
-						<div class="kg-rail-block">
-							<h2 class="kg-rail-title mb-3">Follow development</h2>
-								<div class="d-flex flex-column gap-2">
-									<a href="https://bsky.app/profile/mishotofu.bsky.social" class="kg-text-link">Bluesky</a>
-									<a href="https://x.com/MishoWave" class="kg-text-link">X / Twitter</a>
-									<a href="https://store.steampowered.com/app/387060/Earth_Overclocked/" class="kg-text-link">Previous game</a>
-								</div>
-						</div>
-
-					</aside>
-				</div>
+					</div>
+				</aside>
 			</div>
 		</div>
 	</section>
 
-	<!-- Footer Component -->
 	<div id="footer-container"></div>
 
 	<!-- Bootstrap JS -->
@@ -145,5 +95,6 @@
 	<!-- Component Loader -->
 	<script src="js/ComponentLoader.js"></script>
 	<script src="js/navbar-init.js"></script>
+	<script src="js/site.js"></script>
 </body>
 </html>

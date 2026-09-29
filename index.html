@@ -3,383 +3,176 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	
-	<!-- SEO Meta Tags -->
-	<title>Redshfit Labs</title>
-	<meta name="description" content="Command a Soviet lunar colony in Kosmograd - an intense colony management RTS game. Balance survival, politics, and resources on the Moon. Manage oxygen, food, power, and equipment failures. Coming to Steam January 2026.">
-	<meta name="keywords" content="Kosmograd, RTS game, colony management, Soviet space, lunar colony, strategy game, survival game, indie game, Steam, colony sim, space RTS, base building, resource management, Redshift Labs, Earth Overclocked">
-	<meta name="author" content="Redshift Labs">
-	<meta name="creator" content="Redshift Labs">
-	<meta name="publisher" content="Redshift Labs">
-	<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-	<meta name="googlebot" content="index, follow">
-	<link rel="canonical" href="https://mfgoes.github.io/redshiftlabs/">
-	<meta name="application-name" content="Kosmograd">
-	<meta name="theme-color" content="#0a0a0a">
-	<meta name="color-scheme" content="dark light">
 
-	<!-- Open Graph / Facebook -->
+	<title>Redshift Labs | Small games about big, hostile places</title>
+	<meta name="description" content="Redshift Labs is an independent game studio making systems-driven strategy games with a focus on atmosphere, experimentation and tiny worlds. Currently developing Kosmograd, a lunar colony sim.">
+	<meta name="keywords" content="Redshift Labs, indie game studio, Kosmograd, colony sim, strategy game, systems-driven games">
+	<meta name="author" content="Redshift Labs">
+	<meta name="robots" content="index, follow, max-image-preview:large">
+	<link rel="canonical" href="https://mfgoes.github.io/redshiftlabs/">
+	<meta name="theme-color" content="#0a0d10">
+
 	<meta property="og:type" content="website">
 	<meta property="og:site_name" content="Redshift Labs">
-	<meta property="og:title" content="Kosmograd - Soviet Lunar Colony RTS">
-	<meta property="og:description" content="Command a Soviet lunar colony in this casual RTS. Manage oxygen, food, power systems, and survive environmental hazards. Balance politics and resources on the Moon. Coming to Steam January 2026.">
+	<meta property="og:title" content="Redshift Labs">
+	<meta property="og:description" content="Small games about big, hostile places. Independent studio behind Kosmograd.">
 	<meta property="og:url" content="https://mfgoes.github.io/redshiftlabs/">
-	<meta property="og:image" content="https://mfgoes.github.io/redshiftlabs/images/MessageGen%20Hero2.jpg">
-	<meta property="og:image:width" content="1200">
-	<meta property="og:image:height" content="630">
-	<meta property="og:image:alt" content="Kosmograd - Soviet Lunar Colony RTS Game">
-	<meta property="og:locale" content="en_US">
-
-	<!-- Twitter Card -->
+	<meta property="og:image" content="https://mfgoes.github.io/redshiftlabs/images/o9DtpA.png">
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:site" content="@mishotofu">
-	<meta name="twitter:creator" content="@mishotofu">
-	<meta name="twitter:title" content="Kosmograd">
-	<meta name="twitter:description" content="Command a Soviet lunar colony in this casual RTS. Manage oxygen, food, power systems, and survive on the Moon. Coming to Steam January 2026.">
-	<meta name="twitter:image" content="https://mfgoes.github.io/redshiftlabs/images/MessageGen%20Hero2.jpg">
-	<meta name="twitter:image:alt" content="Kosmograd - Soviet Lunar Colony RTS Game">
-	
-	<!-- Favicon -->
-	<link rel="icon" type="image/x-icon" href="images/moon_icon.png">
-	
-	<!-- Google Fonts - Orbitron -->
+	<meta name="twitter:title" content="Redshift Labs">
+	<meta name="twitter:description" content="Small games about big, hostile places.">
+	<meta name="twitter:image" content="https://mfgoes.github.io/redshiftlabs/images/o9DtpA.png">
+
+	<link rel="icon" type="image/svg+xml" href="assets/branding/Logo%20nly.svg">
+	<link rel="icon" type="image/x-icon" href="favicon.ico">
+
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-	
-	<!-- Bootstrap CSS -->
+	<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Onest:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="css/main.css">
 	<link rel="stylesheet" href="css/devlog-styles.css">
 	<link rel="stylesheet" href="css/kosmograd.css">
-
-	<!-- Bluesky Embed -->
-	<script async src="https://cdn.jsdelivr.net/npm/bsky-embed/dist/bsky-embed.es.js" type="module"></script>
 </head>
-<body class="bg-dark text-white page-home">
+<body class="bg-dark text-white page-home rl-overlay-nav">
 
-	<!-- Navbar Component -->
 	<div id="navbar-container"></div>
 
-	<!-- Hero Section - styled as the game's own title screen -->
-	<section class="hero-section kg-hero rl-menu-hero">
+	<!-- Kosmograd hero -->
+	<section class="rl-game-hero">
 		<div class="container">
-			<p class="kg-kicker mb-2">Kosmograd / lunar colony RTS</p>
-			<h1 class="rl-hero-title mb-4">Survive the darkness<br>expand your base</h1>
-
-			<div class="rl-menu-stack mx-auto">
-				<a href="https://mischa.itch.io/kosmograd" class="kg-menu-btn is-selected">Play Demo</a>
-				<a href="https://mischa.itch.io/kosmograd" class="kg-menu-btn">Play in Browser</a>
+			<p class="rl-eyebrow mb-2">Redshift Labs presents</p>
+			<h1>Kosmograd</h1>
+			<p class="rl-lede mb-3">A tiny lunar colony sim about keeping three people alive on a hostile moon.</p>
+			<div class="rl-tags mb-4"><span>Colony Sim</span><span>Strategy</span><span>Survival</span><span>Automation</span><span>Pixel Art</span></div>
+			<div class="rl-btn-row">
+				<a href="https://mischa.itch.io/kosmograd" class="rl-btn rl-btn--primary">Play the Demo</a>
+				<a href="kosmograd.html" class="rl-btn">Explore Kosmograd &rarr;</a>
 			</div>
-
-			<p class="progress-text mb-0 mt-3">Last updated <a href="devlog-making-survival-matter.html" class="rl-last-updated-link">Sep 13, 2026</a></p>
+			<p class="rl-note">Steam page coming soon.</p>
+			<div class="rl-readout" aria-hidden="true">
+				<span><i class="rl-dot"></i>Colonists <b>3/3</b></span>
+				<span>O&#8322; <b>Nominal</b></span>
+				<span>Dust storm in <b data-storm>02:14</b></span>
+			</div>
 		</div>
-
-		<a href="#devlog-feed" class="rl-scroll-cue" aria-label="Scroll to latest devlog">
-			<span class="rl-scroll-cue-label">Scroll</span>
-			<span class="rl-scroll-cue-arrow">&#8595;</span>
-		</a>
 	</section>
 
-	<!-- Development dispatches — intentionally separate from editorial news. -->
-	<section id="devlog-feed" class="kg-home-feed">
+	<!-- Pitch -->
+	<section class="rl-section rl-section--raised">
 		<div class="container">
-			<div class="d-flex flex-wrap justify-content-between gap-3 align-items-end mb-4">
+			<div class="rl-usps">
+				<div class="rl-usp">
+					<svg class="rl-usp-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.2A8.5 8.5 0 1 1 9.8 3.5a6.7 6.7 0 0 0 10.7 10.7z"/></svg>
+					<h3>Survive the Moon</h3>
+					<p>Keep your tiny colony alive through oxygen shortages, power failures, scarce resources, and brutal lunar storms.</p>
+				</div>
+				<div class="rl-usp">
+					<svg class="rl-usp-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M5 21V11l7-6 7 6v10M10 21v-6h4v6"/></svg>
+					<h3>Build a Living Outpost</h3>
+					<p>Design and automate a self-sufficient Soviet-inspired moon base, from basic survival systems to advanced production.</p>
+				</div>
+				<div class="rl-usp">
+					<svg class="rl-usp-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg>
+					<h3>Every Day Is a Crisis</h3>
+					<p>Balance limited resources, unreliable machinery, and unpredictable events where one failure can cascade into disaster.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- What's new: devlogs + articles -->
+	<section class="rl-section" id="devlog-feed">
+		<div class="container">
+			<div class="d-flex flex-wrap justify-content-between align-items-end gap-3 mb-4">
 				<div>
-					<p class="kg-kicker mb-2">Lunar colony / field record</p>
-					<h2 class="kg-section-heading mb-0">Latest devlog</h2>
+					<p class="rl-eyebrow mb-2">Kosmograd devlog</p>
+					<h2 class="rl-h2 mb-0">Latest development</h2>
 				</div>
-				<a href="devlog.html" class="btn kg-button">Open full log</a>
+				<a href="devlog.html" class="rl-more">All devlog posts &rarr;</a>
 			</div>
-			<a href="devlog-making-survival-matter.html" class="kg-dispatch-card">
-				<span class="kg-dispatch-index">LOG 05</span>
-				<span class="kg-dispatch-body">
+			<div class="rl-cards rl-cards--2">
+				<a href="devlog-making-survival-matter.html" class="rl-card">
 					<h3>Making Survival Matter</h3>
-					<p>The early food loop gets a big overhaul — Food Fabricator becomes an emergency fallback, Hydroponics Bay ties long-term survival to a real supply line, plus a continued pixel-art UI pass across the whole interface.</p>
-				</span>
-				<span class="kg-dispatch-meta">Sep 13, 2026 · 5 min</span>
-			</a>
-			<a href="devlog-quest-system-planning.html" class="kg-dispatch-card">
-				<span class="kg-dispatch-index">LOG 04</span>
-				<span class="kg-dispatch-body">
+					<p>The early food loop gets an overhaul, with a Food Fabricator fallback and a Hydroponics Bay supply line.</p>
+					<span class="rl-card-meta">Devlog &middot; 5 min</span>
+				</a>
+				<a href="devlog-quest-system-planning.html" class="rl-card">
 					<h3>Quest System Planning</h3>
-					<p>A goal-driven progression layer for the colony's next phase. Objectives now unlock new buildings as rewards, replacing idle waiting with a clear sense of progress.</p>
-				</span>
-				<span class="kg-dispatch-meta">Dec 13, 2025 · 3 min</span>
-			</a>
-			<a href="devlog-food-survival-system.html" class="kg-dispatch-card">
-				<span class="kg-dispatch-index">LOG 03</span>
-				<span class="kg-dispatch-body">
-					<h3>Food &amp; Survival System</h3>
-					<p>Colonist survival stats turn the stockpile into a meaningful decision. Stronghold-style food mechanics track hunger per colonist, so a shortage has real consequences.</p>
-				</span>
-				<span class="kg-dispatch-meta">Nov 16, 2025 · 4 min</span>
-			</a>
+					<p>A goal-driven progression layer where objectives unlock new buildings as rewards.</p>
+					<span class="rl-card-meta">Devlog &middot; 3 min</span>
+				</a>
+			</div>
 		</div>
 	</section>
 
-	<!-- Bluesky Updates Section -->
-	<section class="community-section py-5">
+	<!-- Research: separate from the game devlog on purpose. -->
+	<section class="rl-section rl-section--raised rl-research">
 		<div class="container">
-			<div class="row g-4 align-items-start">
-				<!-- Left: Text and Button -->
-				<div class="col-lg-5 col-md-12">
-					<p class="kg-kicker mb-2">Kosmograd / transmissions</p>
-					<h2 class="bluesky-section-title">
-						<img src="images/Bluesky_logo.png" alt="" class="bluesky-logo">
-						Bluesky Updates
-					</h2>
-					<p class="bluesky-section-description">
-						Daily progress updates, behind-the-scenes development, and direct answers to community questions. Join the conversation on Bluesky.
-					</p>
-					<a href="https://bsky.app/profile/mishotofu.bsky.social" class="kg-button">Follow on Bluesky</a>
-					<a href="https://x.com/MishoWave" class="kg-button">Follow on X</a>
+			<p class="rl-eyebrow mb-2">Research &amp; writing</p>
+			<h2 class="rl-h2">Beyond the game</h2>
+			<p class="rl-text mb-4" style="max-width: 40rem;">Not devlogs. Longer pieces on systems, neurons and the science that sits somewhere between biology and science fiction.</p>
+			<!-- Medium article goes live around mid-October 2026. -->
+			<a href="https://medium.com/p/4240fe212558" class="rl-card rl-card--article rl-card--research" target="_blank" rel="noopener noreferrer">
+				<div class="rl-card-media"><img src="images/fly.jpg" alt="Rendered fruit fly with its brain highlighted in colour" loading="lazy"></div>
+				<div class="rl-card-body">
+					<span class="rl-eyebrow">Research &middot; Neuroscience</span>
+					<h3>What a Fly Is Afraid Of</h3>
+					<p>A fruit fly has separate, dedicated wiring for spoiled fruit, mould and parasitoid wasps. Where do those warnings come back together, and how much of what we know about them is an artefact of the tools we used to look?</p>
+					<span class="rl-card-meta">Essay &middot; 10 min read &middot; Coming soon on Medium</span>
 				</div>
+			</a>
+		</div>
+	</section>
 
-				<!-- Right: Feed -->
-				<div class="col-lg-7 col-md-12">
-					<div class="bsky-feed-container">
-						<bsky-embed id="bskyEmbed" limit="3" mode="dark" username="mishotofu.bsky.social"></bsky-embed>
-					</div>
-				</div>
+	<!-- Follow along -->
+	<section class="rl-section">
+		<div class="container d-flex flex-wrap justify-content-between align-items-center gap-4">
+			<div>
+				<h2 class="rl-h2 mb-1" style="font-size: 1.4rem;">Follow along</h2>
+				<p class="rl-text mb-0">Kosmograd is in active development. Follow along or join the playtest.</p>
+			</div>
+			<div class="rl-btn-row">
+				<a href="https://discord.gg/RbzwwYn945" class="rl-btn rl-btn--primary">Join the Discord</a>
+				<a href="https://bsky.app/profile/mishotofu.bsky.social" class="rl-btn">Bluesky</a>
+				<a href="https://x.com/MishoWave" class="rl-btn">X</a>
+				<a href="mailto:mfgoes1@gmail.com" class="rl-btn">Email</a>
 			</div>
 		</div>
 	</section>
 
-	<!-- Roadmap in the game’s mission-control visual language. -->
-	<section id="timeline" class="kg-roadmap">
-		<div class="container">
-			<p class="kg-kicker mb-2">Colony programme</p>
-			<h2 class="kg-section-heading mb-2">Mission status</h2>
-			<p class="kg-roadmap-copy mb-0">A working projection of the systems required to get the first lunar colony online.</p>
-			<div class="kg-mission-list">
-				<div class="kg-mission"><span class="kg-mission-date">OCT 2025</span><span class="kg-mission-feature">Movement, selection, building placement, and resource systems</span><span class="kg-status kg-status--complete">Complete</span></div>
-				<div class="kg-mission"><span class="kg-mission-date">NOV 2025</span><span class="kg-mission-feature">Resource management, core buildings, and power usage</span><span class="kg-status kg-status--complete">Complete</span></div>
-				<div class="kg-mission"><span class="kg-mission-date">DEC 2025</span><span class="kg-mission-feature">Equipment failures, resource shortages, and environmental events</span><span class="kg-status">In planning</span></div>
-				<div class="kg-mission"><span class="kg-mission-date">JAN 2026</span><span class="kg-mission-feature">Core-mechanics testing and player feedback</span><span class="kg-status">In planning</span></div>
-			</div>
-		</div>
-	</section>
+	<div id="footer-container"></div>
 
-	<!-- Contact Section -->
-	<section class="contact-section py-5">
-		<div class="container text-center">
-			<h2 class="kg-section-heading mb-3">Get in touch</h2>
-			<p class="bluesky-section-description mb-4 mx-auto" style="max-width: 34rem;">
-				Questions, feedback, or playtester applications welcome!
-			</p>
-			<div class="d-flex gap-3 justify-content-center flex-wrap">
-				<a href="mailto:mfgoes1@gmail.com" class="kg-button">Email</a>
-				<a href="https://discord.gg/RbzwwYn945" class="kg-button">Discord</a>
-				<a href="https://bsky.app/profile/mishotofu.bsky.social" class="kg-button">Bluesky</a>
-			</div>
-		</div>
-	</section>
-
-
-	<!-- Footer -->
-	<footer class="py-4" style="background-color: #0a0a0a; border-top: 1px solid #2c2c2c;">
-		<div class="container">
-			<div class="text-center">
-				<p class="mb-2" style="color: #8a8a8f; font-size: 0.875rem;">
-					Redshift Labs &copy; 2025
-				</p>
-				<p class="mb-0">
-					<a href="press-kit.html" style="color: #8a8a8f; font-size: 0.8125rem; text-decoration: none;">Press Kit</a>
-				</p>
-				<p class="mb-0">
-					<a href="moon/UI_STYLE_GUIDE.html" style="color: #8a8a8f; font-size: 0.8125rem; text-decoration: none;">Design System</a>
-				</p>
-			</div>
-		</div>
-	</footer>
-
-
-	<!-- Bootstrap JS -->
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-	<!-- Component Loader -->
 	<script src="js/ComponentLoader.js"></script>
 	<script src="js/navbar-init.js"></script>
+	<script src="js/site.js"></script>
 
-	<!-- JSON-LD Structured Data -->
-	<script type="application/ld+json">
-	{
-		"@context": "https://schema.org",
-		"@type": "VideoGame",
-		"name": "Kosmograd",
-		"alternateName": "Kosmograd - Soviet Lunar Colony RTS",
-		"description": "Command a Soviet lunar colony in this intense real-time strategy game. Balance survival, politics, and resources. Manage oxygen consumption, food production, power systems, and respond to equipment failures and environmental hazards on the Moon.",
-		"url": "https://mfgoes.github.io/redshiftlabs/",
-		"image": "https://mfgoes.github.io/redshiftlabs/images/MessageGen%20Hero2.jpg",
-		"publisher": {
-			"@type": "Organization",
-			"name": "Redshift Labs",
-			"url": "https://mfgoes.github.io/redshiftlabs/",
-			"email": "mfgoes1@gmail.com",
-			"sameAs": [
-				"https://bsky.app/profile/mishotofu.bsky.social",
-				"https://discord.gg/RbzwwYn945",
-				"https://store.steampowered.com/app/387060/Earth_Overclocked/"
-			]
-		},
-		"creator": {
-			"@type": "Person",
-			"name": "Redshift Labs"
-		},
-		"genre": ["Strategy", "Colony Management", "RTS", "Real-Time Strategy", "Survival", "Base Building"],
-		"gamePlatform": ["PC", "Steam", "Windows"],
-		"operatingSystem": "Windows",
-		"applicationCategory": "Game",
-		"keywords": "RTS, colony management, Soviet space, lunar colony, strategy game, survival, base building, resource management",
-		"datePublished": "2026-01-01",
-		"inLanguage": "en-US",
-		"gameItem": [
-			{
-				"@type": "Thing",
-				"name": "Oxygen Management System"
-			},
-			{
-				"@type": "Thing",
-				"name": "Food Production System"
-			},
-			{
-				"@type": "Thing",
-				"name": "Power Management"
-			},
-			{
-				"@type": "Thing",
-				"name": "Environmental Events"
-			}
-		],
-		"audience": {
-			"@type": "Audience",
-			"audienceType": "Strategy game players, RTS fans, Colony sim enthusiasts"
-		},
-		"offers": {
-			"@type": "Offer",
-			"availability": "https://schema.org/PreOrder",
-			"price": "TBD",
-			"priceCurrency": "USD",
-			"url": "https://mfgoes.github.io/redshiftlabs/",
-			"availableAtOrFrom": {
-				"@type": "Organization",
-				"name": "Steam"
-			}
-		},
-		"aggregateRating": {
-			"@type": "AggregateRating",
-			"ratingValue": "N/A",
-			"reviewCount": "0",
-			"bestRating": "5",
-			"worstRating": "1"
-		}
-	}
-	</script>
-
-	<!-- JSON-LD Organization Data -->
 	<script type="application/ld+json">
 	{
 		"@context": "https://schema.org",
 		"@type": "Organization",
 		"name": "Redshift Labs",
 		"url": "https://mfgoes.github.io/redshiftlabs/",
-		"logo": "https://mfgoes.github.io/redshiftlabs/images/moon_icon.png",
-		"description": "Independent game development studio creating innovative strategy and simulation games. Creators of Earth Overclocked and Kosmograd.",
+		"logo": "https://mfgoes.github.io/redshiftlabs/assets/branding/Top.png",
+		"description": "Independent game studio making small, systems-driven strategy games. Creators of Kosmograd and Earth Overclocked.",
 		"email": "mfgoes1@gmail.com",
-		"foundingDate": "2015",
 		"sameAs": [
 			"https://bsky.app/profile/mishotofu.bsky.social",
 			"https://discord.gg/RbzwwYn945",
 			"https://store.steampowered.com/app/387060/Earth_Overclocked/"
-		],
-		"makesOffer": [
-			{
-				"@type": "VideoGame",
-				"name": "Kosmograd"
-			},
-			{
-				"@type": "VideoGame",
-				"name": "Earth Overclocked"
-			}
 		]
 	}
 	</script>
-
-	<!-- JSON-LD WebSite Data -->
 	<script type="application/ld+json">
 	{
 		"@context": "https://schema.org",
 		"@type": "WebSite",
-		"name": "Redshift Labs - Kosmograd",
+		"name": "Redshift Labs",
 		"url": "https://mfgoes.github.io/redshiftlabs/",
-		"description": "Official website for Kosmograd, a Soviet lunar colony RTS game by Redshift Labs",
-		"publisher": {
-			"@type": "Organization",
-			"name": "Redshift Labs"
-		},
 		"inLanguage": "en-US"
 	}
 	</script>
-
-	<!-- Hide Bluesky Avatars on Mobile -->
-	<script>
-		// Hide Bluesky profile pictures on mobile devices
-		if (window.innerWidth <= 768) {
-			function hideAvatars() {
-				// Find all images in the bsky-feed-container
-				const container = document.querySelector('.bsky-feed-container');
-				if (!container) return;
-
-				// Target all avatar images
-				const allImages = container.querySelectorAll('img');
-				allImages.forEach(img => {
-					if (img.src && (img.src.includes('avatar') || img.src.includes('cdn.bsky.app/img/avatar'))) {
-						img.style.display = 'none';
-						img.style.width = '0';
-						img.style.height = '0';
-						img.classList.add('avatar-hidden');
-					}
-				});
-
-				// Also try to access shadow DOM
-				const bskyEmbeds = container.querySelectorAll('bsky-embed');
-				bskyEmbeds.forEach(embed => {
-					if (embed.shadowRoot) {
-						const shadowImages = embed.shadowRoot.querySelectorAll('img');
-						shadowImages.forEach(img => {
-							if (img.src && (img.src.includes('avatar') || img.src.includes('cdn.bsky.app/img/avatar'))) {
-								img.style.display = 'none';
-								img.style.width = '0';
-								img.style.height = '0';
-							}
-						});
-					}
-				});
-			}
-
-			// Run on load
-			document.addEventListener('DOMContentLoaded', function() {
-				// Run immediately
-				setTimeout(hideAvatars, 500);
-				// Run again after component loads
-				setTimeout(hideAvatars, 2000);
-				setTimeout(hideAvatars, 4000);
-
-				// Watch for DOM changes using MutationObserver
-				const observer = new MutationObserver(hideAvatars);
-				const container = document.querySelector('.bsky-feed-container');
-				if (container) {
-					observer.observe(container, {
-						childList: true,
-						subtree: true,
-						attributes: true,
-						attributeFilter: ['src']
-					});
-				}
-			});
-		}
-	</script>
-
 </body>
 </html>

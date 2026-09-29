@@ -20,7 +20,6 @@
                     // Some pages intentionally omit a container (e.g. devlog posts
                     // that skip the navbar) - skip quietly instead of failing the
                     // whole loadMultiple() batch.
-                    console.warn(`Container not found, skipping: ${containerSelector}`);
                     return null;
                 }
 
@@ -36,8 +35,6 @@
 
                 // Inject the HTML into the container
                 container.innerHTML = html;
-
-                console.log(`Component loaded: ${componentName}`);
 
                 return container;
             } catch (error) {
@@ -68,5 +65,4 @@
     // Expose ComponentLoader globally
     window.ComponentLoader = ComponentLoader;
 
-    console.log('ComponentLoader initialized');
 })();

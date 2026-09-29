@@ -19,14 +19,13 @@
 	<meta property="og:url" content="https://mfgoes.github.io/redshiftlabs/devlog-making-survival-matter.html">
 
 	<!-- Favicon -->
-	<link rel="icon" type="image/x-icon" href="images/moon_icon.png">
-
-	<!-- Google Fonts - Orbitron -->
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+	<link rel="icon" type="image/svg+xml" href="assets/branding/Logo%20nly.svg">
+	<link rel="icon" type="image/x-icon" href="favicon.ico">
 
 	<!-- Bootstrap CSS -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Onest:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="css/main.css">
 	<link rel="stylesheet" href="css/devlog-styles.css">
@@ -56,39 +55,81 @@
 					<article class="devlog-entry kg-devlog-entry kg-devlog-entry--solo">
 						<div class="devlog-content">
 
-			<p class="mb-4">This week I’ve been making survival a little less automatic.</p>
+			<p class="kg-lede">This week I’ve been making survival a little less automatic.</p>
 
-			<img class="img-fluid rounded mb-4" src="images/devlog-images/colony-base-day1.png" alt="Kosmograd colony base with HUD and colonist dialogue">
+			<figure class="kg-figure">
+				<img class="img-fluid" src="images/devlog-images/colony-base-day1.png" alt="Kosmograd colony base with HUD and colonist dialogue">
+				<figcaption>Day 1 at the colony: quest tracker, resource bar and a word from Katya.</figcaption>
+			</figure>
 
-			<img class="img-fluid rounded mb-4" src="images/devlog-images/8bArCF.gif" alt="Kosmograd gameplay clip">
-
-			<img class="img-fluid rounded mb-4" src="images/devlog-images/OKaTHF.gif" alt="Kosmograd gameplay clip">
+			<div class="kg-tldr">
+				<p class="kg-label mb-2">This update</p>
+				<ul>
+					<li><strong>Food:</strong> Fabricator is now a fallback; Hydroponics is the real supply line.</li>
+					<li><strong>Spoilage:</strong> exceed cold storage and food rots.</li>
+					<li><strong>Opening:</strong> free Earth hail, starter rations, smarter workers.</li>
+					<li><strong>UI:</strong> pixel-art pass across menus, quests and portraits.</li>
+				</ul>
+			</div>
 
 			<h5>Food &amp; Logistics</h5>
 			<p class="mb-3">The early food loop has had a pretty big overhaul:</p>
+			<div class="kg-compare">
+				<div class="kg-compare-card">
+					<span class="kg-tag">Buy time</span>
+					<h6>Food Fabricator</h6>
+					<p>Emergency solution. Lower output, higher mineral cost.</p>
+				</div>
+				<div class="kg-compare-card kg-compare-card--good">
+					<span class="kg-tag">Build to last</span>
+					<h6>Hydroponics Bay</h6>
+					<p>Sustainable food, but it needs Cryo Shards from a hazardous crater biome.</p>
+				</div>
+			</div>
 			<ul class="mb-3">
-				<li>Food Fabricator is now an emergency solution — lower output, higher mineral cost.</li>
-				<li>Hydroponics Bay provides sustainable food, but requires Cryo Shards from a hazardous crater biome.</li>
-				<li>Food can spoil when you exceed your cold-storage capacity.</li>
-				<li>Cold Store gives you more capacity and lets you prepare for difficult periods.</li>
+				<li>Food can <strong>spoil</strong> when you exceed your cold-storage capacity.</li>
+				<li><strong>Cold Store</strong> gives you more capacity and lets you prepare for difficult periods.</li>
 			</ul>
-			<p class="mb-4">So the early game now becomes a choice between buying time and building a proper supply chain.</p>
+			<p class="kg-callout">The early game is now a choice between buying time and building a proper supply chain.</p>
+
+			<figure class="kg-figure">
+				<img class="img-fluid" src="images/devlog-images/8bArCF.gif" alt="Kosmograd gameplay clip">
+				<figcaption>Colonists at work around the base.</figcaption>
+			</figure>
 
 			<h5>Smoother Opening</h5>
 			<p class="mb-3">A few changes should make the first minutes less frustrating:</p>
 			<ul class="mb-4">
-				<li>Contacting Earth now works with a free hail from the Comms Center.</li>
-				<li>Initial lander rations give the crew some breathing room.</li>
-				<li>Workers are better at recovering when construction sites are unreachable.</li>
-				<li>HUD/tooltips make storage and spoilage easier to understand.</li>
+				<li><strong>Free hail:</strong> contacting Earth works from the Comms Center at no cost.</li>
+				<li><strong>Lander rations:</strong> the crew gets some breathing room at the start.</li>
+				<li><strong>Smarter workers:</strong> better recovery when construction sites are unreachable.</li>
+				<li><strong>Clearer HUD:</strong> tooltips make storage and spoilage easier to understand.</li>
 			</ul>
+
+			<figure class="kg-figure">
+				<img class="img-fluid" src="images/devlog-images/OKaTHF.gif" alt="Kosmograd gameplay clip">
+				<figcaption>More base activity from the current build.</figcaption>
+			</figure>
 
 			<h5>More Personality</h5>
 			<p class="mb-3">I’ve also continued the pixel-art UI pass across the pause menu, save/load screens, quests, building panels and colonist priorities.</p>
-			<p class="mb-3">Colonists now have expressive portraits, and the HUD has a much stronger visual identity.</p>
-			<p class="mb-4">Still in progress: storms, crises, day/night visuals, biome zones, and the consequences of losing colonists.</p>
+			<p class="mb-4">Colonists now have expressive portraits, and the HUD has a much stronger visual identity.</p>
 
-			<p class="mb-0"><em>The goal: survival should never be automatic — but every problem should have a readable, satisfying solution.</em></p>
+			<h5>Still in progress</h5>
+			<div class="kg-tags mb-4">
+				<span class="kg-tag">Storms</span>
+				<span class="kg-tag">Crises</span>
+				<span class="kg-tag">Day/night visuals</span>
+				<span class="kg-tag">Biome zones</span>
+				<span class="kg-tag">Losing colonists</span>
+			</div>
+
+			<blockquote class="kg-pullquote">Survival should never be automatic — but every problem should have a readable, satisfying solution.</blockquote>
+
+			<div class="kg-cta">
+				<p class="mb-0">Want to try it and tell me what breaks?</p>
+				<a href="https://mischa.itch.io/kosmograd" class="btn kg-button">Play the demo</a>
+			</div>
 						</div>
 
 						<div class="devlog-footer d-flex justify-content-between align-items-center flex-wrap gap-2">
@@ -155,5 +196,6 @@
 	<!-- Component Loader -->
 	<script src="js/ComponentLoader.js"></script>
 	<script src="js/navbar-init.js"></script>
+	<script src="js/site.js"></script>
 </body>
 </html>
