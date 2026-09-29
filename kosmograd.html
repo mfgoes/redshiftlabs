@@ -97,8 +97,8 @@
 					<h2 class="rl-h2">Small systems. Big problems.</h2>
 					<p class="rl-text">Build a Soviet-inspired lunar outpost, manage oxygen, food and power, and keep your colonists alive through freezing nights and violent dust storms. Expand your base, automate essential systems and make difficult choices when something inevitably breaks.</p>
 				</div>
-				<div class="col-lg-7">
-					<!-- TODO: swap for a YouTube embed once the trailer exists. -->
+				<!-- TODO: swap for a YouTube embed once the trailer exists, and drop rl-hide-sm so it shows on phones. -->
+				<div class="col-lg-7 rl-hide-sm">
 					<div class="rl-trailer"><span>Trailer coming soon</span></div>
 				</div>
 			</div>
@@ -110,31 +110,31 @@
 			<p class="rl-eyebrow mb-2">Gameplay</p>
 			<h2 class="rl-h2 mb-4">Keep the colony running</h2>
 			<div class="rl-pillars">
-				<div>
-					<h3>Keep 3 colonists alive</h3>
+				<details class="rl-pillar" open>
+					<summary><h3>Keep 3 colonists alive</h3></summary>
 					<p>Keep them fed, supplied with oxygen and protected from the moon's harsh environment. Losing even one person can change what your colony is capable of.</p>
-				</div>
-				<div>
-					<h3>Build your lunar outpost</h3>
+				</details>
+				<details class="rl-pillar" open>
+					<summary><h3>Build your lunar outpost</h3></summary>
 					<p>Build habitats, power systems, food production and industrial machinery. Oxygen is limited, so where you place each building matters &mdash; your colony needs to keep working when conditions turn against you.</p>
-				</div>
-				<div>
-					<h3>Survive the environment</h3>
+				</details>
+				<details class="rl-pillar" open>
+					<summary><h3>Survive the environment</h3></summary>
 					<p>Lunar nights are cold, power is limited, and dust storms can bring your carefully planned systems to a halt. Prepare your colony before conditions deteriorate.</p>
-				</div>
-				<div id="moon">
-					<h3>Explore a strange, unforgiving moon</h3>
+				</details>
+				<details class="rl-pillar" id="moon" open>
+					<summary><h3>Explore a strange, unforgiving moon</h3></summary>
 					<p>Venture beyond the safety of your base to gather resources and discover new environments. Explore three distinct lunar biomes, each offering new resources, hazards and reasons to leave the comfort of your colony.</p>
-				</div>
-				<div class="rl-pillar-wide">
-					<h3>When machines fail, do it yourself</h3>
+				</details>
+				<details class="rl-pillar rl-pillar-wide" open>
+					<summary><h3>When machines fail, do it yourself</h3></summary>
 					<p><strong style="color:#f2f3f3;">Machinery makes life easier &mdash; until it breaks.</strong> When production goes offline or power fails, your colonists can step in and mine resources manually. It's slower. It's riskier. Sometimes it's the only option.</p>
-				</div>
+				</details>
 			</div>
 		</div>
 	</section>
 
-	<section class="rl-section rl-section--raised" id="feature-summary">
+	<section class="rl-section rl-section--raised rl-hide-sm" id="feature-summary">
 		<div class="container">
 			<p class="rl-eyebrow mb-2">Feature summary</p>
 			<h2 class="rl-h2 mb-4">At a glance</h2>

@@ -703,7 +703,56 @@ body.rl-overlay-nav:not(.rl-scrolled) #navbar-container .navbar {
 	.rl-footer-row { align-items: flex-start; flex-direction: column; }
 	/* Narrow screens lose the side-to-side fade, so darken the art evenly. */
 	.rl-game-hero::before { opacity: .45; }
+
+	/* Phones get the skim version: headlines and visuals, with the long copy
+	   either dropped (when it repeats nearby content) or folded away. */
+	.rl-section { padding: 2.75rem 0; }
+	.rl-game-hero { padding-top: calc(var(--rl-nav-h) + 3rem); }
+	.rl-tags span:nth-child(n + 4),
+	.rl-readout span:nth-child(2) { display: none; }
+	.rl-readout { margin-top: 2rem; }
+	.rl-hide-sm { display: none !important; }
+
+	/* USPs collapse to a compact icon + title list. */
+	.rl-usps { gap: 0; }
+	.rl-usp { align-items: center; display: flex; gap: 1rem; padding: 1rem 0; }
+	.rl-usp::after, .rl-usp p { display: none; }
+	.rl-usp-icon { flex: none; height: 24px; margin: 0; width: 24px; }
+	.rl-usp h3 { font-size: 1.1rem; margin: 0; }
+
+	/* Cards keep title + meta; excerpts go, except a short one on articles. */
+	.rl-card p { display: none; }
+	.rl-card--article p { -webkit-box-orient: vertical; display: -webkit-box; -webkit-line-clamp: 3; overflow: hidden; }
+	.rl-card h3 { margin-bottom: .5rem; }
+
+	/* Gameplay pillars become an accordion (see setupPillars in site.js). */
+	.rl-pillars { gap: 0; }
+	.rl-pillar { border-top: 1px solid var(--rl-line); }
+	.rl-pillar-wide { border-left: 0; padding-left: 0; }
+	.rl-pillars .rl-pillar h3::before { display: none; }
+	.rl-pillar summary { align-items: center; cursor: pointer; display: flex; justify-content: space-between; padding: 1rem 0; }
+	.rl-pillar summary::after { color: var(--kg-accent); content: '+'; font-family: var(--rl-mono); font-size: 1.1rem; }
+	.rl-pillar[open] summary::after { content: '\2212'; }
+	.rl-pillar summary h3 { font-size: 1.1rem; margin: 0; }
+	.rl-pillar p { padding-bottom: 1.1rem; }
+
+	/* Screenshots become a swipeable strip instead of a tall stack. */
+	.rl-shots { display: flex; gap: .75rem; margin: 0 -.75rem; overflow-x: auto; padding: 0 .75rem; scroll-snap-type: x mandatory; scrollbar-width: none; }
+	.rl-shots::-webkit-scrollbar { display: none; }
+	.rl-shot { flex: 0 0 85%; scroll-snap-align: start; }
+
+	/* Team: names and roles only. */
+	.rl-team { gap: 1.25rem; }
+	.rl-person p:not(.rl-role) { display: none; }
+	.rl-person .rl-role { margin: 0; }
+
+	.rl-footer-sign { font-size: 1.75rem; margin-bottom: 2rem; }
 }
+
+/* Pillar summaries only act as toggles on phones. */
+.rl-pillar summary { list-style: none; }
+.rl-pillar summary::-webkit-details-marker { display: none; }
+@media (min-width: 768px) { .rl-pillar summary { cursor: default; display: block; pointer-events: none; } }
 
 /* ── Devlog index ───────────────────────────────────────────────────── */
 .rl-devlog-list { display: grid; gap: 1rem; }

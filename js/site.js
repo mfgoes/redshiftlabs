@@ -87,6 +87,26 @@
         dialog.addEventListener('click', () => dialog.close());
     }
 
+    // Gameplay pillars: always open on wider screens, a closed accordion on
+    // phones. Markup ships with `open` so nothing is hidden without JS.
+    function setupPillars() {
+        const pillars = document.querySelectorAll('details.rl-pillar');
+        if (!pillars.length) return;
+
+        const phone = window.matchMedia('(max-width: 767px)');
+        const sync = () => pillars.forEach(p => { p.open = !phone.matches; });
+        sync();
+        phone.addEventListener('change', sync);
+
+        // Jumping to a pillar (e.g. "The Moon" in the sub-nav) opens it.
+        const openTarget = () => {
+            const target = location.hash && document.querySelector(location.hash);
+            if (target && target.matches('details.rl-pillar')) target.open = true;
+        };
+        openTarget();
+        window.addEventListener('hashchange', openTarget);
+    }
+
     function greet() {
         console.log(
             '%c Redshift Labs %c Small games about big, hostile places.\nWant to playtest Kosmograd? https://discord.gg/RbzwwYn945',
@@ -101,6 +121,7 @@
         setupReveal();
         setupStormClock();
         setupLightbox();
+        setupPillars();
         greet();
     });
 })();
